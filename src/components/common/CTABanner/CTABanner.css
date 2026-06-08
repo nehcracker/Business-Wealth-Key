@@ -1,0 +1,163 @@
+/* ─── CTABanner ──────────────────────────────────────────────────────────── */
+
+.cta-banner {
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--space-20);
+}
+
+/* ── Dark variant (default) ──────────────────────────────────────────────── */
+
+.cta-banner--dark {
+  background: var(--color-bg-secondary);
+  border-top:    1px solid var(--color-amethyst-border);
+  border-bottom: 1px solid var(--color-amethyst-border);
+}
+
+/* ── Amethyst variant — inverted ─────────────────────────────────────────── */
+
+.cta-banner--amethyst {
+  background: linear-gradient(
+    135deg,
+    var(--color-amethyst-dark) 0%,
+    var(--color-burgundy)      60%,
+    #2A1040                    100%
+  );
+}
+
+.cta-banner--amethyst .cta-banner__heading {
+  color: #fff;
+  -webkit-text-fill-color: #fff;
+  background: none;
+}
+
+.cta-banner--amethyst .cta-banner__subtext {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ── Decorative orbs ─────────────────────────────────────────────────────── */
+
+.cta-banner__orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.cta-banner__orb--left {
+  width: 360px;
+  height: 360px;
+  top: -120px;
+  left: -100px;
+  background: radial-gradient(
+    circle,
+    rgba(155, 110, 200, 0.1) 0%,
+    transparent 70%
+  );
+}
+
+.cta-banner__orb--right {
+  width: 300px;
+  height: 300px;
+  bottom: -100px;
+  right: -60px;
+  background: radial-gradient(
+    circle,
+    rgba(212, 130, 74, 0.08) 0%,
+    transparent 70%
+  );
+}
+
+/* ── Inner ───────────────────────────────────────────────────────────────── */
+
+.cta-banner__inner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--section-padding-x);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-10);
+}
+
+.cta-banner__text {
+  flex: 1;
+  max-width: 640px;
+}
+
+.cta-banner__heading {
+  font-family: var(--font-display);
+  font-size: clamp(var(--text-2xl), 4vw, var(--text-3xl));
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--space-4);
+  background: linear-gradient(
+    135deg,
+    var(--color-text-heading),
+    var(--color-amethyst-light)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cta-banner__subtext {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  max-width: none;
+}
+
+.cta-banner__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  flex-shrink: 0;
+}
+
+/* ── Bottom border accent ────────────────────────────────────────────────── */
+
+.cta-banner__border {
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-amethyst-border) 30%,
+    var(--color-ember-border)    70%,
+    transparent
+  );
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  .cta-banner__inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cta-banner__text {
+    max-width: none;
+  }
+
+  .cta-banner__actions {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-banner {
+    padding-block: var(--space-12);
+  }
+
+  .cta-banner__actions {
+    flex-direction: column;
+    width: 100%;
+  }
+}

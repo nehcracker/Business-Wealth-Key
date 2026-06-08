@@ -1,0 +1,193 @@
+/* ─── About page ─────────────────────────────────────────────────────────── */
+
+.about-story {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: var(--space-16);
+  align-items: start;
+}
+
+.about-story__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.about-story__text p {
+  max-width: none;
+  text-align: justify;
+  font-size: clamp(var(--text-base), 1.1vw, var(--text-lg));
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.about-story__aside {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  position: sticky;
+  top: calc(var(--navbar-height) + var(--space-8));
+}
+
+.about-mission-box {
+  padding: var(--space-8);
+  background: var(--color-bg-overlay);
+  border: 1px solid var(--color-amethyst-border);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.about-mission-box h3 {
+  font-family: var(--font-cinzel);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-amethyst);
+}
+
+.about-mission-box p {
+  font-family: var(--font-body);
+  font-size: clamp(var(--text-sm), 1.05vw, var(--text-base));
+  color: var(--color-text-secondary);
+  line-height: 1.75;
+  max-width: none;
+  text-align: justify;
+}
+
+/* ── Differentiators ─────────────────────────────────────────────────────── */
+
+.about-different-section {
+  position: relative;
+  background: linear-gradient(
+      rgba(8, 6, 15, 0.78),
+      rgba(8, 6, 15, 0.78)
+    ),
+    url('../../assets/images/hero/Business-Wealth-Key-Different.png') center/cover fixed no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.about-different-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      ellipse 100% 80% at 50% 0%,
+      rgba(155, 110, 200, 0.15) 0%,
+      transparent 50%
+    );
+  pointer-events: none;
+}
+
+.about-differentiators {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+  position: relative;
+  z-index: 1;
+}
+
+.about-differentiator {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-5);
+  padding: var(--space-6);
+  background: rgba(8, 6, 15, 0.68);
+  border: 1px solid rgba(155, 110, 200, 0.25);
+  border-radius: var(--radius-lg);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.about-differentiator:hover {
+  border-color: var(--color-amethyst);
+  background: rgba(18, 10, 32, 0.82);
+  box-shadow: var(--shadow-amethyst-sm);
+}
+
+.about-differentiator__num {
+  font-family: var(--font-cinzel);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--color-amethyst-border);
+  flex-shrink: 0;
+  line-height: 1;
+  transition: color var(--transition-fast);
+}
+
+.about-differentiator:hover .about-differentiator__num {
+  color: var(--color-amethyst);
+}
+
+.about-differentiator__text {
+  font-family: var(--font-body);
+  font-size: clamp(var(--text-sm), 1.05vw, var(--text-base));
+  color: var(--color-text-secondary);
+  line-height: 1.75;
+  text-align: justify;
+}
+
+@media (max-width: 1024px) {
+  .about-story { grid-template-columns: 1fr; gap: var(--space-10); }
+  .about-story__aside { position: static; }
+}
+
+@media (max-width: 768px) {
+  .about-differentiators { grid-template-columns: 1fr; }
+  
+  .about-different-section {
+    background-attachment: scroll;
+  }
+  
+  .about-story__text p {
+    font-size: clamp(var(--text-base), 1.2vw, var(--text-lg));
+    text-align: left;
+  }
+  
+  .about-mission-box p {
+    text-align: left;
+  }
+  
+  .about-differentiator__text {
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-story__text p {
+    font-size: var(--text-base);
+    text-align: left;
+    line-height: 1.7;
+  }
+  
+  .about-mission-box {
+    padding: var(--space-6);
+    gap: var(--space-3);
+  }
+  
+  .about-mission-box p {
+    font-size: var(--text-sm);
+  }
+  
+  .about-differentiator {
+    padding: var(--space-4);
+    gap: var(--space-3);
+    background: rgba(8, 6, 15, 0.82);
+  }
+  
+  .about-differentiator__num {
+    font-size: var(--text-lg);
+  }
+  
+  .about-differentiator__text {
+    font-size: var(--text-sm);
+  }
+}

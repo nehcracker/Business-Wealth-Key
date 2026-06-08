@@ -1,0 +1,186 @@
+/* ─── Shared Page Layout Utilities ──────────────────────────────────────── */
+/* Imported by individual page CSS files as needed                           */
+
+/* ── Section header — centered heading + divider ─────────────────────────── */
+
+.page-section-header {
+  text-align: center;
+  max-width: 720px;
+  margin-inline: auto;
+  margin-bottom: var(--space-12);
+}
+
+.page-section-header--left {
+  text-align: left;
+  margin-inline: 0;
+}
+
+.page-eyebrow {
+  font-family: var(--font-cinzel);
+  font-size: var(--text-xs);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-amethyst);
+  margin-bottom: var(--space-4);
+  max-width: none;
+}
+
+.page-heading {
+  font-family: var(--font-display);
+  font-size: clamp(var(--text-2xl), 4vw, var(--text-3xl));
+  color: var(--color-text-heading);
+  line-height: 1.25;
+  margin-bottom: var(--space-5);
+}
+
+.page-lead {
+  font-family: var(--font-body);
+  font-size: clamp(var(--text-base), 1.1vw, var(--text-lg));
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  max-width: 680px;
+  margin-inline: auto;
+  text-align: justify;
+}
+
+.page-lead--left {
+  margin-inline: 0;
+}
+
+/* ── Two-column editorial layout ─────────────────────────────────────────── */
+
+.page-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: start;
+}
+
+.page-two-col--wide-left {
+  grid-template-columns: 1.4fr 1fr;
+}
+
+@media (max-width: 900px) {
+  .page-two-col,
+  .page-two-col--wide-left {
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+  }
+}
+
+/* ── Feature grid — 3-up cards ───────────────────────────────────────────── */
+
+.page-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+@media (max-width: 900px) {
+  .page-feature-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 580px) {
+  .page-feature-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Feature card ────────────────────────────────────────────────────────── */
+
+.page-feature-card {
+  padding: var(--space-8);
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-amethyst-border);
+  border-radius: var(--radius-lg);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.page-feature-card:hover {
+  border-color: var(--color-amethyst);
+  box-shadow: var(--shadow-amethyst-sm);
+}
+
+.page-feature-card__icon {
+  color: var(--color-amethyst);
+  margin-bottom: var(--space-4);
+}
+
+.page-feature-card__title {
+  font-family: var(--font-cinzel);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--color-text-heading);
+  margin-bottom: var(--space-3);
+}
+
+.page-feature-card__desc {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text-tertiary);
+  line-height: 1.75;
+  max-width: none;
+}
+
+/* ── Highlight box — bordered call-out ───────────────────────────────────── */
+
+.page-highlight {
+  padding: var(--space-8) var(--space-10);
+  background: var(--color-amethyst-dim);
+  border: 1px solid var(--color-amethyst-border);
+  border-left: 3px solid var(--color-amethyst);
+  border-radius: var(--radius-lg);
+}
+
+.page-highlight p {
+  font-family: var(--font-body);
+  font-size: clamp(var(--text-base), 1.1vw, var(--text-lg));
+  font-style: italic;
+  color: var(--color-text-secondary);
+  line-height: 1.85;
+  max-width: none;
+  text-align: justify;
+}
+
+/* ── Service list — detailed bullet list ─────────────────────────────────── */
+
+.page-service-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.page-service-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  font-family: var(--font-body);
+  font-size: clamp(var(--text-sm), 1.05vw, var(--text-base));
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  text-align: justify;
+}
+
+.page-service-list li::before {
+  content: '◆';
+  color: var(--color-amethyst);
+  font-size: 0.55rem;
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+/* ── Services grid on overview pages ─────────────────────────────────────── */
+
+.page-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+@media (max-width: 1024px) {
+  .page-services-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .page-services-grid { grid-template-columns: 1fr; }
+}

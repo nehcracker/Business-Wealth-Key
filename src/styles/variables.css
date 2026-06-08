@@ -1,0 +1,118 @@
+/* ─── Design Tokens — Business Wealth Key ───────────────────────────────── */
+/* Palette derived from the amethyst crystal hero image                      */
+
+:root {
+
+  /* ── Backgrounds ─────────────────────────────────────────────────────── */
+  --color-bg-primary:    #08060F; /* near-black with violet cast — base bg  */
+  --color-bg-secondary:  #0F0C1A; /* navbar, header bg                      */
+  --color-bg-tertiary:   #16112A; /* card backgrounds                       */
+  --color-bg-overlay:    #1E1730; /* hover surfaces, elevated cards         */
+  --color-bg-glass:      rgba(22, 17, 42, 0.85); /* frosted glass overlays  */
+
+  /* ── Amethyst — primary accent ───────────────────────────────────────── */
+  --color-amethyst:        #9B6EC8;
+  --color-amethyst-light:  #C4A0E8;
+  --color-amethyst-dark:   #6B3FA0;
+  --color-amethyst-dim:    rgba(155, 110, 200, 0.12);
+  --color-amethyst-border: rgba(155, 110, 200, 0.25);
+  --color-amethyst-hover:  rgba(155, 110, 200, 0.18);
+
+  /* ── Ember — warm secondary accent ──────────────────────────────────── */
+  --color-ember:        #D4824A;
+  --color-ember-light:  #E8A878;
+  --color-ember-dark:   #A85E30;
+  --color-ember-dim:    rgba(212, 130, 74, 0.12);
+  --color-ember-border: rgba(212, 130, 74, 0.25);
+
+  /* ── Burgundy — deep accent ──────────────────────────────────────────── */
+  --color-burgundy:       #6B2D4E;
+  --color-burgundy-light: #9B4E72;
+
+  /* ── Text ────────────────────────────────────────────────────────────── */
+  --color-text-primary:   #EDE8F5; /* soft lavender-white — body text       */
+  --color-text-secondary: #B8A8D4; /* muted lavender — supporting text      */
+  --color-text-tertiary:  #6B5E8A; /* placeholder, disabled, captions       */
+  --color-text-heading:   #F0EBF8; /* slightly brighter for headings        */
+  --color-text-link:      #C4A0E8; /* amethyst-light for inline links       */
+
+  /* ── Semantic ────────────────────────────────────────────────────────── */
+  --color-success:        #4A9B6F;
+  --color-success-dim:    rgba(74, 155, 111, 0.15);
+  --color-error:          #C05A5A;
+  --color-error-dim:      rgba(192, 90, 90, 0.15);
+  --color-warning:        #C8922A;
+  --color-warning-dim:    rgba(200, 146, 42, 0.15);
+
+  /* ── Typography — font stacks with system fallbacks ─────────────────── */
+  --font-display: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+  --font-cinzel:  'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+  --font-body:    'Cormorant Garamond', 'Garamond', 'Georgia', serif;
+  --font-ui:      'Jost', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono:    'Fira Code', 'Consolas', 'Courier New', monospace;
+
+  /* ── Type Scale ──────────────────────────────────────────────────────── */
+  --text-xs:   0.75rem;   /*  12px — labels, tags, badges                  */
+  --text-sm:   0.875rem;  /*  14px — meta, captions                        */
+  --text-base: 1rem;      /*  16px — body copy                             */
+  --text-lg:   1.25rem;   /*  20px — large body / lead paragraph           */
+  --text-xl:   1.5rem;    /*  24px — card title                            */
+  --text-2xl:  2rem;      /*  32px — sub-section heading                   */
+  --text-3xl:  2.5rem;    /*  40px — section heading                       */
+  --text-4xl:  3.5rem;    /*  56px — page title                            */
+  --text-5xl:  5rem;      /*  80px — hero H1                               */
+
+  /* ── Spacing Scale ───────────────────────────────────────────────────── */
+  --space-1:  0.25rem;  /*  4px  */
+  --space-2:  0.5rem;   /*  8px  */
+  --space-3:  0.75rem;  /*  12px */
+  --space-4:  1rem;     /*  16px */
+  --space-5:  1.25rem;  /*  20px */
+  --space-6:  1.5rem;   /*  24px */
+  --space-8:  2rem;     /*  32px */
+  --space-10: 2.5rem;   /*  40px */
+  --space-12: 3rem;     /*  48px */
+  --space-16: 4rem;     /*  64px */
+  --space-20: 5rem;     /*  80px */
+  --space-24: 6rem;     /*  96px */
+
+  /* ── Border Radius ───────────────────────────────────────────────────── */
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   16px;
+  --radius-xl:   24px;
+  --radius-full: 9999px;
+
+  /* ── Shadows ─────────────────────────────────────────────────────────── */
+  --shadow-amethyst-sm: 0 0 12px rgba(155, 110, 200, 0.18);
+  --shadow-amethyst-md: 0 0 32px rgba(155, 110, 200, 0.28);
+  --shadow-amethyst-lg: 0 0 64px rgba(155, 110, 200, 0.38);
+  --shadow-ember-sm:    0 0 12px rgba(212, 130, 74, 0.18);
+  --shadow-ember-md:    0 0 32px rgba(212, 130, 74, 0.28);
+  --shadow-card:        0 4px 24px rgba(0, 0, 0, 0.5);
+  --shadow-card-hover:  0 8px 40px rgba(0, 0, 0, 0.65);
+
+  /* ── Transitions ─────────────────────────────────────────────────────── */
+  --transition-fast:   150ms ease;
+  --transition-base:   250ms ease;
+  --transition-slow:   400ms ease;
+  --transition-xslow:  700ms ease;
+
+  /* ── Z-index Scale ───────────────────────────────────────────────────── */
+  --z-below:   -1;
+  --z-base:     0;
+  --z-raised:   10;
+  --z-dropdown: 100;
+  --z-sticky:   200;
+  --z-overlay:  300;
+  --z-modal:    400;
+  --z-toast:    500;
+
+  /* ── Layout ──────────────────────────────────────────────────────────── */
+  --max-width:         1200px;
+  --max-width-narrow:  800px;
+  --max-width-wide:    1440px;
+  --navbar-height:     72px;
+  --section-padding-y: var(--space-20);
+  --section-padding-x: var(--space-6);
+}

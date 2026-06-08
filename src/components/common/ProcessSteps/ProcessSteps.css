@@ -1,0 +1,165 @@
+/* ─── ProcessSteps ───────────────────────────────────────────────────────── */
+
+.process__header {
+  text-align: center;
+  margin-bottom: var(--space-16);
+}
+
+.process__heading {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  color: var(--color-text-heading);
+}
+
+/* ── Horizontal layout (default desktop) ─────────────────────────────────── */
+
+.process--horizontal .process__list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-2);
+  list-style: none;
+  counter-reset: none;
+  position: relative;
+}
+
+.process--horizontal .process__step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-4);
+  padding: var(--space-6) var(--space-4);
+}
+
+/* Connecting line between steps */
+.process--horizontal .process__connector {
+  position: absolute;
+  top: 28px;
+  left: calc(50% + 24px);
+  right: calc(-50% + 24px);
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    var(--color-amethyst-border),
+    var(--color-amethyst-dim)
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ── Vertical layout ─────────────────────────────────────────────────────── */
+
+.process--vertical .process__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  list-style: none;
+}
+
+.process--vertical .process__step {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-6);
+  padding: var(--space-6) 0;
+  position: relative;
+}
+
+.process--vertical .process__connector {
+  position: absolute;
+  left: 23px;
+  top: 56px;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    var(--color-amethyst-border),
+    transparent
+  );
+}
+
+/* ── Number badge ────────────────────────────────────────────────────────── */
+
+.process__number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--color-amethyst-border);
+  background: var(--color-bg-tertiary);
+  font-family: var(--font-cinzel);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-amethyst);
+  letter-spacing: 0.04em;
+  position: relative;
+  z-index: 1;
+  transition: border-color var(--transition-base),
+              background   var(--transition-base),
+              box-shadow   var(--transition-base);
+}
+
+.process__step:hover .process__number {
+  border-color: var(--color-amethyst);
+  background: var(--color-amethyst-dim);
+  box-shadow: var(--shadow-amethyst-sm);
+}
+
+/* ── Content ─────────────────────────────────────────────────────────────── */
+
+.process__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.process__title {
+  display: block;
+  font-family: var(--font-cinzel);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--color-text-heading);
+  line-height: 1.4;
+}
+
+.process__desc {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-tertiary);
+  line-height: 1.7;
+}
+
+/* ── Responsive — collapse horizontal to vertical ────────────────────────── */
+
+@media (max-width: 900px) {
+  .process--horizontal .process__list {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .process--horizontal .process__step {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    padding: var(--space-5) 0;
+  }
+
+  .process--horizontal .process__connector {
+    top: 56px;
+    left: 23px;
+    right: auto;
+    bottom: 0;
+    width: 1px;
+    height: auto;
+    background: linear-gradient(
+      to bottom,
+      var(--color-amethyst-border),
+      transparent
+    );
+  }
+}

@@ -1,0 +1,168 @@
+/* ─── Button ─────────────────────────────────────────────────────────────── */
+
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-family: var(--font-ui);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  transition:
+    background-color var(--transition-fast),
+    color            var(--transition-fast),
+    box-shadow       var(--transition-fast),
+    transform        var(--transition-fast),
+    border-color     var(--transition-fast);
+  white-space: nowrap;
+  user-select: none;
+}
+
+.btn__label {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Shimmer layer (primary only) ────────────────────────────────────────── */
+
+.btn__shimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.18) 50%,
+    transparent 70%
+  );
+  background-size: 200% 100%;
+  background-position: -200% center;
+  z-index: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .btn:hover .btn__shimmer {
+    animation: shimmer 0.6s ease forwards;
+  }
+}
+
+/* ── Sizes ───────────────────────────────────────────────────────────────── */
+
+.btn--sm {
+  font-size: var(--text-xs);
+  padding: var(--space-2) var(--space-5);
+  gap: var(--space-2);
+}
+
+.btn--md {
+  font-size: var(--text-sm);
+  padding: var(--space-3) var(--space-8);
+  gap: var(--space-3);
+}
+
+.btn--lg {
+  font-size: var(--text-base);
+  padding: var(--space-4) var(--space-10);
+  gap: var(--space-3);
+}
+
+/* ── Full width ──────────────────────────────────────────────────────────── */
+
+.btn--full {
+  width: 100%;
+}
+
+/* ── Primary — amethyst ──────────────────────────────────────────────────── */
+
+.btn--primary.btn--amethyst {
+  background: var(--color-amethyst);
+  color: var(--color-bg-primary);
+}
+
+.btn--primary.btn--amethyst:hover {
+  background: var(--color-amethyst-light);
+  box-shadow: var(--shadow-amethyst-sm);
+  transform: translateY(-2px);
+}
+
+.btn--primary.btn--amethyst:active {
+  transform: translateY(0);
+  background: var(--color-amethyst-dark);
+}
+
+/* ── Primary — ember ─────────────────────────────────────────────────────── */
+
+.btn--primary.btn--ember {
+  background: var(--color-ember);
+  color: var(--color-bg-primary);
+}
+
+.btn--primary.btn--ember:hover {
+  background: var(--color-ember-light);
+  box-shadow: var(--shadow-ember-sm);
+  transform: translateY(-2px);
+}
+
+.btn--primary.btn--ember:active {
+  transform: translateY(0);
+  background: var(--color-ember-dark);
+}
+
+/* ── Ghost — amethyst ────────────────────────────────────────────────────── */
+
+.btn--ghost.btn--amethyst {
+  background: transparent;
+  color: var(--color-amethyst);
+  border: 1px solid var(--color-amethyst-border);
+}
+
+.btn--ghost.btn--amethyst:hover {
+  background: var(--color-amethyst-dim);
+  border-color: var(--color-amethyst);
+  color: var(--color-amethyst-light);
+}
+
+/* ── Ghost — ember ───────────────────────────────────────────────────────── */
+
+.btn--ghost.btn--ember {
+  background: transparent;
+  color: var(--color-ember);
+  border: 1px solid var(--color-ember-border);
+}
+
+.btn--ghost.btn--ember:hover {
+  background: var(--color-ember-dim);
+  border-color: var(--color-ember);
+  color: var(--color-ember-light);
+}
+
+/* ── Text ────────────────────────────────────────────────────────────────── */
+
+.btn--text {
+  background: transparent;
+  color: var(--color-amethyst);
+  padding-inline: 0;
+  letter-spacing: 0.06em;
+  text-transform: none;
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+  border-radius: 0;
+}
+
+.btn--text:hover {
+  color: var(--color-amethyst-light);
+  border-bottom-color: var(--color-amethyst-border);
+}
+
+/* ── Disabled ────────────────────────────────────────────────────────────── */
+
+.btn--disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}

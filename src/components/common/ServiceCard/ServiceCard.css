@@ -1,0 +1,141 @@
+/* ─── ServiceCard ────────────────────────────────────────────────────────── */
+
+.service-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  padding: var(--space-8);
+  background: rgba(8, 6, 15, 0.048);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  overflow: hidden;
+  transition:
+    border-color  var(--transition-base),
+    box-shadow    var(--transition-base),
+    transform     var(--transition-base),
+    background    var(--transition-base);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(14px);
+}
+
+.service-card:hover {
+  border-color: rgba(155, 110, 200, 0.65);
+  box-shadow: var(--shadow-amethyst-sm), var(--shadow-card-hover);
+  transform: translateY(-4px);
+  background: rgba(18, 10, 32, 0.29);
+}
+
+/* Featured variant — always has amethyst border + extra padding */
+.service-card--featured {
+  border-color: rgba(155, 110, 200, 0.45);
+  padding: var(--space-10);
+}
+
+.service-card--featured:hover {
+  border-color: var(--color-amethyst);
+  box-shadow: var(--shadow-amethyst-md), var(--shadow-card-hover);
+}
+
+/* ── Hover glow blob ─────────────────────────────────────────────────────── */
+
+.service-card__glow {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(
+    circle,
+    rgba(155, 110, 200, 0.14) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity var(--transition-slow);
+  pointer-events: none;
+}
+
+.service-card:hover .service-card__glow {
+  opacity: 1;
+}
+
+/* ── Icon ────────────────────────────────────────────────────────────────── */
+
+.service-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 48px;
+  height: 48px;
+  color: var(--color-amethyst);
+  transition: color var(--transition-fast),
+              transform var(--transition-base);
+  flex-shrink: 0;
+}
+
+.service-card:hover .service-card__icon {
+  color: var(--color-amethyst-light);
+  transform: scale(1.08);
+}
+
+.service-card__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ── Body ────────────────────────────────────────────────────────────────── */
+
+.service-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  flex: 1;
+}
+
+.service-card__title {
+  display: block;
+  font-family: var(--font-cinzel);
+  font-size: var(--text-base);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-text-heading);
+  transition: color var(--transition-fast);
+  line-height: 1.3;
+}
+
+.service-card:hover .service-card__title {
+  color: var(--color-amethyst-light);
+}
+
+.service-card__desc {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text-tertiary);
+  line-height: 1.7;
+  transition: color var(--transition-fast);
+  text-align: justify;
+}
+
+.service-card:hover .service-card__desc {
+  color: var(--color-text-secondary);
+}
+
+/* ── Arrow ───────────────────────────────────────────────────────────────── */
+
+.service-card__arrow {
+  display: flex;
+  align-items: center;
+  color: var(--color-amethyst-border);
+  margin-top: auto;
+  transition: color    var(--transition-fast),
+              transform var(--transition-base);
+  align-self: flex-end;
+}
+
+.service-card:hover .service-card__arrow {
+  color: var(--color-amethyst);
+  transform: translateX(6px);
+}

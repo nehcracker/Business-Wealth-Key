@@ -1,0 +1,19 @@
+name = "bwk-contact"
+main = "contact.js"
+compatibility_date = "2024-09-23"
+
+# Route: maps /api/contact on the live domain to this Worker
+# Uncomment and update zone_id after connecting domain to Cloudflare
+# routes = [
+#   { pattern = "businesswealthkey.com/api/contact", zone_name = "businesswealthkey.com" }
+# ]
+
+[vars]
+ENVIRONMENT = "production"
+# CONTACT_EMAIL is set as an encrypted secret — never put it here
+# Run: wrangler secret put CONTACT_EMAIL
+
+# Local dev
+# Run: wrangler dev
+# Worker will be available at http://localhost:8787
+# Update VITE_WORKER_URL in your .env.local to http://localhost:8787/api/contact

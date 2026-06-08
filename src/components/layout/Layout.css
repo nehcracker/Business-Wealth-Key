@@ -1,0 +1,13 @@
+/* ─── Layout ─────────────────────────────────────────────────────────────── */
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.layout__main {
+  flex: 1;
+  /* Push content below the fixed navbar */
+  padding-top: var(--navbar-height);
+}

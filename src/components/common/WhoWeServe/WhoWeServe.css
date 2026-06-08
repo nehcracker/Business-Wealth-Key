@@ -1,0 +1,114 @@
+/* ─── WhoWeServe ─────────────────────────────────────────────────────────── */
+
+.who__header {
+  text-align: center;
+  margin-bottom: var(--space-10);
+}
+
+.who__heading {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  color: var(--color-text-heading);
+}
+
+/* ── Grid layouts ────────────────────────────────────────────────────────── */
+
+.who__grid {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+/* Pill variant — wrapping flex */
+.who__grid--pill {
+  justify-content: center;
+}
+
+/* Card variant — fixed columns */
+.who__grid--card {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.who__grid--auto          { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+.who__grid--cols-2        { grid-template-columns: repeat(2, 1fr); }
+.who__grid--cols-3        { grid-template-columns: repeat(3, 1fr); }
+.who__grid--cols-4        { grid-template-columns: repeat(4, 1fr); }
+
+/* ── Pill item ───────────────────────────────────────────────────────────── */
+
+.who__item--pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-5);
+  background: var(--color-amethyst-dim);
+  border: 1px solid var(--color-amethyst-border);
+  border-radius: var(--radius-full);
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  letter-spacing: 0.04em;
+  transition: background   var(--transition-fast),
+              border-color var(--transition-fast),
+              color        var(--transition-fast);
+}
+
+.who__item--pill:hover {
+  background: var(--color-amethyst-hover);
+  border-color: var(--color-amethyst);
+  color: var(--color-amethyst-light);
+}
+
+.who__pill-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-amethyst);
+  flex-shrink: 0;
+}
+
+/* ── Card item ───────────────────────────────────────────────────────────── */
+
+.who__item--card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-amethyst-border);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition-fast),
+              background   var(--transition-fast);
+}
+
+.who__item--card:hover {
+  border-color: var(--color-amethyst);
+  background: var(--color-bg-overlay);
+}
+
+.who__card-icon {
+  font-size: 0.55rem;
+  color: var(--color-amethyst);
+  flex-shrink: 0;
+}
+
+.who__card-label {
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .who__grid--cols-4 { grid-template-columns: repeat(2, 1fr); }
+  .who__grid--cols-3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .who__grid--cols-2,
+  .who__grid--cols-3,
+  .who__grid--cols-4 { grid-template-columns: 1fr; }
+}

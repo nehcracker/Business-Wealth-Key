@@ -1,0 +1,73 @@
+/* ─── SectionWrapper ─────────────────────────────────────────────────────── */
+
+.section-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+/* ── Backgrounds ─────────────────────────────────────────────────────────── */
+
+.section-wrapper--bg-default {
+  background: var(--color-bg-primary);
+}
+
+.section-wrapper--bg-alt {
+  background: var(--color-bg-secondary);
+}
+
+.section-wrapper--bg-transparent {
+  background: transparent;
+}
+
+/* ── Padding ─────────────────────────────────────────────────────────────── */
+
+.section-wrapper--pad-section .section-wrapper__inner {
+  padding-block: var(--section-padding-y);
+  padding-inline: var(--section-padding-x);
+}
+
+.section-wrapper--pad-tight .section-wrapper__inner {
+  padding-block: var(--space-12);
+  padding-inline: var(--section-padding-x);
+}
+
+.section-wrapper--pad-none .section-wrapper__inner {
+  padding: 0;
+}
+
+/* ── Inner max-width ─────────────────────────────────────────────────────── */
+
+.section-wrapper__inner {
+  margin-inline: auto;
+  width: 100%;
+}
+
+.section-wrapper__inner--default {
+  max-width: var(--max-width);
+}
+
+.section-wrapper__inner--narrow {
+  max-width: var(--max-width-narrow);
+}
+
+.section-wrapper__inner--wide {
+  max-width: var(--max-width-wide);
+}
+
+.section-wrapper__inner--full {
+  max-width: none;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+
+@media (max-width: 640px) {
+  .section-wrapper--pad-section .section-wrapper__inner {
+    padding-block: var(--space-16);
+    padding-inline: var(--space-5);
+  }
+
+  .section-wrapper--pad-tight .section-wrapper__inner {
+    padding-block: var(--space-10);
+    padding-inline: var(--space-5);
+  }
+}
