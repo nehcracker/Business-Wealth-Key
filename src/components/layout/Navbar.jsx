@@ -91,6 +91,7 @@ export default function Navbar() {
 
         {/* ── Hamburger ── */}
         <button
+          type="button"
           ref={hamburgerRef}
           className={['navbar__hamburger', menuOpen ? 'navbar__hamburger--open' : ''].filter(Boolean).join(' ')}
           onClick={toggleMenu}
