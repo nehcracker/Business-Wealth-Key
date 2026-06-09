@@ -12,6 +12,7 @@ import { faqData } from '../../utils/faqData'
 import { processStepsData } from '../../utils/processStepsData'
 import { generateBreadcrumbSchema } from '../../utils/structuredData'
 import { IconShield, IconGlobe, IconCrown, IconStar, IconDiamond, IconKey } from '../../assets/icons'
+import heroImage from '../../assets/images/services/Corporate-Spiritual-Solutions.jpg'
 
 const WHO = [
   'Large Corporations', 'Mid-Sized Companies', 'Executives & CEOs', 'Directors & Boards',
@@ -79,6 +80,8 @@ export default function CorporateSolutions() {
       </Helmet>
 
       <HeroSection
+        image={heroImage}
+        imageAlt="Corporate Spiritual Solutions — Business Wealth Key"
         title="Spiritual Guidance for Corporate Growth, Prosperity, Leadership, and Organisational Success."
         subtitle="Tailored spiritual solutions for corporations, executives, directors, and investors. Addressing the invisible forces that shape organisational performance at the highest level."
         ctaPrimary={{ label: 'Submit a Corporate Enquiry', href: '/contact' }}

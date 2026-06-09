@@ -22,6 +22,8 @@
     border-color     var(--transition-fast);
   white-space: nowrap;
   user-select: none;
+  /* Minimum touch target — accessibility */
+  min-height: 44px;
 }
 
 .btn__label {
@@ -57,6 +59,7 @@
   font-size: var(--text-xs);
   padding: var(--space-2) var(--space-5);
   gap: var(--space-2);
+  min-height: 36px;
 }
 
 .btn--md {
@@ -66,9 +69,10 @@
 }
 
 .btn--lg {
-  font-size: var(--text-base);
+  font-size: var(--text-sm);
   padding: var(--space-4) var(--space-10);
   gap: var(--space-3);
+  letter-spacing: 0.1em;
 }
 
 /* ── Full width ──────────────────────────────────────────────────────────── */
@@ -88,6 +92,7 @@
   background: var(--color-amethyst-light);
   box-shadow: var(--shadow-amethyst-sm);
   transform: translateY(-2px);
+  color: var(--color-bg-primary);
 }
 
 .btn--primary.btn--amethyst:active {
@@ -106,6 +111,7 @@
   background: var(--color-ember-light);
   box-shadow: var(--shadow-ember-sm);
   transform: translateY(-2px);
+  color: var(--color-bg-primary);
 }
 
 .btn--primary.btn--ember:active {
@@ -152,6 +158,7 @@
   font-weight: 500;
   border-bottom: 1px solid transparent;
   border-radius: 0;
+  min-height: unset;
 }
 
 .btn--text:hover {
@@ -165,4 +172,18 @@
   opacity: 0.45;
   cursor: not-allowed;
   pointer-events: none;
+}
+
+/* ── Mobile — Fix #4: ensure adequate touch targets ──────────────────────── */
+
+@media (max-width: 480px) {
+  .btn--lg {
+    font-size: var(--text-xs);
+    padding: var(--space-4) var(--space-8);
+    letter-spacing: 0.08em;
+  }
+
+  .btn--md {
+    padding: var(--space-3) var(--space-6);
+  }
 }

@@ -12,11 +12,11 @@ const NAV_LINKS = [
 ]
 
 export default function Navbar() {
-  const [menuOpen, setMenuOpen]   = useState(false)
-  const isScrolled                = useNavScroll(60)
-  const location                  = useLocation()
-  const menuRef                   = useRef(null)
-  const hamburgerRef              = useRef(null)
+  const [menuOpen, setMenuOpen] = useState(false)
+  const isScrolled               = useNavScroll(60)
+  const location                 = useLocation()
+  const menuRef                  = useRef(null)
+  const hamburgerRef             = useRef(null)
 
   // Close mobile menu on route change
   useEffect(() => {
@@ -47,21 +47,21 @@ export default function Navbar() {
     <header
       className={[
         'navbar',
-        isScrolled  ? 'navbar--scrolled'  : '',
-        menuOpen    ? 'navbar--menu-open'  : '',
+        isScrolled ? 'navbar--scrolled'   : '',
+        menuOpen   ? 'navbar--menu-open'   : '',
       ].filter(Boolean).join(' ')}
       role="banner"
     >
       <div className="navbar__inner">
 
         {/* ── Logo ── */}
-        <Link to="/" className="navbar__logo" aria-label="Business Wealth Key — home">
+        <a href="/" className="navbar__logo" aria-label="Business Wealth Key — home">
           <img src={logo} alt="Business Wealth Key" className="navbar__logo-img" />
           <span className="navbar__logo-text" aria-hidden="true">
             <span className="navbar__logo-top">Business</span>
             <span className="navbar__logo-bottom">Wealth Key</span>
           </span>
-        </Link>
+        </a>
 
         {/* ── Desktop nav ── */}
         <nav className="navbar__nav" aria-label="Primary navigation">
@@ -74,9 +74,10 @@ export default function Navbar() {
                   className={({ isActive }) =>
                     ['navbar__link', isActive ? 'navbar__link--active' : ''].filter(Boolean).join(' ')
                   }
-                  aria-current={({ isActive }) => (isActive ? 'page' : undefined)}
                 >
-                  {label}
+                  {({ isActive }) => (
+                    <span aria-current={isActive ? 'page' : undefined}>{label}</span>
+                  )}
                 </NavLink>
               </li>
             ))}
@@ -124,14 +125,18 @@ export default function Navbar() {
                   className={({ isActive }) =>
                     ['navbar__mobile-link', isActive ? 'navbar__mobile-link--active' : ''].filter(Boolean).join(' ')
                   }
-                  aria-current={({ isActive }) => (isActive ? 'page' : undefined)}
                   tabIndex={menuOpen ? 0 : -1}
                 >
-                  {label}
+                  {({ isActive }) => (
+                    <span aria-current={isActive ? 'page' : undefined}>{label}</span>
+                  )}
                 </NavLink>
               </li>
             ))}
-            <li className="navbar__mobile-item navbar__mobile-item--cta" style={{ '--i': NAV_LINKS.length }}>
+            <li
+              className="navbar__mobile-item navbar__mobile-item--cta"
+              style={{ '--i': NAV_LINKS.length }}
+            >
               <Link
                 to="/contact"
                 className="navbar__mobile-cta"

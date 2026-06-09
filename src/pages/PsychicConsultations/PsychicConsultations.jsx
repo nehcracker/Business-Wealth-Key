@@ -12,6 +12,7 @@ import { faqData } from '../../utils/faqData'
 import { processStepsData } from '../../utils/processStepsData'
 import { generateBreadcrumbSchema } from '../../utils/structuredData'
 import { IconShield, IconDiamond, IconCrown, IconGlobe, IconStar } from '../../assets/icons'
+import heroImage from '../../assets/images/services/Psychic-Business-Consultations.png'
 import './PsychicConsultations.css'
 
 const WHO = [
@@ -72,6 +73,8 @@ export default function PsychicConsultations() {
       </Helmet>
 
       <HeroSection
+        image={heroImage}
+        imageAlt="Psychic Business Consultations — Business Wealth Key"
         title="Gain Insight. Identify Opportunities. Strengthen Your Path to Success."
         subtitle="Every business decision shapes the future of your company. A psychic business consultation provides the deeper clarity that strategy and analysis alone cannot offer."
         ctaPrimary={{ label: 'Book a Consultation', href: '/contact' }}

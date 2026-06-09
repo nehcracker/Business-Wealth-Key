@@ -12,6 +12,7 @@ import { faqData } from '../../utils/faqData'
 import { processStepsData } from '../../utils/processStepsData'
 import { generateBreadcrumbSchema } from '../../utils/structuredData'
 import { IconShield, IconDiamond, IconCrown, IconGlobe, IconFlame } from '../../assets/icons'
+import heroImage from '../../assets/images/services/Business-Prosperity-Rituals.jpg'
 import './ProsperityRituals.css'
 
 const WHO = [
@@ -77,6 +78,8 @@ export default function ProsperityRituals() {
       </Helmet>
 
       <HeroSection
+        image={heroImage}
+        imageAlt="Prosperity Rituals — Business Wealth Key"
         title="Activate Prosperity. Attract Opportunities. Support Business Growth."
         subtitle="Harness the power of authentic spiritual rituals to align your business with abundance and create the energetic conditions for lasting financial prosperity."
         ctaPrimary={{ label: 'Book a Consultation', href: '/contact' }}

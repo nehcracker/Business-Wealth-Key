@@ -46,13 +46,13 @@
 }
 
 .navbar__logo-img {
-  width: 28px;
+  width: 34px;
   height: auto;
   display: block;
 }
 
 .navbar__logo-icon {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   color: var(--color-amethyst);
   line-height: 1;
   filter: drop-shadow(0 0 8px rgba(155, 110, 200, 0.6));
@@ -71,7 +71,7 @@
 
 .navbar__logo-top {
   font-family: var(--font-ui);
-  font-size: var(--text-xs);
+  font-size: 0.65rem;
   font-weight: 400;
   color: var(--color-text-secondary);
   letter-spacing: 0.18em;
@@ -80,7 +80,7 @@
 
 .navbar__logo-bottom {
   font-family: var(--font-cinzel);
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   font-weight: 600;
   color: var(--color-text-heading);
   letter-spacing: 0.06em;

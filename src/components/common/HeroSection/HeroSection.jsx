@@ -15,8 +15,6 @@ import './HeroSection.css'
  */
 export default function HeroSection({
   image,
-  imageSources = [],
-  imageAlt = '',
   title,
   subtitle,
   ctaPrimary,
@@ -31,28 +29,17 @@ export default function HeroSection({
       className={['hero', `hero--align-${align}`].join(' ')}
       aria-label={title}
     >
-      {/* Responsive background image */}
-      {(imageSources.length > 0 || image) && (
-        <picture className="hero__picture">
-          {imageSources.map((source, index) => (
-            <source
-              key={index}
-              srcSet={source.srcSet}
-              media={source.media}
-              type={source.type}
-              sizes={source.sizes}
-            />
-          ))}
-          <img
-            src={image}
-            alt={imageAlt}
-            aria-hidden={imageAlt ? 'false' : 'true'}
-            className="hero__bg"
-            loading={eager ? 'eager' : 'lazy'}
-            fetchpriority={eager ? 'high' : undefined}
-            decoding="async"
-          />
-        </picture>
+      {/* Background image */}
+      {image && (
+        <img
+          src={image}
+          alt=""
+          aria-hidden="true"
+          className="hero__bg"
+          loading={eager ? 'eager' : 'lazy'}
+          fetchpriority={eager ? 'high' : undefined}
+          decoding="async"
+        />
       )}
 
       {/* Gradient overlays — multi-layer for depth */}

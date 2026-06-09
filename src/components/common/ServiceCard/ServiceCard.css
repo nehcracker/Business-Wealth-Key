@@ -6,8 +6,8 @@
   flex-direction: column;
   gap: var(--space-5);
   padding: var(--space-8);
-  background: rgba(8, 6, 15, 0.048);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-amethyst-border);
   border-radius: var(--radius-lg);
   text-decoration: none;
   overflow: hidden;
@@ -16,15 +16,13 @@
     box-shadow    var(--transition-base),
     transform     var(--transition-base),
     background    var(--transition-base);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(14px);
 }
 
 .service-card:hover {
-  border-color: rgba(155, 110, 200, 0.65);
+  border-color: var(--color-amethyst);
   box-shadow: var(--shadow-amethyst-sm), var(--shadow-card-hover);
   transform: translateY(-4px);
-  background: rgba(18, 10, 32, 0.29);
+  background: var(--color-bg-overlay);
 }
 
 /* Featured variant — always has amethyst border + extra padding */
@@ -94,6 +92,59 @@
   flex: 1;
 }
 
+/* When a background image is present, ensure proper sizing and an overlay for readability */
+.service-card--has-bg {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+}
+
+.service-card--has-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  /* Softer gray overlay to increase contrast for white text */
+  background: linear-gradient(180deg, rgba(60,60,70,0.48), rgba(33,33,38,0.68));
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Lift content above the overlay */
+.service-card__icon,
+.service-card__body,
+.service-card__arrow {
+  position: relative;
+  z-index: 1;
+}
+
+/* Disable transform/background hover effects for cards that use a background image
+   to keep the image stable on pointer hover while preserving border glow */
+.service-card--has-bg:hover {
+  /* prevent any background movement or animation */
+  background-position: center !important;
+  background-size: cover !important;
+  box-shadow: var(--shadow-amethyst-sm); /* keep a subtle glow */
+}
+
+/* Ensure text remains readable on bg cards and hover does not dim it */
+.service-card--has-bg .service-card__title {
+  color: #ffffff;
+}
+.service-card--has-bg .service-card__desc {
+  color: rgba(255,255,255,0.92);
+}
+.service-card--has-bg:hover .service-card__title,
+.service-card--has-bg:hover .service-card__desc {
+  color: #ffffff !important;
+}
+
+/* Darken overlay on hover for better legibility */
+.service-card--has-bg:hover::before {
+  background: linear-gradient(180deg, rgba(20,20,24,0.78), rgba(6,6,8,0.9));
+  transition: background 180ms ease-in-out;
+}
+
 .service-card__title {
   display: block;
   font-family: var(--font-cinzel);
@@ -113,10 +164,10 @@
   display: block;
   font-family: var(--font-body);
   font-size: var(--text-base);
-  color: var(--color-text-tertiary);
+  color: var(--color-text-heading);
+  text-align: justify;
   line-height: 1.7;
   transition: color var(--transition-fast);
-  text-align: justify;
 }
 
 .service-card:hover .service-card__desc {

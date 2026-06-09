@@ -31,13 +31,13 @@ export default function Footer() {
 
         {/* ── Brand column ── */}
         <div className="footer__brand">
-          <Link to="/" className="footer__logo" aria-label="Business Wealth Key — home">
+          <a href="/" className="footer__logo" aria-label="Business Wealth Key — home">
             <img src={logo} alt="Business Wealth Key" className="footer__logo-img" />
             <span className="footer__logo-text">
               <span className="footer__logo-top">Business</span>
               <span className="footer__logo-bottom">Wealth Key</span>
             </span>
-          </Link>
+          </a>
 
           <p className="footer__tagline">
             Unlock Prosperity.<br />

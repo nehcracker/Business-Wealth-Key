@@ -1,5 +1,7 @@
 /* ─── Home page ──────────────────────────────────────────────────────────── */
 
+/* ── Intro block ─────────────────────────────────────────────────────────── */
+
 .home-intro {
   text-align: center;
   max-width: 720px;
@@ -17,23 +19,29 @@
   max-width: none;
 }
 
+/* Fix #8 — explicit weight + tighter tracking on display headings */
 .home-intro__heading {
   font-family: var(--font-display);
-  font-size: clamp(var(--text-2xl), 4vw, var(--text-3xl));
+  font-size: clamp(var(--text-xl), 4vw, var(--text-3xl));
+  font-weight: 700;
+  letter-spacing: -0.02em;
   color: var(--color-text-heading);
+  line-height: 1.22;
   margin-bottom: var(--space-5);
-  line-height: 1.25;
 }
 
+/* Fix #3 — left-align body text; no justify on short-measure centred columns */
 .home-intro__body {
   font-family: var(--font-body);
-  font-size: var(--text-lg);
+  font-size: clamp(var(--text-base), 1.1vw, var(--text-lg));
   color: var(--color-text-secondary);
-  line-height: 1.8;
-  max-width: 640px;
+  line-height: 1.85;
+  max-width: 620px;
   margin-inline: auto;
-  text-align: justify;
+  text-align: left;
 }
+
+/* ── Services section header ─────────────────────────────────────────────── */
 
 .home-section-header {
   text-align: center;
@@ -42,21 +50,29 @@
   margin-bottom: var(--space-12);
 }
 
+/* Fix #8 — explicit weight + letter-spacing */
 .home-section-header h2 {
   font-family: var(--font-display);
-  font-size: clamp(var(--text-2xl), 4vw, var(--text-3xl));
+  font-size: clamp(var(--text-xl), 4vw, var(--text-3xl));
+  font-weight: 700;
+  letter-spacing: -0.02em;
   color: var(--color-text-heading);
+  line-height: 1.22;
   margin-bottom: var(--space-4);
 }
 
+/* Fix #3 — left-align body text under centered heading */
 .home-section-header p {
   font-family: var(--font-body);
-  font-size: var(--text-lg);
+  font-size: clamp(var(--text-base), 1.05vw, var(--text-lg));
   color: var(--color-text-secondary);
+  line-height: 1.85;
   margin-inline: auto;
   margin-top: var(--space-5);
-  text-align: justify;
+  text-align: left;
 }
+
+/* ── Services grid ───────────────────────────────────────────────────────── */
 
 .home-services-grid {
   display: grid;
@@ -64,19 +80,58 @@
   gap: var(--space-6);
 }
 
+/* ── Services section background — Fix #5: bg-image via inline style ────── */
+/* The .home-services-section class handles overlay + sizing;                */
+/* the actual url() is passed as style={{ backgroundImage }} from JSX        */
+
 .home-services-section {
-  background: linear-gradient(
-      rgba(8, 6, 15, 0.72),
-      rgba(8, 6, 15, 0.72)
-    ),
-    url('../../assets/images/services/Spiritual-Business-Services.jpg') center/cover no-repeat;
+  background-color: var(--color-bg-secondary); /* fallback if image fails */
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
 }
 
-.home-services-section .section-wrapper__inner {
-  border-radius: var(--radius-xl);
-  overflow: hidden;
+/* Dark overlay over the background image */
+.home-services-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 6, 15, 0.74);
+  pointer-events: none;
+  z-index: 0;
 }
+
+/* Lift inner content above the overlay */
+.home-services-section .section-wrapper__inner {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Fix #2: Section padding overrides for mobile ────────────────────────── */
+/* Global --section-padding-y is 80px — too generous on small screens        */
+
+@media (max-width: 1024px) {
+  /* Tablet: reduce from 80px → 56px */
+  .section-wrapper--pad-section .section-wrapper__inner {
+    padding-block: var(--space-16); /* 64px */
+  }
+}
+
+@media (max-width: 640px) {
+  /* Mobile: reduce further to 40px */
+  .section-wrapper--pad-section .section-wrapper__inner {
+    padding-block: var(--space-10); /* 40px */
+    padding-inline: var(--space-5);
+  }
+
+  .section-wrapper--pad-tight .section-wrapper__inner {
+    padding-block: var(--space-8);  /* 32px */
+    padding-inline: var(--space-5);
+  }
+}
+
+/* ── Grid collapses ──────────────────────────────────────────────────────── */
 
 @media (max-width: 1024px) {
   .home-services-grid { grid-template-columns: repeat(2, 1fr); }
@@ -84,4 +139,39 @@
 
 @media (max-width: 640px) {
   .home-services-grid { grid-template-columns: 1fr; }
+
+  /* Fix #3 — no justify on narrow screens */
+  .home-intro__body,
+  .home-section-header p {
+    text-align: left;
+  }
+
+  .home-section-header {
+    text-align: left;
+  }
+
+  .home-section-header .section-divider {
+    margin-inline: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-intro__heading,
+  .home-section-header h2 {
+    font-size: var(--text-2xl);
+    letter-spacing: -0.015em;
+  }
+
+  .home-intro {
+    text-align: left;
+    margin-bottom: var(--space-8);
+  }
+
+  .home-intro__eyebrow {
+    text-align: left;
+  }
+
+  .home-services-grid {
+    gap: var(--space-4);
+  }
 }

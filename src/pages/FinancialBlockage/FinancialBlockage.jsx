@@ -12,6 +12,7 @@ import { faqData } from '../../utils/faqData'
 import { processStepsData } from '../../utils/processStepsData'
 import { generateBreadcrumbSchema } from '../../utils/structuredData'
 import { IconShield, IconCompass, IconCrown, IconGlobe, IconDiamond } from '../../assets/icons'
+import heroImage from '../../assets/images/services/Financial-Blockage-Removal.jpg'
 
 const WHO = [
   'Entrepreneurs', 'Business Owners', 'CEOs & Executives', 'Investors',
@@ -81,6 +82,8 @@ export default function FinancialBlockage() {
       </Helmet>
 
       <HeroSection
+        image={heroImage}
+        imageAlt="Financial Blockage Removal — Business Wealth Key"
         title="Restore Financial Flow. Remove Obstacles. Pursue Greater Prosperity."
         subtitle="Many businesses experience recurring financial challenges despite consistent effort and strong strategy. The root cause may lie beyond what conventional analysis can reach."
         ctaPrimary={{ label: 'Book a Consultation', href: '/contact' }}

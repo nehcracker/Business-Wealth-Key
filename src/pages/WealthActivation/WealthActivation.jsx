@@ -12,6 +12,7 @@ import { faqData } from '../../utils/faqData'
 import { processStepsData } from '../../utils/processStepsData'
 import { generateBreadcrumbSchema } from '../../utils/structuredData'
 import { IconShield, IconCrown, IconStar, IconGlobe, IconDiamond } from '../../assets/icons'
+import heroImage from '../../assets/images/services/Wealth-Activation.jpg'
 
 const WHO = [
   'Entrepreneurs', 'Business Owners', 'CEOs & Executives', 'Investors',
@@ -74,6 +75,8 @@ export default function WealthActivation() {
       </Helmet>
 
       <HeroSection
+        image={heroImage}
+        imageAlt="Wealth Activation — Business Wealth Key"
         title="Activate Prosperity. Expand Abundance. Strengthen Your Wealth Path."
         subtitle="For individuals and organisations seeking to move beyond financial plateaus and build a lasting foundation for wealth creation and sustained prosperity."
         ctaPrimary={{ label: 'Book a Consultation', href: '/contact' }}

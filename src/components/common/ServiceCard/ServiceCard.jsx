@@ -15,14 +15,18 @@ export default function ServiceCard({
   description,
   href,
   variant = 'default',
+  bgImage,
 }) {
   const classes = [
     'service-card',
     variant === 'featured' ? 'service-card--featured' : '',
+    bgImage ? 'service-card--has-bg' : '',
   ].filter(Boolean).join(' ')
 
+  const style = bgImage ? { backgroundImage: `url(${bgImage})` } : undefined
+
   return (
-    <Link to={href} className={classes} aria-label={`Learn more about ${title}`}>
+    <Link to={href} className={classes} aria-label={`Learn more about ${title}`} style={style}>
       {/* Hover glow */}
       <span className="service-card__glow" aria-hidden="true" />
 

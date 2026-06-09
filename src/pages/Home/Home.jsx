@@ -12,16 +12,12 @@ import { processStepsData } from '../../utils/processStepsData'
 import {
   IconShield, IconStar, IconKey, IconCrown, IconGlobe, IconDiamond,
 } from '../../assets/icons'
-import heroImage from '../../assets/images/hero/hero__bg.jpg'
-import './Home.css'
 
-const heroImageSources = [
-  {
-    srcSet: `${heroImage} 1200w, ${heroImage} 800w, ${heroImage} 480w`,
-    sizes: '(max-width: 480px) 100vw, (max-width: 768px) 100vw, 100vw',
-    type: 'image/png',
-  },
-]
+// Fix #5 — import assets through Vite so paths are hashed correctly in prod
+import heroImage      from '../../assets/images/hero/hero__bg.jpg'
+import servicesBgImage from '../../assets/images/services/Spiritual-Business-Services.jpg'
+
+import './Home.css'
 
 const WHO_WE_SERVE = [
   'Entrepreneurs', 'CEOs & Executives', 'Business Owners', 'Investors',
@@ -53,14 +49,33 @@ const BENEFITS = [
 ]
 
 const TRUST_ITEMS = [
-  { icon: <IconShield size={28} />, title: 'Absolute Confidentiality',   description: 'Every consultation is conducted in complete privacy. Your business details are never shared.' },
-  { icon: <IconDiamond size={28} />, title: 'Fully Personalised',        description: 'No generic programmes. Every service is tailored to your unique situation and goals.' },
-  { icon: <IconCrown size={28} />, title: 'Prosperity-Focused',          description: 'Our sole focus is your lasting business prosperity and financial success.' },
-  { icon: <IconGlobe size={28} />, title: 'Serving Clients Worldwide',   description: 'Online consultations available across all time zones. No location barriers.' },
-  { icon: <IconStar size={28} />, title: 'Trusted by Leaders',           description: 'Entrepreneurs, executives, investors, and corporations trust us with their most sensitive goals.' },
+  {
+    icon: <IconShield size={28} />,
+    title: 'Absolute Confidentiality',
+    description: 'Every consultation is conducted in complete privacy. Your business details are never shared.',
+  },
+  {
+    icon: <IconDiamond size={28} />,
+    title: 'Fully Personalised',
+    description: 'No generic programmes. Every service is tailored to your unique situation and goals.',
+  },
+  {
+    icon: <IconCrown size={28} />,
+    title: 'Prosperity-Focused',
+    description: 'Our sole focus is your lasting business prosperity and financial success.',
+  },
+  {
+    icon: <IconGlobe size={28} />,
+    title: 'Serving Clients Worldwide',
+    description: 'Online consultations available across all time zones. No location barriers.',
+  },
+  {
+    icon: <IconStar size={28} />,
+    title: 'Trusted by Leaders',
+    description: 'Entrepreneurs, executives, investors, and corporations trust us with their most sensitive goals.',
+  },
 ]
 
-// Home shares process steps with psychic-consultations as the generic intro flow
 const HOME_STEPS = processStepsData['psychic-consultations']
 
 export default function Home() {
@@ -70,15 +85,16 @@ export default function Home() {
     <>
       {seo}
 
-      {/* ── Hero ── */}
+      {/* ── Hero — Fix #1: center-aligned ── */}
       <HeroSection
-        image={heroImage}        imageSources={heroImageSources}
-        imageAlt="Spiritual business prosperity hero background"        title="The Spiritual Key to Wealth, Prosperity, and Business Success"
+        image={heroImage}
+        imageAlt="Spiritual business prosperity — Business Wealth Key"
+        title="The Spiritual Key to Wealth, Prosperity, and Business Success"
         subtitle="Unlock the hidden forces behind business growth. Through psychic consultations, prosperity rituals, and spiritual guidance, we help entrepreneurs, executives, and corporations achieve lasting success."
         ctaPrimary={{ label: 'Book Private Consultation', href: '/contact' }}
         ctaSecondary={{ label: 'Explore Our Services', href: '/services' }}
         eager
-        align="left"
+        align="center"
       />
 
       {/* ── Who We Serve ── */}
@@ -107,8 +123,12 @@ export default function Home() {
         />
       </SectionWrapper>
 
-      {/* ── Services Grid ── */}
-      <SectionWrapper background="alt" className="home-services-section">
+      {/* ── Services Grid — Fix #5: inline style with Vite-imported image ── */}
+      <SectionWrapper
+        background="alt"
+        className="home-services-section"
+        style={{ backgroundImage: `url(${servicesBgImage})` }}
+      >
         <div className="home-section-header">
           <h2>Our Spiritual Business Services</h2>
           <div className="section-divider" />

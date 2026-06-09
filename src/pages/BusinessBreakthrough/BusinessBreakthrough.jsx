@@ -12,6 +12,7 @@ import { faqData } from '../../utils/faqData'
 import { processStepsData } from '../../utils/processStepsData'
 import { generateBreadcrumbSchema } from '../../utils/structuredData'
 import { IconShield, IconBolt, IconCrown, IconGlobe, IconStar } from '../../assets/icons'
+import heroImage from '../../assets/images/services/Business-Breakthrough.jpg'
 
 const WHO = [
   'Entrepreneurs', 'Business Owners', 'CEOs & Executives', 'Investors',
@@ -82,6 +83,8 @@ export default function BusinessBreakthrough() {
       </Helmet>
 
       <HeroSection
+        image={heroImage}
+        imageAlt="Business Breakthrough — Business Wealth Key"
         title="Overcome Stagnation. Unlock Opportunities. Accelerate Business Growth."
         subtitle="For businesses that are doing everything right — yet something invisible is holding back the growth, momentum, and success they deserve."
         ctaPrimary={{ label: 'Book a Consultation', href: '/contact' }}

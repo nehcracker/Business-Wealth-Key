@@ -1,5 +1,11 @@
 // ─── Services Data ────────────────────────────────────────────────────────────
 import { IconEye, IconFlame, IconCompass, IconCrown, IconBolt, IconGlobe } from '../assets/icons'
+import psychicImg from '../assets/images/services/Psychic-Business-Consultations.png'
+import prosperityImg from '../assets/images/services/Business-Prosperity-Rituals.jpg'
+import financialImg from '../assets/images/services/Financial-Blockage-Removal.jpg'
+import wealthImg from '../assets/images/services/Wealth-Activation.jpg'
+import breakthroughImg from '../assets/images/services/Business-Breakthrough.jpg'
+import corporateImg from '../assets/images/services/Corporate-Spiritual-Solutions.jpg'
 
 export const services = [
   {
@@ -9,6 +15,7 @@ export const services = [
     shortDesc:   'Gain insight into business challenges, opportunities, partnerships, and your path to prosperity through a personalised psychic business consultation.',
     icon:        <IconEye />,
     heroImage:   'psychic-consultations.webp',
+    bgImage:     psychicImg,
     ogImage:     '/og/og-psychic-consultations.jpg',
     heroTitle:   'Gain Insight. Identify Opportunities. Strengthen Your Path to Success.',
     heroSubtitle:'Every business decision shapes the future of your company. Gain the insight you need to move forward with confidence.',
@@ -20,6 +27,7 @@ export const services = [
     shortDesc:   'Activate prosperity, attract opportunities, and support business growth through powerful, personalised prosperity rituals for individuals and corporations.',
     icon:        <IconFlame />,
     heroImage:   'prosperity-rituals.webp',
+    bgImage:     prosperityImg,
     ogImage:     '/og/og-prosperity-rituals.jpg',
     heroTitle:   'Activate Prosperity. Attract Opportunities. Support Business Growth.',
     heroSubtitle:'Harness the power of spiritual rituals to align your business with abundance and lasting prosperity.',
@@ -31,6 +39,7 @@ export const services = [
     shortDesc:   'Identify and remove the hidden financial blockages holding your business back. Restore financial flow and pursue the prosperity you deserve.',
     icon:        <IconCompass />,
     heroImage:   'financial-blockage.webp',
+    bgImage:     financialImg,
     ogImage:     '/og/og-financial-blockage.jpg',
     heroTitle:   'Restore Financial Flow. Remove Obstacles. Pursue Greater Prosperity.',
     heroSubtitle:'Many businesses experience recurring financial challenges despite consistent effort. The root cause may lie deeper than strategy alone.',
@@ -42,6 +51,7 @@ export const services = [
     shortDesc:   'Activate your wealth consciousness, strengthen your prosperity mindset, and align your business with long-term financial growth and abundance.',
     icon:        <IconCrown />,
     heroImage:   'wealth-activation.webp',
+    bgImage:     wealthImg,
     ogImage:     '/og/og-wealth-activation.jpg',
     heroTitle:   'Activate Prosperity. Expand Abundance. Strengthen Your Wealth Path.',
     heroSubtitle:'For individuals and organisations seeking greater prosperity and long-term wealth development.',
@@ -53,6 +63,7 @@ export const services = [
     shortDesc:   'Overcome business stagnation, unlock new opportunities, and accelerate growth with tailored breakthrough solutions guided by spiritual insight.',
     icon:        <IconBolt />,
     heroImage:   'business-breakthrough.webp',
+    bgImage:     breakthroughImg,
     ogImage:     '/og/og-business-breakthrough.jpg',
     heroTitle:   'Overcome Stagnation. Unlock Opportunities. Accelerate Business Growth.',
     heroSubtitle:'For businesses facing stagnation, missed opportunities, declining revenue, or recurring setbacks.',
@@ -64,6 +75,7 @@ export const services = [
     shortDesc:   'Tailored spiritual guidance for corporations, executives, directors, and investors. Drive organisational growth, prosperity, and leadership success.',
     icon:        <IconGlobe />,
     heroImage:   'corporate-solutions.webp',
+    bgImage:     corporateImg,
     ogImage:     '/og/og-corporate-solutions.jpg',
     heroTitle:   'Spiritual Guidance for Corporate Growth, Prosperity, Leadership, and Organisational Success.',
     heroSubtitle:'Tailored services for corporations, executives, directors, investors, and organisational leaders.',

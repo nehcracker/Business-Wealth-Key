@@ -7,8 +7,11 @@ import TrustBadges from '../../components/common/TrustBadges/TrustBadges'
 import WhoWeServe from '../../components/common/WhoWeServe/WhoWeServe'
 import { services } from '../../utils/servicesData'
 import { IconShield, IconStar, IconKey, IconCrown, IconDiamond } from '../../assets/icons'
+
+// Fix #6 — import via Vite so path is correctly hashed in production
 import heroImage from '../../assets/images/hero/Business-Wealth-Key.jpg'
-import differentImage from '../../assets/images/hero/Business-Wealth-Key-Different.png'
+import differentBgImage from '../../assets/images/hero/Business-Wealth-Key-Different.png'
+
 import './About.css'
 
 const WHO_WE_SERVE = [
@@ -29,11 +32,11 @@ const DIFFERENTIATORS = [
 ]
 
 const VALUES = [
-  { icon: <IconShield size={28} />, title: 'Confidentiality',  description: 'Every consultation and all information shared is treated with absolute discretion.' },
-  { icon: <IconDiamond size={28} />, title: 'Integrity',       description: 'We operate with honesty and transparency in everything we do.' },
-  { icon: <IconStar size={28} />, title: 'Excellence',         description: 'We hold ourselves to the highest standard in every service we provide.' },
-  { icon: <IconCrown size={28} />, title: 'Commitment',        description: 'We are genuinely invested in your long-term prosperity and success.' },
-  { icon: <IconKey size={28} />, title: 'Respect',             description: 'Every client is treated with dignity, care, and without judgement.' },
+  { icon: <IconShield size={28} />, title: 'Confidentiality', description: 'Every consultation and all information shared is treated with absolute discretion.' },
+  { icon: <IconDiamond size={28} />, title: 'Integrity',      description: 'We operate with honesty and transparency in everything we do.' },
+  { icon: <IconStar size={28} />, title: 'Excellence',        description: 'We hold ourselves to the highest standard in every service we provide.' },
+  { icon: <IconCrown size={28} />, title: 'Commitment',       description: 'We are genuinely invested in your long-term prosperity and success.' },
+  { icon: <IconKey size={28} />, title: 'Respect',            description: 'Every client is treated with dignity, care, and without judgement.' },
 ]
 
 export default function About() {
@@ -78,8 +81,12 @@ export default function About() {
         </div>
       </SectionWrapper>
 
-      {/* ── What Makes Us Different ── */}
-      <SectionWrapper background="default" className="about-different-section">
+      {/* ── What Makes Us Different — Fix #6: BG via inline style ── */}
+      <SectionWrapper
+        background="default"
+        className="about-different-section"
+        style={{ backgroundImage: `url(${differentBgImage})` }}
+      >
         <div className="page-section-header">
           <p className="page-eyebrow">Our Approach</p>
           <h2 className="page-heading">What Makes Business Wealth Key Different</h2>
@@ -104,13 +111,7 @@ export default function About() {
         </div>
         <div className="page-services-grid">
           {services.map((s) => (
-            <ServiceCard
-              key={s.id}
-              icon={s.icon}
-              title={s.title}
-              description={s.shortDesc}
-              href={s.slug}
-            />
+            <ServiceCard key={s.id} icon={s.icon} title={s.title} description={s.shortDesc} href={s.slug} />
           ))}
         </div>
       </SectionWrapper>

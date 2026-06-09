@@ -7,6 +7,7 @@ import TrustBadges from '../../components/common/TrustBadges/TrustBadges'
 import WhoWeServe from '../../components/common/WhoWeServe/WhoWeServe'
 import { services } from '../../utils/servicesData'
 import { IconShield, IconStar, IconCrown, IconDiamond, IconGlobe, IconKey, IconBolt, IconEye } from '../../assets/icons'
+import heroImage from '../../assets/images/services/Spiritual-Business-Services.jpg'
 import './Services.css'
 
 const WHO_WE_SERVE = [
@@ -32,8 +33,10 @@ export default function Services() {
     <>
       {seo}
       <HeroSection
+        image={heroImage}
+        imageAlt="Spiritual business services hero image — Business Wealth Key"
         title="Spiritual Solutions for Business Growth, Prosperity, and Financial Success"
-        subtitle="Six specialised service areas, each designed to unlock a specific dimension of business prosperity. From psychic insight to corporate prosperity programmes — we address what strategy alone cannot."
+        subtitle="Six specialised service areas, each designed to unlock a specific dimension of business prosperity. From psychic insight to corporate prosperity programmes, we address what strategy alone cannot."
         ctaPrimary={{ label: 'Book a Consultation', href: '/contact' }}
         ctaSecondary={{ label: 'About Us', href: '/about' }}
         align="center"
@@ -51,25 +54,18 @@ export default function Services() {
         </div>
       </SectionWrapper>
 
-      {services.map((s, i) => (
-        <SectionWrapper key={s.id} background={i % 2 === 0 ? 'default' : 'alt'}>
-          <div className="services-service-block">
-            <div className="services-service-block__header">
-              <span className="services-service-block__icon" aria-hidden="true">{s.icon}</span>
-              <div>
-                <p className="page-eyebrow">{`0${i + 1}`}</p>
-                <h2 className="page-heading">{s.title}</h2>
-                <div className="section-divider" />
-              </div>
-            </div>
-            <p className="page-lead" style={{ marginBottom: 'var(--space-8)' }}>{s.shortDesc}</p>
-            <p className="services-service-block__cta-text">{s.heroSubtitle}</p>
-            <a href={s.slug} className="services-service-link">
-              Explore {s.title} →
-            </a>
-          </div>
-        </SectionWrapper>
-      ))}
+      <SectionWrapper background="alt">
+        <div className="page-section-header">
+          <p className="page-eyebrow">Core Areas of Expertise</p>
+          <h2 className="page-heading">Six Dimensions of Business Prosperity</h2>
+          <div className="section-divider" />
+        </div>
+        <div className="page-services-grid">
+          {services.map((s) => (
+            <ServiceCard key={s.id} icon={s.icon} title={s.title} description={s.shortDesc} href={s.slug} bgImage={s.bgImage} />
+          ))}
+        </div>
+      </SectionWrapper>
 
       <SectionWrapper background="alt">
         <WhoWeServe items={WHO_WE_SERVE} heading="Who We Serve" variant="pill" />
