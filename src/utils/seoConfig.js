@@ -40,9 +40,9 @@ export const seoConfig = {
     canonical:   'https://businesswealthkey.com/services/psychic-consultations',
   },
   '/services/prosperity-rituals': {
-    title:       'Business Prosperity Rituals | Wealth Attraction & Abundance',
-    description: 'Activate prosperity, attract opportunities, and support business growth through powerful prosperity rituals. Individual and corporate programs available.',
-    keywords:    'business prosperity ritual, wealth attraction ritual, abundance ritual, business blessing',
+    title:       'Ritual for Business Success & Luck | Business Wealth Key',
+    description: 'Powerful prosperity rituals for business success and luck. Remove spiritual and financial blockages. For entrepreneurs, executives, and corporations worldwide.',
+    keywords:    'ritual for business success, luck rituals for business, good luck rituals for business, business rituals, spiritual blockage removal, financial blockage removal, remove spiritual blockages, business prosperity ritual',
     ogImage:     '/og/og-prosperity-rituals.jpg',
     canonical:   'https://businesswealthkey.com/services/prosperity-rituals',
   },
@@ -80,5 +80,10 @@ export const seoConfig = {
     keywords:    'book psychic business consultation, contact business wealth key, private consultation',
     ogImage:     '/og/og-contact.jpg',
     canonical:   'https://businesswealthkey.com/contact',
+  },
+  '/404': {
+    title:       '404 — Page Not Found | Business Wealth Key',
+    description: 'The page you are looking for does not exist. Return to Business Wealth Key for spiritual business guidance, psychic consultations, and prosperity services.',
+    robots:      'noindex, nofollow',
   },
 }
