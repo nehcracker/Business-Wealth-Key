@@ -163,7 +163,7 @@ export default function ProsperityRituals() {
 
       <CTABanner
         heading="Begin Your Ritual for Business Success Today"
-        subtext="Begin your prosperity ritual programme and take decisive action toward the abundance your business deserves."
+        subtext="Start your prosperity ritual programme and take decisive action toward the abundance your business deserves."
         ctaPrimary={{ label: 'Book a Consultation', href: '/contact' }}
         variant="dark"
       />
