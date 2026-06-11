@@ -74,7 +74,7 @@ export default function ProsperityRituals() {
   ])
   const serviceSchema = generateServiceSchema({
     name:        'Business Prosperity Rituals',
-    description: 'Powerful prosperity rituals for business success and luck. Remove spiritual and financial blockages. For entrepreneurs, executives, and corporations worldwide.',
+    description: 'Powerful prosperity rituals for business success & luck. Remove spiritual & financial blockages. For entrepreneurs, executives, & corporations worldwide.',
     slug:        '/services/prosperity-rituals',
   })
   const faqSchema = generateFAQSchema(faqData['prosperity-rituals'])

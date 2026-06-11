@@ -41,7 +41,7 @@ export const seoConfig = {
   },
   '/services/prosperity-rituals': {
     title:       'Ritual for Business Success & Luck | Business Wealth Key',
-    description: 'Powerful prosperity rituals for business success and luck. Remove spiritual and financial blockages. For entrepreneurs, executives, and corporations worldwide.',
+    description: 'Powerful prosperity rituals for business success & luck. Remove spiritual & financial blockages. For entrepreneurs, executives, & corporations worldwide.',
     keywords:    'ritual for business success, luck rituals for business, good luck rituals for business, business rituals, spiritual blockage removal, financial blockage removal, remove spiritual blockages, business prosperity ritual',
     ogImage:     '/og/og-prosperity-rituals.jpg',
     canonical:   'https://businesswealthkey.com/services/prosperity-rituals',
