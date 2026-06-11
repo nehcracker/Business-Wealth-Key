@@ -85,7 +85,7 @@ export default function WealthActivation() {
       <HeroSection
         image={heroImage}
         imageAlt="Wealth Activation — Business Wealth Key"
-        title="Activate Prosperity. Expand Abundance. Strengthen Your Wealth Path."
+        title="Wealth Activation — Activate Prosperity, Expand Abundance & Strengthen Your Wealth Path"
         subtitle="For individuals and organisations seeking to move beyond financial plateaus and build a lasting foundation for wealth creation and sustained prosperity."
         ctaPrimary={{ label: 'Book a Consultation', href: '/contact' }}
         align="center"
@@ -106,9 +106,9 @@ export default function WealthActivation() {
               <p>"Wealth is not simply earned. It is activated — through the right alignment of energy, intention, and spiritual foundation."</p>
             </div>
             <div className="page-info-box">
-              <h3>For Individuals & Corporations</h3>
+              <h3>Wealth Consciousness Activation for Individuals & Corporations</h3>
               <p>We work with sole traders, high net worth individuals, and large corporations. Wealth activation is relevant at every scale of ambition.</p>
-              <h3>Ongoing Programmes Available</h3>
+              <h3>Spiritual Wealth Activation Programmes Available</h3>
               <p>Single activation sessions or sustained wealth development programmes — we design the approach that will create the most lasting results for your situation.</p>
             </div>
           </div>
@@ -122,7 +122,7 @@ export default function WealthActivation() {
       <SectionWrapper background="alt">
         <div className="page-section-header page-section-header--center">
           <p className="page-eyebrow">Focus Areas</p>
-          <h2 className="page-heading">What We Activate</h2>
+          <h2 className="page-heading">What Our Prosperity Activation Programme Covers</h2>
           <div className="section-divider" style={{ margin: 'var(--space-5) auto' }} />
         </div>
         <div className="page-cards-grid">
@@ -136,19 +136,19 @@ export default function WealthActivation() {
       </SectionWrapper>
 
       <SectionWrapper background="default">
-        <ProblemList heading="Benefits of Wealth Activation" items={BENEFITS} icon="star" columns={2} />
+        <ProblemList heading="Benefits of Wealth Consciousness Activation" items={BENEFITS} icon="star" columns={2} />
       </SectionWrapper>
 
       <SectionWrapper background="alt">
-        <ProblemList heading="Common Reasons Clients Seek Wealth Activation" items={WHY_SEEK} icon="diamond" columns={1} />
+        <ProblemList heading="Why Clients Seek Spiritual Wealth Activation" items={WHY_SEEK} icon="diamond" columns={1} />
       </SectionWrapper>
 
       <SectionWrapper background="default">
-        <ProcessSteps heading="Your Wealth Activation Programme" steps={processStepsData['wealth-activation']} layout="horizontal" />
+        <ProcessSteps heading="Your Prosperity Activation Programme" steps={processStepsData['wealth-activation']} layout="horizontal" />
       </SectionWrapper>
 
       <SectionWrapper background="alt">
-        <TrustBadges heading="Why Choose Business Wealth Key" items={TRUST} columns={3} />
+        <TrustBadges heading="Why Clients Trust Us for Wealth Activation" items={TRUST} columns={3} />
       </SectionWrapper>
 
       <SectionWrapper background="default">
@@ -156,7 +156,7 @@ export default function WealthActivation() {
       </SectionWrapper>
 
       <CTABanner
-        heading="Activate Your Path To Greater Prosperity"
+        heading="Begin Your Wealth Activation Programme Today"
         subtext="Take the first step toward unlocking your full wealth potential with a private consultation."
         ctaPrimary={{ label: 'Book a Consultation', href: '/contact' }}
         variant="dark"

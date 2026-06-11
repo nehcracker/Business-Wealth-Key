@@ -93,7 +93,7 @@ export default function BusinessBreakthrough() {
       <HeroSection
         image={heroImage}
         imageAlt="Business Breakthrough — Business Wealth Key"
-        title="Overcome Stagnation. Unlock Opportunities. Accelerate Business Growth."
+        title="Business Breakthrough — Overcome Stagnation, Unlock Opportunities & Accelerate Growth"
         subtitle="For businesses that are doing everything right — yet something invisible is holding back the growth, momentum, and success they deserve."
         ctaPrimary={{ label: 'Book a Consultation', href: '/contact' }}
         align="center"
@@ -114,9 +114,9 @@ export default function BusinessBreakthrough() {
               <p>"Stagnation is not failure. It is a signal that something invisible is holding the business back — and invisible problems require non-conventional solutions."</p>
             </div>
             <div className="page-info-box">
-              <h3>Individual & Corporate</h3>
+              <h3>Overcome Business Stagnation — For Every Size of Business</h3>
               <p>Breakthrough solutions for sole traders, SMEs, and large corporations. We scale our approach to match the size and complexity of your challenge.</p>
-              <h3>Follow-Up Support</h3>
+              <h3>Business Stagnation Solutions — Ongoing Support Available</h3>
               <p>We provide continued support after the initial breakthrough to ensure momentum is maintained and the underlying conditions do not return.</p>
             </div>
           </div>
@@ -124,13 +124,13 @@ export default function BusinessBreakthrough() {
       </SectionWrapper>
 
       <SectionWrapper background="default">
-        <ProblemList heading="Signs Your Business Needs a Breakthrough" items={SIGNS_OF_STAGNATION} icon="warning" columns={2} />
+        <ProblemList heading="Signs You Need to Overcome Business Stagnation" items={SIGNS_OF_STAGNATION} icon="warning" columns={2} />
       </SectionWrapper>
 
       <SectionWrapper background="alt">
         <div className="page-section-header page-section-header--center">
           <p className="page-eyebrow">Our Breakthrough Services</p>
-          <h2 className="page-heading">How We Create Your Breakthrough</h2>
+          <h2 className="page-heading">How We Unlock Business Opportunities & Drive Your Breakthrough</h2>
           <div className="section-divider" style={{ margin: 'var(--space-5) auto' }} />
         </div>
         <div className="page-cards-grid">
@@ -148,15 +148,15 @@ export default function BusinessBreakthrough() {
       </SectionWrapper>
 
       <SectionWrapper background="alt">
-        <ProblemList heading="What Clients Achieve Through a Breakthrough" items={RESULTS} icon="star" columns={2} />
+        <ProblemList heading="Results When You Unlock Business Opportunities" items={RESULTS} icon="star" columns={2} />
       </SectionWrapper>
 
       <SectionWrapper background="default">
-        <ProcessSteps heading="Your Breakthrough Programme" steps={processStepsData['business-breakthrough']} layout="horizontal" />
+        <ProcessSteps heading="Your Business Stagnation Solutions Programme" steps={processStepsData['business-breakthrough']} layout="horizontal" />
       </SectionWrapper>
 
       <SectionWrapper background="alt">
-        <TrustBadges heading="Why Choose Business Wealth Key" items={TRUST} columns={3} />
+        <TrustBadges heading="Why We're Trusted for Business Breakthrough Solutions" items={TRUST} columns={3} />
       </SectionWrapper>
 
       <SectionWrapper background="default">
@@ -164,7 +164,7 @@ export default function BusinessBreakthrough() {
       </SectionWrapper>
 
       <CTABanner
-        heading="Your Next Level of Success Starts With a Breakthrough"
+        heading="Begin Your Business Breakthrough Today"
         subtext="Begin identifying and removing what is holding your business back. Book a private consultation today."
         ctaPrimary={{ label: 'Book a Consultation', href: '/contact' }}
         variant="dark"

@@ -90,7 +90,7 @@ export default function CorporateSolutions() {
       <HeroSection
         image={heroImage}
         imageAlt="Corporate Spiritual Solutions — Business Wealth Key"
-        title="Spiritual Guidance for Corporate Growth, Prosperity, Leadership, and Organisational Success."
+        title="Corporate Spiritual Solutions — Spiritual Guidance for Corporate Growth, Prosperity & Leadership"
         subtitle="Tailored spiritual solutions for corporations, executives, directors, and investors. Addressing the invisible forces that shape organisational performance at the highest level."
         ctaPrimary={{ label: 'Submit a Corporate Enquiry', href: '/contact' }}
         align="center"
@@ -111,9 +111,9 @@ export default function CorporateSolutions() {
               <p>"The most successful organisations understand that performance has invisible dimensions. We address those dimensions — with precision and complete discretion."</p>
             </div>
             <div className="page-info-box">
-              <h3>Confidential Engagement</h3>
+              <h3>Spiritual Guidance for Corporations — Delivered With Full Discretion</h3>
               <p>All corporate consultations are treated as commercially sensitive engagements. Full discretion is maintained at every stage.</p>
-              <h3>Scalable From SME to Enterprise</h3>
+              <h3>Executive Spiritual Consultation — From SME to Enterprise</h3>
               <p>We work with organisations of every size — from growing businesses to large multinationals — with programmes scaled to match the complexity and scope of each engagement.</p>
             </div>
           </div>
@@ -127,7 +127,7 @@ export default function CorporateSolutions() {
       <SectionWrapper background="alt">
         <div className="page-section-header page-section-header--center">
           <p className="page-eyebrow">Corporate Service Portfolio</p>
-          <h2 className="page-heading">Our Corporate Spiritual Services</h2>
+          <h2 className="page-heading">Our Corporate Prosperity Programme Portfolio</h2>
           <div className="section-divider" style={{ margin: 'var(--space-5) auto' }} />
         </div>
         <div className="page-cards-grid">
@@ -141,19 +141,19 @@ export default function CorporateSolutions() {
       </SectionWrapper>
 
       <SectionWrapper background="default">
-        <ProblemList heading="Common Reasons Corporations Contact Us" items={CORPORATE_REASONS} icon="diamond" columns={2} />
+        <ProblemList heading="Why Corporations Seek Spiritual Guidance for Business" items={CORPORATE_REASONS} icon="diamond" columns={2} />
       </SectionWrapper>
 
       <SectionWrapper background="alt">
-        <ProblemList heading="What Corporate Clients Achieve" items={RESULTS} icon="check" columns={2} />
+        <ProblemList heading="What Corporate Prosperity Programmes Achieve" items={RESULTS} icon="check" columns={2} />
       </SectionWrapper>
 
       <SectionWrapper background="default">
-        <ProcessSteps heading="Our Corporate Engagement Process" steps={processStepsData['corporate-solutions']} layout="horizontal" />
+        <ProcessSteps heading="Our Executive Spiritual Consultation Process" steps={processStepsData['corporate-solutions']} layout="horizontal" />
       </SectionWrapper>
 
       <SectionWrapper background="alt">
-        <TrustBadges heading="Why Leading Organisations Choose Us" items={TRUST} columns={3} />
+        <TrustBadges heading="Why Corporations Choose Our Spiritual Guidance" items={TRUST} columns={3} />
       </SectionWrapper>
 
       <SectionWrapper background="default">
@@ -161,7 +161,7 @@ export default function CorporateSolutions() {
       </SectionWrapper>
 
       <CTABanner
-        heading="Support Your Organisation's Growth, Prosperity, and Leadership Success"
+        heading="Begin Your Corporate Spiritual Solutions Engagement Today"
         subtext="Submit a confidential corporate enquiry and begin exploring what spiritual guidance can unlock for your organisation."
         ctaPrimary={{ label: 'Submit a Corporate Enquiry', href: '/contact' }}
         variant="dark"

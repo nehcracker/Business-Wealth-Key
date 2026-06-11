@@ -92,7 +92,7 @@ export default function FinancialBlockage() {
       <HeroSection
         image={heroImage}
         imageAlt="Financial Blockage Removal — Business Wealth Key"
-        title="Restore Financial Flow. Remove Obstacles. Pursue Greater Prosperity."
+        title="Financial Blockage Removal — Restore Prosperity & Financial Flow"
         subtitle="Many businesses experience recurring financial challenges despite consistent effort and strong strategy. The root cause may lie beyond what conventional analysis can reach."
         ctaPrimary={{ label: 'Book a Consultation', href: '/contact' }}
         align="center"
@@ -102,7 +102,7 @@ export default function FinancialBlockage() {
         <div className="page-two-col">
           <div className="page-two-col__body">
             <p className="page-eyebrow">Understanding the Problem</p>
-            <h2 className="page-heading">What Is a Financial Blockage?</h2>
+            <h2 className="page-heading">What Is Financial Blockage Removal?</h2>
             <div className="section-divider" />
             <p>A financial blockage is any spiritual, energetic, or metaphysical condition that restricts the natural flow of prosperity through your business or personal finances. These blockages operate below the surface of conventional business analysis — and they can persist for years, frustrating even the most capable and disciplined business operators.</p>
             <p>Financial blockages are not always the result of bad decisions or poor strategy. They often arise from external interference, energy misalignment, disrupted business relationships, or conditions in the environment surrounding your business that conventional consultants are not equipped to address.</p>
@@ -113,9 +113,9 @@ export default function FinancialBlockage() {
               <p>"If you have done everything right and the results still do not follow — the cause may be something no spreadsheet can identify."</p>
             </div>
             <div className="page-info-box">
-              <h3>Individual & Corporate</h3>
+              <h3>Spiritual Financial Blockage — Who Is Affected</h3>
               <p>We work with sole traders, small businesses, and large corporations — wherever financial blockages are impacting performance.</p>
-              <h3>International Clients</h3>
+              <h3>Financial Flow Restoration — Available Worldwide</h3>
               <p>All services delivered privately online. Available to clients worldwide across all time zones.</p>
             </div>
           </div>
@@ -123,13 +123,13 @@ export default function FinancialBlockage() {
       </SectionWrapper>
 
       <SectionWrapper background="default">
-        <ProblemList heading="Signs You May Have a Financial Blockage" items={SIGNS} icon="warning" columns={2} />
+        <ProblemList heading="Signs You Need to Remove Financial Blockages" items={SIGNS} icon="warning" columns={2} />
       </SectionWrapper>
 
       <SectionWrapper background="alt">
         <div className="page-section-header page-section-header--center">
           <p className="page-eyebrow">Our Assessment Framework</p>
-          <h2 className="page-heading">Root Causes We Investigate</h2>
+          <h2 className="page-heading">Root Causes of Spiritual Financial Blockage</h2>
           <div className="section-divider" style={{ margin: 'var(--space-5) auto' }} />
         </div>
         <div className="page-cards-grid">
@@ -147,7 +147,7 @@ export default function FinancialBlockage() {
       </SectionWrapper>
 
       <SectionWrapper background="alt">
-        <ProblemList heading="What We Help You Restore" items={WHAT_WE_RESTORE} icon="check" columns={2} />
+        <ProblemList heading="What Financial Flow Restoration Achieves" items={WHAT_WE_RESTORE} icon="check" columns={2} />
       </SectionWrapper>
 
       <SectionWrapper background="default">
@@ -155,7 +155,7 @@ export default function FinancialBlockage() {
       </SectionWrapper>
 
       <SectionWrapper background="alt">
-        <TrustBadges heading="Why Choose Business Wealth Key" items={TRUST} columns={3} />
+        <TrustBadges heading="Why Clients Trust Us to Remove Financial Blockages" items={TRUST} columns={3} />
       </SectionWrapper>
 
       <SectionWrapper background="default">
@@ -163,7 +163,7 @@ export default function FinancialBlockage() {
       </SectionWrapper>
 
       <CTABanner
-        heading="Restore Your Path To Prosperity"
+        heading="Begin Your Financial Blockage Removal Today"
         subtext="Begin the process of identifying and removing what is holding your business back from the financial success it deserves."
         ctaPrimary={{ label: 'Book a Consultation', href: '/contact' }}
         variant="dark"
