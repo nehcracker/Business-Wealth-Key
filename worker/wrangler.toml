@@ -1,6 +1,7 @@
 name = "bwk-contact"
 main = "contact.js"
 compatibility_date = "2024-09-23"
+# Email provider: ZeptoMail (api.zeptomail.com/v1.1/email)
 
 # Route: maps /api/contact on the live domain to this Worker
 # Uncomment and update zone_id after connecting domain to Cloudflare
@@ -10,8 +11,9 @@ compatibility_date = "2024-09-23"
 
 [vars]
 ENVIRONMENT = "production"
-# CONTACT_EMAIL is set as an encrypted secret — never put it here
-# Run: wrangler secret put CONTACT_EMAIL
+# Secrets — set via wrangler, never hardcode values here:
+#   wrangler secret put CONTACT_EMAIL   (recipient email address)
+#   wrangler secret put ZEPTO_API_KEY   (full "Zoho-enczapikey ..." token from ZeptoMail dashboard)
 
 # Local dev
 # Run: wrangler dev
