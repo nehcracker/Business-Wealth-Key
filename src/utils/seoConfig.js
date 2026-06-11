@@ -81,9 +81,4 @@ export const seoConfig = {
     ogImage:     '/og/og-contact.jpg',
     canonical:   'https://businesswealthkey.com/contact',
   },
-  '/404': {
-    title:       '404 — Page Not Found | Business Wealth Key',
-    description: 'The page you are looking for does not exist. Return to Business Wealth Key for spiritual business guidance, psychic consultations, and prosperity services.',
-    robots:      'noindex, nofollow',
-  },
 }
