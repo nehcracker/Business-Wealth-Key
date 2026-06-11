@@ -93,7 +93,7 @@ export default function PsychicConsultations() {
         <div className="page-two-col">
           <div className="page-two-col__body">
             <p className="page-eyebrow">What Is This Service</p>
-            <h2 className="page-heading">Psychic Business Consultations</h2>
+            <h2 className="page-heading">Psychic Business Consultations — Private Online Psychic Readings</h2>
             <div className="section-divider" />
             <p>A psychic business consultation is a private, personalised session in which we use spiritual insight and psychic perception to examine the hidden forces influencing your business — challenges you cannot fully explain, opportunities you may be missing, and the energetic landscape surrounding your next steps.</p>
             <p>Unlike conventional business advice, a psychic consultation reaches beyond what is visible — providing clarity on the root causes of obstacles, the nature of key relationships, and the most aligned path forward for your business.</p>
@@ -104,9 +104,9 @@ export default function PsychicConsultations() {
               <p>"Every business challenge has a visible dimension and a hidden one. Our consultations address both."</p>
             </div>
             <div className="page-info-box">
-              <h3>Who This Is For</h3>
+              <h3>Private Sessions with an Experienced Spiritual Medium</h3>
               <p>Entrepreneurs, executives, investors, and corporations facing important decisions, recurring obstacles, or an unexplained sense that something is working against their success.</p>
-              <h3>How It Works</h3>
+              <h3>Online Psychic Reading Sessions — What to Expect</h3>
               <p>Sessions are conducted online. You share your key questions and challenges. We provide genuine psychic insight — clearly and directly.</p>
             </div>
           </div>
@@ -120,7 +120,7 @@ export default function PsychicConsultations() {
       <SectionWrapper background="alt">
         <div className="page-section-header page-section-header--center">
           <p className="page-eyebrow">Areas of Focus</p>
-          <h2 className="page-heading">What We Assess in Your Consultation</h2>
+          <h2 className="page-heading">What Your Spiritual Medium Assesses Each Session</h2>
           <div className="section-divider" style={{ margin: 'var(--space-5) auto' }} />
         </div>
         <div className="page-cards-grid">
@@ -135,7 +135,7 @@ export default function PsychicConsultations() {
 
       <SectionWrapper background="default">
         <ProblemList
-          heading="Benefits of a Psychic Business Consultation"
+          heading="What You Gain From a Psychic Business Consultation"
           items={BENEFITS}
           icon="check"
           columns={2}
@@ -144,7 +144,7 @@ export default function PsychicConsultations() {
 
       <SectionWrapper background="alt">
         <ProblemList
-          heading="Common Reasons Clients Seek This Service"
+          heading="Signs You Need an Online Psychic Reading for Business"
           items={WHY_SEEK}
           icon="diamond"
           columns={1}
@@ -153,14 +153,14 @@ export default function PsychicConsultations() {
 
       <SectionWrapper background="default">
         <ProcessSteps
-          heading="How Your Consultation Works"
+          heading="How Your Online Psychic Reading Session Works"
           steps={processStepsData['psychic-consultations']}
           layout="horizontal"
         />
       </SectionWrapper>
 
       <SectionWrapper background="alt">
-        <TrustBadges heading="Why Choose Business Wealth Key" items={TRUST} columns={3} />
+        <TrustBadges heading="Why We're Trusted as the Best Online Psychic for Business" items={TRUST} columns={3} />
       </SectionWrapper>
 
       <SectionWrapper background="default">
@@ -168,7 +168,7 @@ export default function PsychicConsultations() {
       </SectionWrapper>
 
       <CTABanner
-        heading="Gain Greater Insight Into Your Business Future"
+        heading="Book Your Psychic Business Consultation Today"
         subtext="Book a private psychic business consultation and take the first step toward the clarity your business needs."
         ctaPrimary={{ label: 'Book Your Consultation', href: '/contact' }}
         variant="dark"
