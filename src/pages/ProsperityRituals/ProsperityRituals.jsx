@@ -10,7 +10,7 @@ import WhoWeServe from '../../components/common/WhoWeServe/WhoWeServe'
 import FAQAccordion from '../../components/common/FAQAccordion/FAQAccordion'
 import { faqData } from '../../utils/faqData'
 import { processStepsData } from '../../utils/processStepsData'
-import { generateBreadcrumbSchema } from '../../utils/structuredData'
+import { generateBreadcrumbSchema, generateServiceSchema, generateFAQSchema } from '../../utils/structuredData'
 import { IconShield, IconDiamond, IconCrown, IconGlobe, IconFlame } from '../../assets/icons'
 import heroImage from '../../assets/images/services/Business-Prosperity-Rituals.jpg'
 import './ProsperityRituals.css'
@@ -22,6 +22,7 @@ const WHO = [
 ]
 
 const RITUAL_SERVICES = [
+  { title: 'Spiritual & Financial Blockage Removal', desc: 'Identify and clear spiritual and financial blockages restricting your prosperity flow, revenue growth, and business success.' },
   { title: 'Wealth Attraction Rituals',       desc: 'Rituals designed to draw greater financial abundance and revenue to your business.' },
   { title: 'Prosperity Activation',           desc: 'Activate dormant prosperity energy within your business and personal wealth field.' },
   { title: 'Business Blessing Ceremonies',    desc: 'Spiritual ceremonies to bless your business, premises, and ventures for success.' },
@@ -52,6 +53,8 @@ const WHY_SEEK = [
   'A sense that negative energy or interference is affecting results',
   'Desire to establish a strong prosperity foundation for a new venture',
   'Corporate need for systematic energetic improvement across departments',
+  'Experiencing spiritual blockages you believe are suppressing financial performance',
+  'Seeking financial blockage removal to restore natural prosperity flow',
 ]
 
 const TRUST = [
@@ -69,12 +72,20 @@ export default function ProsperityRituals() {
     { name: 'Services', slug: '/services' },
     { name: 'Prosperity Rituals', slug: '/services/prosperity-rituals' },
   ])
+  const serviceSchema = generateServiceSchema({
+    name:        'Business Prosperity Rituals',
+    description: 'Powerful prosperity rituals for business success and luck. Remove spiritual and financial blockages. For entrepreneurs, executives, and corporations worldwide.',
+    slug:        '/services/prosperity-rituals',
+  })
+  const faqSchema = generateFAQSchema(faqData['prosperity-rituals'])
 
   return (
     <>
       {seo}
       <Helmet>
         <script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>
+        <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
       <HeroSection
