@@ -63,6 +63,15 @@ export default {
       )
     }
 
+    // Guard: fail fast if required secrets are missing
+    if (!env.ZEPTO_API_KEY || !env.CONTACT_EMAIL) {
+      console.error('Worker misconfiguration: ZEPTO_API_KEY or CONTACT_EMAIL secret not set')
+      return Response.json(
+        { ok: false, error: 'Service temporarily unavailable. Please try again later.' },
+        { status: 500, headers: CORS_HEADERS }
+      )
+    }
+
     // Parse body
     let body
     try {
@@ -104,7 +113,7 @@ export default {
           'Authorization': `Zoho-enczapikey ${env.ZEPTO_API_KEY}`,
         },
         body: JSON.stringify({
-          from:     { address: 'noreply@businesswealthkey.com' },
+          from:     { address: 'noreply@businesswealthkey.com', name: 'Business Wealth Key' },
           to:       [{ email_address: { address: env.CONTACT_EMAIL, name: 'Business Wealth Key' }}],
           reply_to: [{ address: email, name: fullName }],
           subject:  `New Consultation Request — ${fullName}`,
