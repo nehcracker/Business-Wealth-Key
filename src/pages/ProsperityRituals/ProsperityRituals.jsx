@@ -101,7 +101,7 @@ export default function ProsperityRituals() {
         <div className="page-two-col">
           <div className="page-two-col__body">
             <p className="page-eyebrow">What This Service Offers</p>
-            <h2 className="page-heading">Business Prosperity Rituals</h2>
+            <h2 className="page-heading">Prosperity Rituals for Business Success & Luck</h2>
             <div className="section-divider" />
             <p>Business prosperity rituals are powerful, personalised spiritual ceremonies designed to activate abundance, attract new opportunities, and strengthen the energetic foundations that support financial growth and success.</p>
             <p>Every ritual is tailored specifically to you and your business. We assess your current energetic and spiritual alignment, identify the areas where ritual work will have the greatest impact, and design a ceremony that addresses your goals at their root.</p>
@@ -112,9 +112,9 @@ export default function ProsperityRituals() {
               <p>"Prosperity is not luck. It is alignment. Our rituals create the conditions in which your business can thrive."</p>
             </div>
             <div className="page-info-box">
-              <h3>Individual & Corporate</h3>
+              <h3>Private Ritual Sessions — Entrepreneurs & Corporations</h3>
               <p>We serve solo entrepreneurs and large corporations alike. Every programme is scaled and customised to your size and goals.</p>
-              <h3>Ongoing Support Available</h3>
+              <h3>Spiritual & Financial Blockage Removal Programmes</h3>
               <p>One-time rituals or sustained prosperity programmes — we recommend the approach that will create the most lasting impact for your situation.</p>
             </div>
           </div>
@@ -128,7 +128,7 @@ export default function ProsperityRituals() {
       <SectionWrapper background="alt">
         <div className="page-section-header page-section-header--center">
           <p className="page-eyebrow">Ritual Services</p>
-          <h2 className="page-heading">Our Prosperity Ritual Offerings</h2>
+          <h2 className="page-heading">Luck Rituals for Business — Our Full Offering</h2>
           <div className="section-divider" style={{ margin: 'var(--space-5) auto' }} />
         </div>
         <div className="page-cards-grid">
