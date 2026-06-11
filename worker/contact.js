@@ -10,6 +10,42 @@ const CORS_HEADERS = {
   'Access-Control-Allow-Headers': 'Content-Type',
 }
 
+function buildHtmlEmail({ fullName, email, phone, country, businessName, preferredMethod, serviceRequired, message }) {
+  const row = (label, value) => `
+    <tr>
+      <td style="padding:10px 16px;background:#f5f5f5;font-weight:600;font-family:Arial,sans-serif;font-size:14px;color:#333;width:180px;vertical-align:top;border-bottom:1px solid #e0e0e0;">${label}</td>
+      <td style="padding:10px 16px;font-family:Arial,sans-serif;font-size:14px;color:#333;border-bottom:1px solid #e0e0e0;">${value}</td>
+    </tr>`
+
+  return `<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"></head>
+<body style="margin:0;padding:24px;background:#fafafa;font-family:Arial,sans-serif;">
+  <table style="max-width:600px;margin:0 auto;background:#fff;border:1px solid #e0e0e0;border-radius:6px;overflow:hidden;">
+    <tr>
+      <td colspan="2" style="padding:20px 24px;background:#1a0a2e;color:#fff;font-family:Arial,sans-serif;">
+        <h2 style="margin:0;font-size:18px;font-weight:600;">New Consultation Request</h2>
+        <p style="margin:4px 0 0;font-size:13px;opacity:0.75;">Business Wealth Key</p>
+      </td>
+    </tr>
+    <tbody>
+      ${row('Full Name', fullName)}
+      ${row('Email', email)}
+      ${row('Phone', phone)}
+      ${row('Country', country)}
+      ${row('Business Name', businessName || 'Not provided')}
+      ${row('Preferred Method', preferredMethod || 'Not specified')}
+      ${row('Service Required', serviceRequired || 'Not specified')}
+      <tr>
+        <td style="padding:10px 16px;background:#f5f5f5;font-weight:600;font-family:Arial,sans-serif;font-size:14px;color:#333;vertical-align:top;border-bottom:1px solid #e0e0e0;">Message</td>
+        <td style="padding:10px 16px;font-family:Arial,sans-serif;font-size:14px;color:#333;white-space:pre-wrap;border-bottom:1px solid #e0e0e0;">${message}</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>`
+}
+
 export default {
   async fetch(request, env) {
     // Handle CORS preflight
@@ -53,21 +89,6 @@ export default {
         { status: 400, headers: CORS_HEADERS }
       )
     }
-
-    // Build email content
-    const services = Array.isArray(serviceRequired) ? serviceRequired.join(', ') : (serviceRequired || 'Not specified')
-    const emailBody = [
-      `Name:               ${fullName}`,
-      `Email:              ${email}`,
-      `Country:            ${country}`,
-      `Business Name:      ${businessName || 'Not provided'}`,
-      `Phone:              ${phone || 'Not provided'}`,
-      `Preferred Method:   ${preferredMethod || 'Not specified'}`,
-      `Services Required:  ${services}`,
-      ``,
-      `Message:`,
-      `${message}`,
-    ].join('\n')
 
     // Send via MailChannels (available natively in Cloudflare Workers)
     try {
