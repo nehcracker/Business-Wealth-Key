@@ -5,7 +5,7 @@ export const FORM_CONFIG = {
   // Update this URL after deploying the Cloudflare Worker
   // Dev: use wrangler dev local URL (http://localhost:8787/api/contact)
   // Prod: https://businesswealthkey.com/api/contact
-  workerUrl: import.meta.env.VITE_WORKER_URL || 'http://localhost:8787/api/contact',
+  workerUrl: import.meta.env.VITE_WORKER_URL || 'https://bwk-contact.nehlmac4.workers.dev/api/contact',
 
   requiredFields: ['fullName', 'email', 'phone', 'country', 'message'],
 
