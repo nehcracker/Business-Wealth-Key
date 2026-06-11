@@ -22,16 +22,16 @@ export const faqData = {
   ],
   'prosperity-rituals': [
     {
-      question: 'What do business prosperity rituals involve?',
-      answer:   'Prosperity rituals are personalised spiritual ceremonies designed to activate abundance, attract opportunities, and strengthen the energetic foundation of your business. Each ritual is tailored to your specific situation and goals.',
+      question: 'What is a ritual for business success?',
+      answer:   'A ritual for business success is a personalised spiritual ceremony designed to activate the energetic conditions that support financial growth, attract opportunity, and align your business with prosperity. Each ritual is tailored to your specific goals and situation.',
     },
     {
-      question: 'Are prosperity rituals kept confidential?',
-      answer:   'Yes. All rituals are conducted in complete privacy and confidentiality. Your personal and business details are never shared.',
+      question: 'Can luck rituals for business really produce results?',
+      answer:   'Yes. Luck rituals work by shifting the energetic environment around your business — removing resistance, attracting opportunity, and creating alignment between your intentions and your outcomes. Clients consistently report increased momentum, new opportunities, and improved financial flow following ritual work.',
     },
     {
-      question: 'How long does a prosperity ritual programme last?',
-      answer:   'Programme duration varies based on your goals and circumstances. Some clients see results from a single session, while others benefit from ongoing ritual support. We will recommend the most appropriate approach during your initial consultation.',
+      question: 'Can a ritual help with spiritual or financial blockage removal?',
+      answer:   'Absolutely. Many clients seek ritual work specifically because they sense a spiritual or financial blockage limiting their success. Our rituals identify the root cause of the blockage and apply targeted spiritual work to clear it and restore natural prosperity flow.',
     },
     {
       question: 'Do you offer corporate prosperity ritual packages?',
