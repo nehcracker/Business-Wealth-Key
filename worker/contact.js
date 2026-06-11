@@ -39,9 +39,9 @@ export default {
     const { fullName, email, country, message, businessName, phone, preferredMethod, serviceRequired } = body
 
     // Server-side validation — required fields
-    if (!fullName || !email || !country || !message) {
+    if (!fullName || !email || !phone || !country || !message) {
       return Response.json(
-        { ok: false, error: 'Required fields missing: fullName, email, country, message' },
+        { ok: false, error: 'Required fields missing: fullName, email, phone, country, message' },
         { status: 400, headers: CORS_HEADERS }
       )
     }
