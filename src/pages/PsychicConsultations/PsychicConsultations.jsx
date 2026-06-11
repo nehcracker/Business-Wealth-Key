@@ -83,7 +83,7 @@ export default function PsychicConsultations() {
       <HeroSection
         image={heroImage}
         imageAlt="Psychic Business Consultations — Business Wealth Key"
-        title="Gain Insight. Identify Opportunities. Strengthen Your Path to Success."
+        title="Psychic Business Consultations — Gain Clarity, Identify Opportunities & Strengthen Your Path to Success"
         subtitle="Every business decision shapes the future of your company. A psychic business consultation provides the deeper clarity that strategy and analysis alone cannot offer."
         ctaPrimary={{ label: 'Book a Consultation', href: '/contact' }}
         align="center"
