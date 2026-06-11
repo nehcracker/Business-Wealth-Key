@@ -1,6 +1,6 @@
 // ─── Cloudflare Worker — Contact Form Handler ────────────────────────────────
 // Route: businesswealthkey.com/api/contact (POST only)
-// Validates fields → sends email via MailChannels → returns JSON
+// Validates fields → sends email via ZeptoMail → returns JSON
 
 const ALLOWED_ORIGIN = 'https://businesswealthkey.com'
 
@@ -92,33 +92,29 @@ export default {
       )
     }
 
-    // Send via MailChannels (available natively in Cloudflare Workers)
+    // Send via ZeptoMail
     try {
-      const mailResponse = await fetch('https://api.mailchannels.net/tx/v1/send', {
-        method:  'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body:    JSON.stringify({
-          personalizations: [
-            { to: [{ email: env.CONTACT_EMAIL }] },
-          ],
-          from: {
-            email: 'noreply@businesswealthkey.com',
-            name:  'BWK Contact Form',
-          },
-          reply_to: {
-            email: email,
-            name:  fullName,
-          },
-          subject: `New Consultation Request — ${fullName}`,
-          content: [
-            { type: 'text/plain', value: emailBody },
-          ],
+      const htmlBody = buildHtmlEmail({ fullName, email, phone, country, businessName, preferredMethod, serviceRequired, message })
+
+      const mailResponse = await fetch('https://api.zeptomail.com/v1.1/email', {
+        method: 'POST',
+        headers: {
+          'Accept':        'application/json',
+          'Content-Type':  'application/json',
+          'Authorization': `Zoho-enczapikey ${env.ZEPTO_API_KEY}`,
+        },
+        body: JSON.stringify({
+          from:     { address: 'noreply@businesswealthkey.com' },
+          to:       [{ email_address: { address: env.CONTACT_EMAIL, name: 'Business Wealth Key' }}],
+          reply_to: [{ address: email, name: fullName }],
+          subject:  `New Consultation Request — ${fullName}`,
+          htmlbody: htmlBody,
         }),
       })
 
       if (!mailResponse.ok) {
         const err = await mailResponse.text()
-        console.error('MailChannels error:', err)
+        console.error('ZeptoMail error:', err)
         throw new Error('Email delivery failed')
       }
     } catch (err) {
