@@ -4,8 +4,10 @@ import { IconKey } from '../../assets/icons'
 import './NotFound.css'
 
 export default function NotFound() {
+  const seo = useSEO('/404')
   return (
     <>
+      {seo}
       <div className="notfound">
         <div className="notfound__inner">
           <div className="notfound__icon" aria-hidden="true">

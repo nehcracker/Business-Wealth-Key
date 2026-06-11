@@ -1,5 +1,4 @@
 import { useSEO } from '../../hooks/useSEO'
-import HeroSection from '../../components/common/HeroSection/HeroSection'
 import SectionWrapper from '../../components/common/SectionWrapper/SectionWrapper'
 import CTABanner from '../../components/common/CTABanner/CTABanner'
 import ConsultationForm from '../../components/common/ConsultationForm/ConsultationForm'
@@ -28,38 +27,51 @@ export default function Contact() {
     <>
       {seo}
 
-      <HeroSection
-        title="Begin Your Journey Toward Prosperity, Business Growth, and Financial Success"
-        subtitle="Every successful journey begins with a conversation. Submit your consultation request and we will be in touch promptly — in complete confidence."
-        ctaPrimary={{ label: 'Go to Consultation Form', href: '#consultation-form' }}
-        align="center"
-      />
+      {/* ── Split layout ── */}
+      <div className="contact-split">
 
-      {/* ── Welcome + Service Quick-Links ── */}
-      <SectionWrapper background="alt">
-        <div className="contact-intro">
-          <div className="contact-intro__text">
-            <p className="page-eyebrow">Private Consultations</p>
-            <h2 className="page-heading">Every Journey Begins With a Conversation</h2>
-            <div className="section-divider" />
-            <p>We serve clients worldwide via secure online consultations — entrepreneurs, executives, investors, and corporations seeking genuine spiritual business guidance.</p>
-            <p>All enquiries are treated with absolute confidentiality. We respond to every request promptly and personally.</p>
+        {/* Left — Atmospheric panel */}
+        <aside className="contact-split__left" aria-label="Contact information">
+          <div className="contact-left__orb" aria-hidden="true" />
+          <div className="contact-left__inner">
+
+            <p className="contact-left__eyebrow">Private Consultations</p>
+
+            <h1 className="contact-left__heading">
+              Begin<br />Your Journey
+            </h1>
+
+            <p className="contact-left__text">
+              Every successful journey begins with a conversation.
+              Submit your request and we will be in touch promptly —
+              in complete confidence.
+            </p>
+
+            <div className="contact-left__rule" aria-hidden="true" />
+
+            {/* Contact details */}
             <div className="contact-details">
               <div className="contact-detail">
                 <span className="contact-detail__label">General Enquiries</span>
-                <a href="mailto:info@businesswealthkey.com" className="contact-detail__value">info@businesswealthkey.com</a>
+                <a href="mailto:info@businesswealthkey.com" className="contact-detail__value">
+                  info@businesswealthkey.com
+                </a>
               </div>
               <div className="contact-detail">
                 <span className="contact-detail__label">Consultation Requests</span>
-                <a href="mailto:consultations@businesswealthkey.com" className="contact-detail__value">consultations@businesswealthkey.com</a>
+                <a href="mailto:consultations@businesswealthkey.com" className="contact-detail__value">
+                  consultations@businesswealthkey.com
+                </a>
               </div>
               <div className="contact-detail">
                 <span className="contact-detail__label">Availability</span>
                 <span className="contact-detail__value">Online — All Time Zones Served</span>
               </div>
             </div>
-          </div>
-          <div className="contact-intro__services">
+
+            <div className="contact-left__rule" aria-hidden="true" />
+
+            {/* Service quick-links */}
             <p className="contact-services__label">Enquire About a Specific Service</p>
             <ul className="contact-services-list" role="list">
               {services.map((s) => (
@@ -72,24 +84,29 @@ export default function Contact() {
                 </li>
               ))}
             </ul>
-          </div>
-        </div>
-      </SectionWrapper>
 
-      {/* ── Form ── */}
-      <SectionWrapper background="default" id="consultation-form">
-        <div className="contact-form-section">
-          <div className="contact-form-section__header">
-            <p className="page-eyebrow">Consultation Request</p>
-            <h2 className="page-heading">Submit Your Private Enquiry</h2>
-            <div className="section-divider" />
-            <p className="page-lead">Please complete the form below. All fields marked with * are required. Your information is held in strict confidence.</p>
           </div>
-          <ConsultationForm />
-        </div>
-      </SectionWrapper>
+        </aside>
 
-      {/* ── Why Contact ── */}
+        {/* Right — Form panel */}
+        <main className="contact-split__right" id="consultation-form">
+          <div className="contact-form-wrapper">
+            <div className="contact-form-header">
+              <p className="contact-form-header__eyebrow">Consultation Request</p>
+              <h2 className="contact-form-header__heading">Submit Your Private Enquiry</h2>
+              <div className="section-divider" />
+              <p className="contact-form-header__lead">
+                Please complete the form below. Fields marked * are required.
+                All information is held in the strictest confidence.
+              </p>
+            </div>
+            <ConsultationForm />
+          </div>
+        </main>
+
+      </div>
+
+      {/* ── Who should contact ── */}
       <SectionWrapper background="alt">
         <ProblemList
           heading="Who Should Contact Business Wealth Key"
@@ -97,17 +114,6 @@ export default function Contact() {
           icon="diamond"
           columns={2}
         />
-      </SectionWrapper>
-
-      {/* ── Confidentiality ── */}
-      <SectionWrapper background="default" padding="tight">
-        <div className="contact-confidentiality">
-          <span className="contact-confidentiality__icon" aria-hidden="true">⬡</span>
-          <div>
-            <h2 className="page-heading" style={{ fontSize: 'var(--text-xl)' }}>Your Privacy Matters</h2>
-            <p>All information submitted through this form — and every detail shared during your consultation — is treated with absolute confidentiality. We do not share, sell, or disclose client information to any third party under any circumstances. Your goals, challenges, and business details remain entirely private.</p>
-          </div>
-        </div>
       </SectionWrapper>
 
       <CTABanner

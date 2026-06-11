@@ -10,7 +10,7 @@ import WhoWeServe from '../../components/common/WhoWeServe/WhoWeServe'
 import FAQAccordion from '../../components/common/FAQAccordion/FAQAccordion'
 import { faqData } from '../../utils/faqData'
 import { processStepsData } from '../../utils/processStepsData'
-import { generateBreadcrumbSchema } from '../../utils/structuredData'
+import { generateBreadcrumbSchema, generateServiceSchema, generateFAQSchema } from '../../utils/structuredData'
 import { IconShield, IconCrown, IconStar, IconGlobe, IconDiamond } from '../../assets/icons'
 import heroImage from '../../assets/images/services/Wealth-Activation.jpg'
 
@@ -66,12 +66,20 @@ export default function WealthActivation() {
     { name: 'Services', slug: '/services' },
     { name: 'Wealth Activation', slug: '/services/wealth-activation' },
   ])
+  const serviceSchema = generateServiceSchema({
+    name:        'Wealth Activation Services',
+    description: 'Activate your wealth consciousness and strengthen your path to long-term financial prosperity. Services for individuals, entrepreneurs, investors, and corporations.',
+    slug:        '/services/wealth-activation',
+  })
+  const faqSchema = generateFAQSchema(faqData['wealth-activation'])
 
   return (
     <>
       {seo}
       <Helmet>
         <script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>
+        <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
       <HeroSection

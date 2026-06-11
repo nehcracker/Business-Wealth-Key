@@ -54,14 +54,15 @@
   background: var(--color-bg-tertiary);
   border: 1px solid var(--color-amethyst-border);
   border-radius: var(--radius-md);
-  padding: var(--space-4) var(--space-5);
+  padding: var(--space-5) var(--space-5);
   font-family: var(--font-ui);
   font-size: var(--text-base);
   color: var(--color-text-primary);
   outline: none;
   transition: border-color var(--transition-fast),
               box-shadow   var(--transition-fast),
-              background   var(--transition-fast);
+              background   var(--transition-fast),
+              border-left-width var(--transition-fast);
 }
 
 .cf__input::placeholder,
@@ -142,6 +143,7 @@
   font-size: var(--text-sm);
   color: var(--color-text-secondary);
   cursor: pointer;
+  -webkit-user-select: none;
   user-select: none;
 }
 
@@ -203,6 +205,7 @@
   font-size: var(--text-sm);
   color: var(--color-text-secondary);
   cursor: pointer;
+  -webkit-user-select: none;
   user-select: none;
   padding: var(--space-3) var(--space-4);
   background: var(--color-bg-tertiary);

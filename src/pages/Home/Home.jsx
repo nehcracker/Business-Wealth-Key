@@ -1,4 +1,5 @@
 import { useSEO } from '../../hooks/useSEO'
+import { useScrollReveal } from '../../hooks/useScrollReveal'
 import HeroSection from '../../components/common/HeroSection/HeroSection'
 import SectionWrapper from '../../components/common/SectionWrapper/SectionWrapper'
 import ServiceCard from '../../components/common/ServiceCard/ServiceCard'
@@ -10,14 +11,18 @@ import WhoWeServe from '../../components/common/WhoWeServe/WhoWeServe'
 import { services } from '../../utils/servicesData'
 import { processStepsData } from '../../utils/processStepsData'
 import {
-  IconShield, IconStar, IconKey, IconCrown, IconGlobe, IconDiamond,
+  IconShield, IconStar, IconCrown, IconGlobe, IconDiamond,
 } from '../../assets/icons'
-
-// Fix #5 — import assets through Vite so paths are hashed correctly in prod
 import heroImage      from '../../assets/images/hero/hero__bg.jpg'
 import servicesBgImage from '../../assets/images/services/Spiritual-Business-Services.jpg'
-
 import './Home.css'
+
+const STATS = [
+  { value: '100%',    label: 'Confidential' },
+  { value: 'Global',  label: 'Worldwide Service' },
+  { value: '6',       label: 'Specialist Disciplines' },
+  { value: 'Private', label: 'Every Consultation' },
+]
 
 const WHO_WE_SERVE = [
   'Entrepreneurs', 'CEOs & Executives', 'Business Owners', 'Investors',
@@ -80,12 +85,13 @@ const HOME_STEPS = processStepsData['psychic-consultations']
 
 export default function Home() {
   const seo = useSEO('/')
+  const statsRef     = useScrollReveal()
+  const manifestoRef = useScrollReveal()
 
   return (
     <>
       {seo}
 
-      {/* ── Hero — Fix #1: center-aligned ── */}
       <HeroSection
         image={heroImage}
         imageAlt="Spiritual business prosperity — Business Wealth Key"
@@ -97,7 +103,19 @@ export default function Home() {
         align="center"
       />
 
-      {/* ── Who We Serve ── */}
+      {/* Stats strip */}
+      <div className="home-stats" ref={statsRef}>
+        <div className="home-stats__inner">
+          {STATS.map((s, i) => (
+            <div key={i} className="home-stats__item">
+              <span className="home-stats__value">{s.value}</span>
+              <span className="home-stats__label">{s.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Intro + Who We Serve */}
       <SectionWrapper background="alt" padding="tight">
         <div className="home-intro">
           <p className="home-intro__eyebrow">Trusted Spiritual Business Guidance</p>
@@ -113,7 +131,7 @@ export default function Home() {
         <WhoWeServe items={WHO_WE_SERVE} heading="We Work With" variant="pill" />
       </SectionWrapper>
 
-      {/* ── Problems ── */}
+      {/* Challenges */}
       <SectionWrapper background="default">
         <ProblemList
           heading="Is Your Business Experiencing Any of These Challenges?"
@@ -123,7 +141,7 @@ export default function Home() {
         />
       </SectionWrapper>
 
-      {/* ── Services Grid — Fix #5: inline style with Vite-imported image ── */}
+      {/* Services */}
       <SectionWrapper
         background="alt"
         className="home-services-section"
@@ -147,8 +165,20 @@ export default function Home() {
         </div>
       </SectionWrapper>
 
-      {/* ── Benefits ── */}
-      <SectionWrapper background="default">
+      {/* Manifesto */}
+      <section className="home-manifesto" ref={manifestoRef} aria-label="Our philosophy">
+        <div className="home-manifesto__inner">
+          <span className="home-manifesto__ornament" aria-hidden="true">✦</span>
+          <blockquote className="home-manifesto__quote">
+            "True prosperity is not found in strategy alone. It begins where logic ends —
+            in the realm of energy, intention, and spiritual alignment."
+          </blockquote>
+          <cite className="home-manifesto__cite">— Business Wealth Key</cite>
+        </div>
+      </section>
+
+      {/* Benefits */}
+      <SectionWrapper background="alt">
         <ProblemList
           heading="What We Help You Unlock"
           items={BENEFITS}
@@ -157,8 +187,8 @@ export default function Home() {
         />
       </SectionWrapper>
 
-      {/* ── Trust Badges ── */}
-      <SectionWrapper background="alt">
+      {/* Trust */}
+      <SectionWrapper background="default">
         <TrustBadges
           heading="Why Clients Trust Business Wealth Key"
           items={TRUST_ITEMS}
@@ -166,8 +196,8 @@ export default function Home() {
         />
       </SectionWrapper>
 
-      {/* ── How It Works ── */}
-      <SectionWrapper background="default">
+      {/* Process */}
+      <SectionWrapper background="alt">
         <ProcessSteps
           heading="How It Works"
           steps={HOME_STEPS}
@@ -175,7 +205,6 @@ export default function Home() {
         />
       </SectionWrapper>
 
-      {/* ── CTA ── */}
       <CTABanner
         heading="Your Success Begins with The Right Key"
         subtext="Take the first step toward lasting prosperity. Book a private consultation and begin your journey."

@@ -10,7 +10,7 @@ import WhoWeServe from '../../components/common/WhoWeServe/WhoWeServe'
 import FAQAccordion from '../../components/common/FAQAccordion/FAQAccordion'
 import { faqData } from '../../utils/faqData'
 import { processStepsData } from '../../utils/processStepsData'
-import { generateBreadcrumbSchema } from '../../utils/structuredData'
+import { generateBreadcrumbSchema, generateServiceSchema, generateFAQSchema } from '../../utils/structuredData'
 import { IconShield, IconCompass, IconCrown, IconGlobe, IconDiamond } from '../../assets/icons'
 import heroImage from '../../assets/images/services/Financial-Blockage-Removal.jpg'
 
@@ -73,12 +73,20 @@ export default function FinancialBlockage() {
     { name: 'Services', slug: '/services' },
     { name: 'Financial Blockage Removal', slug: '/services/financial-blockage' },
   ])
+  const serviceSchema = generateServiceSchema({
+    name:        'Financial Blockage Removal',
+    description: 'Identify and remove financial blockages holding your business back. Restore financial flow, overcome recurring setbacks, and pursue greater prosperity.',
+    slug:        '/services/financial-blockage',
+  })
+  const faqSchema = generateFAQSchema(faqData['financial-blockage'])
 
   return (
     <>
       {seo}
       <Helmet>
         <script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>
+        <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
       <HeroSection

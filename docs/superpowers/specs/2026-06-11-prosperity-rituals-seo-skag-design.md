@@ -68,7 +68,7 @@ ritual for business success, luck rituals for business, good luck rituals for bu
 { title: 'Spiritual & Financial Blockage Removal', desc: 'Identify and clear spiritual and financial blockages restricting your prosperity flow, revenue growth, and business success.' },
 ```
 
-### 3.3 WHY_SEEK — Add Two Pain-Driven Items
+### 3.3 WHY_SEEK — Append Two Pain-Driven Items (add to end of array)
 
 ```js
 'Experiencing spiritual blockages you believe are suppressing financial performance',

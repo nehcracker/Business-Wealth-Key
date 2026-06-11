@@ -10,7 +10,7 @@ import WhoWeServe from '../../components/common/WhoWeServe/WhoWeServe'
 import FAQAccordion from '../../components/common/FAQAccordion/FAQAccordion'
 import { faqData } from '../../utils/faqData'
 import { processStepsData } from '../../utils/processStepsData'
-import { generateBreadcrumbSchema } from '../../utils/structuredData'
+import { generateBreadcrumbSchema, generateServiceSchema, generateFAQSchema } from '../../utils/structuredData'
 import { IconShield, IconBolt, IconCrown, IconGlobe, IconStar } from '../../assets/icons'
 import heroImage from '../../assets/images/services/Business-Breakthrough.jpg'
 
@@ -74,12 +74,20 @@ export default function BusinessBreakthrough() {
     { name: 'Services', slug: '/services' },
     { name: 'Business Breakthrough', slug: '/services/business-breakthrough' },
   ])
+  const serviceSchema = generateServiceSchema({
+    name:        'Business Breakthrough Solutions',
+    description: 'Overcome business stagnation, unlock new opportunities, and accelerate growth with tailored business breakthrough solutions and spiritual guidance.',
+    slug:        '/services/business-breakthrough',
+  })
+  const faqSchema = generateFAQSchema(faqData['business-breakthrough'])
 
   return (
     <>
       {seo}
       <Helmet>
         <script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>
+        <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
       <HeroSection

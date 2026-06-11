@@ -10,7 +10,7 @@ import WhoWeServe from '../../components/common/WhoWeServe/WhoWeServe'
 import FAQAccordion from '../../components/common/FAQAccordion/FAQAccordion'
 import { faqData } from '../../utils/faqData'
 import { processStepsData } from '../../utils/processStepsData'
-import { generateBreadcrumbSchema } from '../../utils/structuredData'
+import { generateBreadcrumbSchema, generateServiceSchema, generateFAQSchema } from '../../utils/structuredData'
 import { IconShield, IconDiamond, IconCrown, IconGlobe, IconStar } from '../../assets/icons'
 import heroImage from '../../assets/images/services/Psychic-Business-Consultations.png'
 import './PsychicConsultations.css'
@@ -64,12 +64,20 @@ export default function PsychicConsultations() {
     { name: 'Services', slug: '/services' },
     { name: 'Psychic Consultations', slug: '/services/psychic-consultations' },
   ])
+  const serviceSchema = generateServiceSchema({
+    name:        'Psychic Business Consultations',
+    description: 'Gain clarity on business challenges, identify hidden opportunities, and strengthen your path to success with private psychic business consultations. Available worldwide.',
+    slug:        '/services/psychic-consultations',
+  })
+  const faqSchema = generateFAQSchema(faqData['psychic-consultations'])
 
   return (
     <>
       {seo}
       <Helmet>
         <script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>
+        <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
       <HeroSection
