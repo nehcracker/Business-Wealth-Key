@@ -7,7 +7,7 @@ export const FORM_CONFIG = {
   // Prod: https://businesswealthkey.com/api/contact
   workerUrl: import.meta.env.VITE_WORKER_URL || 'http://localhost:8787/api/contact',
 
-  requiredFields: ['fullName', 'email', 'country', 'message'],
+  requiredFields: ['fullName', 'email', 'phone', 'country', 'message'],
 
   services: [
     'Psychic Business Consultations',
@@ -18,7 +18,7 @@ export const FORM_CONFIG = {
     'Corporate Solutions',
   ],
 
-  preferredMethods: ['Online', 'Telephone', 'Video Call'],
+  preferredMethods: ['WhatsApp', 'Google Meet'],
 
   messages: {
     success: 'Thank you. Your consultation request has been received. We will be in touch shortly.',

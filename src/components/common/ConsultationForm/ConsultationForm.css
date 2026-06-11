@@ -256,6 +256,155 @@
   color: var(--color-bg-primary);
 }
 
+/* ── Communication method cards ─────────────────────────────────────────── */
+
+.cf__method-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+
+.cf__method-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-3);
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-amethyst-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  text-align: center;
+  transition:
+    background      var(--transition-fast),
+    border-color    var(--transition-fast),
+    box-shadow      var(--transition-fast);
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.cf__method-label:hover {
+  background: var(--color-amethyst-dim);
+  border-color: rgba(155, 110, 200, 0.45);
+}
+
+.cf__method-label--selected {
+  border-color: var(--color-amethyst);
+  background: var(--color-amethyst-dim);
+  box-shadow: 0 0 0 1px var(--color-amethyst);
+}
+
+.cf__method-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-md);
+  transition: background var(--transition-fast);
+}
+
+.cf__method-icon--wa {
+  color: #25D366;
+  background: rgba(37, 211, 102, 0.1);
+}
+
+.cf__method-icon--gm {
+  color: #4285f4;
+  background: rgba(66, 133, 244, 0.1);
+}
+
+.cf__method-label--selected .cf__method-icon--wa {
+  background: rgba(37, 211, 102, 0.18);
+}
+
+.cf__method-label--selected .cf__method-icon--gm {
+  background: rgba(66, 133, 244, 0.18);
+}
+
+.cf__method-name {
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text-primary);
+  line-height: 1;
+}
+
+.cf__method-desc {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--color-text-tertiary);
+  letter-spacing: 0.03em;
+  line-height: 1;
+}
+
+/* ── Service radio grid ─────────────────────────────────────────────────── */
+
+.cf__service-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+
+.cf__service-label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-amethyst-border);
+  border-radius: var(--radius-md);
+  transition:
+    background      var(--transition-fast),
+    border-color    var(--transition-fast),
+    color           var(--transition-fast);
+}
+
+.cf__service-label:hover {
+  background: var(--color-amethyst-dim);
+  border-color: var(--color-amethyst);
+}
+
+.cf__service-label--selected {
+  border-color: var(--color-amethyst);
+  background: var(--color-amethyst-dim);
+  color: var(--color-text-primary);
+}
+
+.cf__service-dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-amethyst-border);
+  background: var(--color-bg-tertiary);
+  flex-shrink: 0;
+  font-size: 9px;
+  color: transparent;
+  transition:
+    border-color    var(--transition-fast),
+    background      var(--transition-fast),
+    color           var(--transition-fast);
+}
+
+.cf__service-dot::after {
+  content: '✓';
+}
+
+.cf__service-label--selected .cf__service-dot {
+  border-color: var(--color-amethyst);
+  background: var(--color-amethyst);
+  color: var(--color-bg-primary);
+}
+
 /* ── Privacy note ────────────────────────────────────────────────────────── */
 
 .cf__privacy {
@@ -327,11 +476,8 @@
 /* ── Responsive ──────────────────────────────────────────────────────────── */
 
 @media (max-width: 768px) {
-  .cf__row {
-    grid-template-columns: 1fr;
-  }
-
-  .cf__checkbox-group {
-    grid-template-columns: 1fr;
-  }
+  .cf__row              { grid-template-columns: 1fr; }
+  .cf__checkbox-group   { grid-template-columns: 1fr; }
+  .cf__method-group     { grid-template-columns: 1fr 1fr; }
+  .cf__service-group    { grid-template-columns: 1fr; }
 }
