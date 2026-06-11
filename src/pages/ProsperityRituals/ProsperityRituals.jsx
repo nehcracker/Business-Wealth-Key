@@ -142,19 +142,19 @@ export default function ProsperityRituals() {
       </SectionWrapper>
 
       <SectionWrapper background="default">
-        <ProblemList heading="What Our Rituals Help Create" items={BENEFITS} icon="star" columns={2} />
+        <ProblemList heading="Results After Financial & Spiritual Blockage Removal" items={BENEFITS} icon="star" columns={2} />
       </SectionWrapper>
 
       <SectionWrapper background="alt">
-        <ProblemList heading="Common Reasons Clients Seek Prosperity Rituals" items={WHY_SEEK} icon="diamond" columns={1} />
+        <ProblemList heading="Signs of Spiritual or Financial Blockage in Your Business" items={WHY_SEEK} icon="diamond" columns={1} />
       </SectionWrapper>
 
       <SectionWrapper background="default">
-        <ProcessSteps heading="How Your Ritual Programme Works" steps={processStepsData['prosperity-rituals']} layout="horizontal" />
+        <ProcessSteps heading="How Your Ritual for Business Success Works" steps={processStepsData['prosperity-rituals']} layout="horizontal" />
       </SectionWrapper>
 
       <SectionWrapper background="alt">
-        <TrustBadges heading="Why Choose Business Wealth Key" items={TRUST} columns={3} />
+        <TrustBadges heading="Why Clients Trust Us for Spiritual Blockage Removal" items={TRUST} columns={3} />
       </SectionWrapper>
 
       <SectionWrapper background="default">
@@ -162,7 +162,7 @@ export default function ProsperityRituals() {
       </SectionWrapper>
 
       <CTABanner
-        heading="Position Yourself For Greater Prosperity"
+        heading="Begin Your Ritual for Business Success Today"
         subtext="Begin your prosperity ritual programme and take decisive action toward the abundance your business deserves."
         ctaPrimary={{ label: 'Book a Consultation', href: '/contact' }}
         variant="dark"
