@@ -10,7 +10,7 @@ import WhoWeServe from '../../components/common/WhoWeServe/WhoWeServe'
 import FAQAccordion from '../../components/common/FAQAccordion/FAQAccordion'
 import { faqData } from '../../utils/faqData'
 import { processStepsData } from '../../utils/processStepsData'
-import { generateBreadcrumbSchema, generateServiceSchema, generateFAQSchema } from '../../utils/structuredData'
+import { generateBreadcrumbSchema } from '../../utils/structuredData'
 import { IconShield, IconDiamond, IconCrown, IconGlobe, IconFlame } from '../../assets/icons'
 import heroImage from '../../assets/images/services/Business-Prosperity-Rituals.jpg'
 import './ProsperityRituals.css'
@@ -69,20 +69,12 @@ export default function ProsperityRituals() {
     { name: 'Services', slug: '/services' },
     { name: 'Prosperity Rituals', slug: '/services/prosperity-rituals' },
   ])
-  const serviceSchema = generateServiceSchema({
-    name:        'Business Prosperity Rituals',
-    description: 'Activate prosperity, attract opportunities, and support business growth through powerful prosperity rituals. Individual and corporate programs available.',
-    slug:        '/services/prosperity-rituals',
-  })
-  const faqSchema = generateFAQSchema(faqData['prosperity-rituals'])
 
   return (
     <>
       {seo}
       <Helmet>
         <script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>
-        <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
       <HeroSection
