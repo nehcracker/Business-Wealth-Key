@@ -13,14 +13,14 @@ export const SEO_GLOBAL = {
 export const seoConfig = {
   '/': {
     title:       'Business Wealth Key | Psychic Business Consultations & Prosperity Rituals',
-    description: 'Psychic consultations, prosperity rituals, financial blockage removal and wealth activation. For entrepreneurs, executives and corporations worldwide.',
+    description: 'Spiritual business guidance: psychic consultations, prosperity rituals, wealth activation and financial blockage removal for entrepreneurs worldwide.',
     keywords:    'psychic business consultant, prosperity rituals, wealth activation, financial blockage removal, business breakthrough, spiritual business guidance',
     ogImage:     '/og/og-home.jpg',
     canonical:   'https://businesswealthkey.com/',
   },
   '/about': {
-    title:       'About Us | Business Wealth Key — Spiritual Business Guidance',
-    description: 'Learn about Business Wealth Key — helping entrepreneurs, executives and corporations achieve lasting prosperity through authentic spiritual guidance worldwide.',
+    title:       'About Us | Business Wealth Key: Spiritual Business Guidance',
+    description: 'About Business Wealth Key: trusted spiritual business guidance and prosperity consultancy for entrepreneurs, executives and corporations worldwide.',
     keywords:    'about business wealth key, spiritual business guidance, prosperity consultant',
     ogImage:     '/og/og-about.jpg',
     canonical:   'https://businesswealthkey.com/about',
@@ -68,9 +68,9 @@ export const seoConfig = {
     canonical:   'https://businesswealthkey.com/services/business-breakthrough',
   },
   '/services/corporate-solutions': {
-    title:       'Corporate Spiritual Solutions | Executive Prosperity',
-    description: 'Spiritual guidance for corporations, executives and directors. Corporate prosperity programmes, executive success support and organisational growth solutions.',
-    keywords:    'corporate spiritual solutions, executive prosperity, corporate wealth activation, business prosperity program',
+    title:       'Corporate Spiritual Solutions | Executive Prosperity & Wealth Activation',
+    description: 'Corporate spiritual solutions for executives, boards and corporations. Prosperity programmes, corporate wealth activation and executive success support.',
+    keywords:    'corporate spiritual solutions, executive prosperity, corporate wealth activation, corporate spiritual guidance, organisational prosperity, executive success support',
     ogImage:     '/og/og-corporate-solutions.jpg',
     canonical:   'https://businesswealthkey.com/services/corporate-solutions',
   },

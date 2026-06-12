@@ -26,7 +26,7 @@ const DIFFERENTIATORS = [
   'We attract the right opportunities, partnerships, and financial pathways',
   'We provide clarity when conventional analysis cannot explain the blockage',
   'We combine deep spiritual insight with an understanding of business reality',
-  'We offer absolute confidentiality — your goals remain entirely private',
+  'We offer absolute confidentiality: your goals remain entirely private',
   'We serve individuals and corporations with equal depth and personalisation',
   'We are committed to your lasting prosperity, not a single transaction',
 ]
@@ -48,9 +48,9 @@ export default function About() {
 
       <HeroSection
         image={heroImage}
-        imageAlt="About Business Wealth Key — spiritual business guidance"
-        title="The Spiritual Key to Business Prosperity, Wealth, and Success"
-        subtitle="We exist to serve those who know their business is capable of more — and who are ready to unlock the forces that make lasting prosperity possible."
+        imageAlt="Business Wealth Key: trusted spiritual business guidance and prosperity consultancy"
+        title="Trusted Spiritual Business Guidance: About Business Wealth Key"
+        subtitle="We exist to serve those who know their business is capable of more, and who are ready to unlock the forces that make lasting prosperity possible."
         ctaPrimary={{ label: 'Book a Consultation', href: '/contact' }}
         ctaSecondary={{ label: 'Our Services', href: '/services' }}
         align="center"
@@ -61,21 +61,21 @@ export default function About() {
         <div className="about-story">
           <div className="about-story__text">
             <p className="page-eyebrow">Our Founding</p>
-            <h2 className="page-heading">Why Business Wealth Key Exists</h2>
+            <h2 className="page-heading">Your Trusted Spiritual Business Guidance & Prosperity Consultancy</h2>
             <div className="section-divider" />
             <p>Business Wealth Key was founded on a simple but profound truth: that lasting business success is not achieved through strategy alone. Behind every thriving enterprise is an alignment of energy, intention, and opportunity that conventional consulting cannot fully address.</p>
-            <p>We were created to serve entrepreneurs, executives, investors, and corporations who sense that something beyond the visible is influencing their results — and who are ready to address it with seriousness and discretion.</p>
+            <p>We were created to serve entrepreneurs, executives, investors, and corporations who sense that something beyond the visible is influencing their results, and who are ready to address it with seriousness and discretion.</p>
             <p>Our work sits at the intersection of deep spiritual insight and the hard realities of business. We do not offer vague promises. We offer genuine guidance, grounded in decades of experience, delivered with absolute confidentiality and a genuine commitment to your prosperity.</p>
           </div>
           <div className="about-story__aside">
             <div className="page-highlight">
-              <p>"Every business journey is unique. Every obstacle has a root cause. Our purpose is to find it — and to help you move past it toward the prosperity you are seeking."</p>
+              <p>"Every business journey is unique. Every obstacle has a root cause. Our purpose is to find it, and to help you move past it toward the prosperity you are seeking."</p>
             </div>
             <div className="about-mission-box">
               <h3>Our Mission</h3>
-              <p>To provide trusted spiritual business guidance that creates lasting prosperity and greater business success for those we serve.</p>
+              <p>To provide trusted psychic business consultations and spiritual guidance that create lasting prosperity and business success for those we serve.</p>
               <h3>Our Vision</h3>
-              <p>To become a globally recognised destination for spiritual business solutions — trusted by leaders on every continent.</p>
+              <p>To become a globally recognised destination for spiritual business solutions, prosperity rituals, and wealth activation, trusted by leaders on every continent.</p>
             </div>
           </div>
         </div>
@@ -89,7 +89,7 @@ export default function About() {
       >
         <div className="page-section-header">
           <p className="page-eyebrow">Our Approach</p>
-          <h2 className="page-heading">What Makes Business Wealth Key Different</h2>
+          <h2 className="page-heading">What Makes Business Wealth Key's Spiritual Guidance Different</h2>
           <div className="section-divider" />
         </div>
         <ul className="about-differentiators">
@@ -106,7 +106,7 @@ export default function About() {
       <SectionWrapper background="alt">
         <div className="page-section-header">
           <p className="page-eyebrow">Core Areas of Expertise</p>
-          <h2 className="page-heading">Six Dimensions of Business Prosperity</h2>
+          <h2 className="page-heading">Six Dimensions of Spiritual Business Prosperity & Wealth Activation</h2>
           <div className="section-divider" />
         </div>
         <div className="page-services-grid">
@@ -118,12 +118,12 @@ export default function About() {
 
       {/* ── Who We Serve ── */}
       <SectionWrapper background="default">
-        <WhoWeServe items={WHO_WE_SERVE} heading="Who We Serve" variant="card" columns="auto" />
+        <WhoWeServe items={WHO_WE_SERVE} heading="Who We Serve: Entrepreneurs, Executives & Corporations Worldwide" variant="card" columns="auto" />
       </SectionWrapper>
 
       {/* ── Values ── */}
       <SectionWrapper background="alt">
-        <TrustBadges heading="Our Core Values" items={VALUES} columns={3} />
+        <TrustBadges heading="Our Core Values: Your Prosperity Is Our Priority" items={VALUES} columns={3} />
       </SectionWrapper>
 
       <CTABanner

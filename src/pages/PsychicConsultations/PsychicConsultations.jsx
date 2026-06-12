@@ -29,7 +29,7 @@ const WHAT_WE_ASSESS = [
   { title: 'Market Positioning',          desc: 'Gaining insight into competitive positioning and untapped market opportunities.' },
   { title: 'Leadership & Decision-Making',desc: 'Clarity on key decisions, leadership challenges, and organisational direction.' },
   { title: 'Long-Term Strategic Planning',desc: 'A broader view of the forces shaping your business destiny over the coming years.' },
-  { title: 'Obstacle Identification',     desc: 'Identifying hidden blockages — spiritual, energetic, or relational — limiting your results.' },
+  { title: 'Obstacle Identification',     desc: 'Identifying hidden blockages, spiritual, energetic, or relational, that are limiting your results.' },
 ]
 
 const BENEFITS = [
@@ -82,8 +82,8 @@ export default function PsychicConsultations() {
 
       <HeroSection
         image={heroImage}
-        imageAlt="Psychic Business Consultations — Business Wealth Key"
-        title="Psychic Business Consultations — Gain Clarity, Identify Opportunities & Strengthen Your Path to Success"
+        imageAlt="Psychic Business Consultations | Business Wealth Key"
+        title="Psychic Business Consultations: Gain Clarity, Identify Opportunities & Strengthen Your Path to Success"
         subtitle="Every business decision shapes the future of your company. A psychic business consultation provides the deeper clarity that strategy and analysis alone cannot offer."
         ctaPrimary={{ label: 'Book a Consultation', href: '/contact' }}
         align="center"
@@ -93,10 +93,10 @@ export default function PsychicConsultations() {
         <div className="page-two-col">
           <div className="page-two-col__body">
             <p className="page-eyebrow">What Is This Service</p>
-            <h2 className="page-heading">Psychic Business Consultations — Private Online Psychic Readings</h2>
+            <h2 className="page-heading">Psychic Business Consultations: Private Online Psychic Readings</h2>
             <div className="section-divider" />
-            <p>A psychic business consultation is a private, personalised session in which we use spiritual insight and psychic perception to examine the hidden forces influencing your business — challenges you cannot fully explain, opportunities you may be missing, and the energetic landscape surrounding your next steps.</p>
-            <p>Unlike conventional business advice, a psychic consultation reaches beyond what is visible — providing clarity on the root causes of obstacles, the nature of key relationships, and the most aligned path forward for your business.</p>
+            <p>A psychic business consultation is a private, personalised session in which we use spiritual insight and psychic perception to examine the hidden forces influencing your business, including challenges you cannot fully explain, opportunities you may be missing, and the energetic landscape surrounding your next steps.</p>
+            <p>Unlike conventional business advice, a psychic consultation reaches beyond what is visible, providing clarity on the root causes of obstacles, the nature of key relationships, and the most aligned path forward for your business.</p>
             <p>These sessions are designed for serious business people who want genuine insight, not reassurance. Every consultation is conducted in complete confidence.</p>
           </div>
           <div className="page-two-col__aside">
@@ -106,8 +106,8 @@ export default function PsychicConsultations() {
             <div className="page-info-box">
               <h3>Private Sessions with an Experienced Spiritual Medium</h3>
               <p>Entrepreneurs, executives, investors, and corporations facing important decisions, recurring obstacles, or an unexplained sense that something is working against their success.</p>
-              <h3>Online Psychic Reading Sessions — What to Expect</h3>
-              <p>Sessions are conducted online. You share your key questions and challenges. We provide genuine psychic insight — clearly and directly.</p>
+              <h3>Online Psychic Reading Sessions: What to Expect</h3>
+              <p>Sessions are conducted online. You share your key questions and challenges. We provide genuine psychic insight, clearly and directly.</p>
             </div>
           </div>
         </div>

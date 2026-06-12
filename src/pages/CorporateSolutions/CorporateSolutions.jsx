@@ -36,7 +36,7 @@ const CORPORATE_REASONS = [
   'Leadership team dynamics that generate friction, misalignment, and poor decision outcomes',
   'Repeated failure to close major deals, secure funding, or complete acquisitions',
   'Organisational culture that drains rather than energises employees and performance',
-  'Major transitions — restructuring, leadership change, M&A — creating destabilising energy',
+  'Major transitions (restructuring, leadership change, M&A) creating destabilising energy',
   'Inexplicable decline in client retention, market share, or competitive standing',
   'A pattern of promising initiatives that consistently fail to deliver expected results',
   'Boards and leadership teams seeking a deeper level of strategic perspective',
@@ -58,10 +58,10 @@ const RESULTS = [
 const TRUST = [
   { icon: <IconShield size={28} />, title: 'Executive-Level Confidentiality', description: 'Corporate consultations are conducted under the strictest possible discretion.' },
   { icon: <IconGlobe size={28} />, title: 'Global Corporate Experience',      description: 'We have served corporations, executives, and investors across multiple continents.' },
-  { icon: <IconCrown size={28} />, title: 'Bespoke Corporate Programmes',     description: 'Every corporate engagement is custom-designed — no standard packages.' },
+  { icon: <IconCrown size={28} />, title: 'Bespoke Corporate Programmes',     description: 'Every corporate engagement is custom-designed with no standard packages.' },
   { icon: <IconStar size={28} />, title: 'Trusted at Board Level',            description: 'Executives and board members trust us with the most sensitive corporate challenges.' },
   { icon: <IconDiamond size={28} />, title: 'Scalable Solutions',             description: 'From small executive teams to large multinational organisations.' },
-  { icon: <IconKey size={28} />, title: 'Long-Term Partnership Approach',     description: 'We build lasting relationships with corporate clients — not one-off engagements.' },
+  { icon: <IconKey size={28} />, title: 'Long-Term Partnership Approach',     description: 'We build lasting relationships with corporate clients, not one-off engagements.' },
 ]
 
 export default function CorporateSolutions() {
@@ -89,8 +89,8 @@ export default function CorporateSolutions() {
 
       <HeroSection
         image={heroImage}
-        imageAlt="Corporate Spiritual Solutions — Business Wealth Key"
-        title="Corporate Spiritual Solutions — Spiritual Guidance for Corporate Growth, Prosperity & Leadership"
+        imageAlt="Corporate Spiritual Solutions | Business Wealth Key"
+        title="Corporate Spiritual Solutions: Spiritual Guidance for Corporate Growth, Prosperity & Leadership"
         subtitle="Tailored spiritual solutions for corporations, executives, directors, and investors. Addressing the invisible forces that shape organisational performance at the highest level."
         ctaPrimary={{ label: 'Submit a Corporate Enquiry', href: '/contact' }}
         align="center"
@@ -100,28 +100,28 @@ export default function CorporateSolutions() {
         <div className="page-two-col">
           <div className="page-two-col__body">
             <p className="page-eyebrow">For Organisations That Seek More</p>
-            <h2 className="page-heading">Corporate Spiritual Solutions</h2>
+            <h2 className="page-heading">Spiritual Guidance for Corporations, Executives & Boards</h2>
             <div className="section-divider" />
             <p>Business Wealth Key offers a comprehensive range of spiritual guidance services specifically designed for corporations, executive leadership teams, boards of directors, and institutional investors.</p>
-            <p>Organisations, like individuals, operate within an energetic and spiritual field that profoundly influences their performance, culture, decision-making, and financial results. When that field is misaligned — through leadership conflict, historic negative events, competitive interference, or accumulated organisational stress — the consequences show up in the balance sheet and the boardroom.</p>
-            <p>Our corporate programmes are not wellness initiatives or team-building exercises. They are serious, private, high-level spiritual engagements — designed to produce measurable improvement in the conditions that determine organisational prosperity.</p>
+            <p>Organisations, like individuals, operate within an energetic and spiritual field that profoundly influences their performance, culture, decision-making, and financial results. When that field is misaligned through leadership conflict, historic negative events, competitive interference, or accumulated organisational stress, the consequences show up in the balance sheet and the boardroom.</p>
+            <p>Our corporate programmes are not wellness initiatives or team-building exercises. They are serious, private, high-level spiritual engagements, designed to produce measurable improvement in the conditions that determine organisational prosperity.</p>
           </div>
           <div className="page-two-col__aside">
             <div className="page-highlight">
-              <p>"The most successful organisations understand that performance has invisible dimensions. We address those dimensions — with precision and complete discretion."</p>
+              <p>"The most successful organisations understand that performance has invisible dimensions. We address those dimensions with precision and complete discretion."</p>
             </div>
             <div className="page-info-box">
-              <h3>Spiritual Guidance for Corporations — Delivered With Full Discretion</h3>
+              <h3>Spiritual Guidance for Corporations: Delivered With Full Discretion</h3>
               <p>All corporate consultations are treated as commercially sensitive engagements. Full discretion is maintained at every stage.</p>
-              <h3>Executive Spiritual Consultation — From SME to Enterprise</h3>
-              <p>We work with organisations of every size — from growing businesses to large multinationals — with programmes scaled to match the complexity and scope of each engagement.</p>
+              <h3>Executive Spiritual Consultation: From SME to Enterprise</h3>
+              <p>We work with organisations of every size, from growing businesses to large multinationals, with programmes scaled to match the complexity and scope of each engagement.</p>
             </div>
           </div>
         </div>
       </SectionWrapper>
 
       <SectionWrapper background="default">
-        <WhoWeServe items={WHO} heading="Organisations We Serve" variant="card" columns={4} />
+        <WhoWeServe items={WHO} heading="Organisations We Serve: Corporations, Executives & Boards" variant="card" columns={4} />
       </SectionWrapper>
 
       <SectionWrapper background="alt">

@@ -94,8 +94,8 @@ export default function Home() {
 
       <HeroSection
         image={heroImage}
-        imageAlt="Spiritual business prosperity — Business Wealth Key"
-        title="The Spiritual Key to Wealth, Prosperity, and Business Success"
+        imageAlt="Psychic business consultations and prosperity rituals | Business Wealth Key"
+        title="Psychic Business Consultations, Prosperity Rituals & Wealth Activation"
         subtitle="Unlock the hidden forces behind business growth. Through psychic consultations, prosperity rituals, and spiritual guidance, we help entrepreneurs, executives, and corporations achieve lasting success."
         ctaPrimary={{ label: 'Book Private Consultation', href: '/contact' }}
         ctaSecondary={{ label: 'Explore Our Services', href: '/services' }}
@@ -120,12 +120,12 @@ export default function Home() {
         <div className="home-intro">
           <p className="home-intro__eyebrow">Trusted Spiritual Business Guidance</p>
           <h2 className="home-intro__heading">
-            Prosperity, Success &amp; Wealth — For Those Who Seek More
+            Business Prosperity, Wealth &amp; Success: For Entrepreneurs Who Seek More
           </h2>
           <p className="home-intro__body">
-            Business Wealth Key was founded to serve those who understand that lasting success
-            requires more than strategy alone. We work with driven individuals and organisations
-            who are ready to unlock the full potential of their prosperity.
+            Business Wealth Key was founded to serve those who understand that lasting business
+            prosperity requires more than strategy alone. We work with driven entrepreneurs,
+            executives, and corporations who are ready to unlock the full potential of their wealth.
           </p>
         </div>
         <WhoWeServe items={WHO_WE_SERVE} heading="We Work With" variant="pill" />
@@ -134,7 +134,7 @@ export default function Home() {
       {/* Challenges */}
       <SectionWrapper background="default">
         <ProblemList
-          heading="Is Your Business Experiencing Any of These Challenges?"
+          heading="Is Your Business Experiencing Financial or Spiritual Blockages?"
           items={PROBLEMS}
           icon="diamond"
           columns={2}
@@ -148,9 +148,9 @@ export default function Home() {
         style={{ backgroundImage: `url(${servicesBgImage})` }}
       >
         <div className="home-section-header">
-          <h2>Our Spiritual Business Services</h2>
+          <h2>Our Psychic &amp; Spiritual Business Services</h2>
           <div className="section-divider" />
-          <p>Six specialised service areas, each designed to unlock a specific dimension of business prosperity.</p>
+          <p>Six specialised psychic and spiritual service areas, from prosperity rituals to wealth activation, each designed to unlock a specific dimension of business prosperity.</p>
         </div>
         <div className="home-services-grid">
           {services.map((s) => (
@@ -170,17 +170,17 @@ export default function Home() {
         <div className="home-manifesto__inner">
           <span className="home-manifesto__ornament" aria-hidden="true">✦</span>
           <blockquote className="home-manifesto__quote">
-            "True prosperity is not found in strategy alone. It begins where logic ends —
+            "True prosperity is not found in strategy alone. It begins where logic ends,
             in the realm of energy, intention, and spiritual alignment."
           </blockquote>
-          <cite className="home-manifesto__cite">— Business Wealth Key</cite>
+          <cite className="home-manifesto__cite">Business Wealth Key</cite>
         </div>
       </section>
 
       {/* Benefits */}
       <SectionWrapper background="alt">
         <ProblemList
-          heading="What We Help You Unlock"
+          heading="What Our Spiritual Business Guidance Helps You Unlock"
           items={BENEFITS}
           icon="star"
           columns={1}
@@ -199,7 +199,7 @@ export default function Home() {
       {/* Process */}
       <SectionWrapper background="alt">
         <ProcessSteps
-          heading="How It Works"
+          heading="How Our Psychic Business Consultation Works"
           steps={HOME_STEPS}
           layout="horizontal"
         />

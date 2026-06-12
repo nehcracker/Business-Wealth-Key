@@ -47,7 +47,7 @@ const BREAKTHROUGH_AREAS = [
 ]
 
 const RESULTS = [
-  'A clearly identified cause for your business stagnation — spiritual and energetic',
+  'A clearly identified cause for your business stagnation, both spiritual and energetic',
   'Removal of the specific blockages preventing your breakthrough',
   'Renewed momentum and forward movement in business performance',
   'Greater confidence and clarity in your leadership and decision-making',
@@ -56,7 +56,7 @@ const RESULTS = [
   'A stronger energetic foundation to prevent future stagnation',
   'Restored alignment between your business vision and your daily results',
   'Leadership that feels genuinely re-energised and directionally clear',
-  'A business that is genuinely moving forward — not just managing the present',
+  'A business that is genuinely moving forward, not just managing the present',
 ]
 
 const TRUST = [
@@ -92,9 +92,9 @@ export default function BusinessBreakthrough() {
 
       <HeroSection
         image={heroImage}
-        imageAlt="Business Breakthrough — Business Wealth Key"
-        title="Business Breakthrough — Overcome Stagnation, Unlock Opportunities & Accelerate Growth"
-        subtitle="For businesses that are doing everything right — yet something invisible is holding back the growth, momentum, and success they deserve."
+        imageAlt="Business Breakthrough | Business Wealth Key"
+        title="Business Breakthrough: Overcome Stagnation, Unlock Opportunities & Accelerate Growth"
+        subtitle="For businesses that are doing everything right, yet something invisible is holding back the growth, momentum, and success they deserve."
         ctaPrimary={{ label: 'Book a Consultation', href: '/contact' }}
         align="center"
       />
@@ -105,18 +105,18 @@ export default function BusinessBreakthrough() {
             <p className="page-eyebrow">Breaking Through the Invisible</p>
             <h2 className="page-heading">Business Breakthrough Solutions</h2>
             <div className="section-divider" />
-            <p>Business stagnation is one of the most frustrating and disorienting experiences a business leader can face. When you have done everything by the book — built the right strategy, hired the right people, invested in the right areas — and the results still do not match the effort, something deeper is at work.</p>
+            <p>Business stagnation is one of the most frustrating and disorienting experiences a business leader can face. When you have done everything by the book, built the right strategy, hired the right people, invested in the right areas, and the results still do not match the effort, something deeper is at work.</p>
             <p>Our business breakthrough service is designed precisely for this situation. We conduct a comprehensive spiritual and energetic assessment of your business, identify the hidden forces responsible for your stagnation, and apply targeted spiritual guidance to remove them and restore forward momentum.</p>
-            <p>This is not motivational coaching. It is serious spiritual intervention — conducted with precision, delivered with discretion, and focused entirely on producing a genuine breakthrough for your business.</p>
+            <p>This is not motivational coaching. It is serious spiritual intervention, conducted with precision, delivered with discretion, and focused entirely on producing a genuine breakthrough for your business.</p>
           </div>
           <div className="page-two-col__aside">
             <div className="page-highlight">
-              <p>"Stagnation is not failure. It is a signal that something invisible is holding the business back — and invisible problems require non-conventional solutions."</p>
+              <p>"Stagnation is not failure. It is a signal that something invisible is holding the business back, and invisible problems require non-conventional solutions."</p>
             </div>
             <div className="page-info-box">
-              <h3>Overcome Business Stagnation — For Every Size of Business</h3>
+              <h3>Overcome Business Stagnation: For Every Size of Business</h3>
               <p>Breakthrough solutions for sole traders, SMEs, and large corporations. We scale our approach to match the size and complexity of your challenge.</p>
-              <h3>Business Stagnation Solutions — Ongoing Support Available</h3>
+              <h3>Business Stagnation Solutions: Ongoing Support Available</h3>
               <p>We provide continued support after the initial breakthrough to ensure momentum is maintained and the underlying conditions do not return.</p>
             </div>
           </div>

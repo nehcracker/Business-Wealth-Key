@@ -29,7 +29,7 @@ const SIGNS = [
   'A persistent feeling that financial growth is being held back by something unseen',
   'New markets or expansion efforts repeatedly fail despite solid preparation',
   'Competitors in the same space seem to progress while you remain stuck',
-  'Financial setbacks occur in patterns — not random events but recurring cycles',
+  'Financial setbacks occur in patterns, not random events but recurring cycles',
   'Internal conflicts and team dynamics seem to generate financial consequences',
   'Legal disputes, regulatory issues, or contractual problems drain resources',
   'Despite positive signs and good fortune, nothing seems to convert into lasting success',
@@ -38,7 +38,7 @@ const SIGNS = [
 const ROOT_CAUSES = [
   { title: 'Energy Misalignment',       desc: 'Your business or personal energy field is not aligned with the frequency of financial abundance.' },
   { title: 'Spiritual Interference',    desc: 'External negative energies or spiritual interference are actively blocking your prosperity.' },
-  { title: 'Relationship Dynamics',     desc: 'Key business relationships — partners, clients, employees — carry conflicting or negative energies.' },
+  { title: 'Relationship Dynamics',     desc: 'Key business relationships, including partners, clients, and employees, carry conflicting or negative energies.' },
   { title: 'Decision-Making Patterns',  desc: 'Recurring patterns of self-sabotage or misaligned decisions rooted in deeper causes.' },
   { title: 'Business Environment',      desc: 'The physical or energetic environment of your business carries residual negative energy.' },
   { title: 'Prosperity Consciousness',  desc: 'Deep-seated beliefs or spiritual conditions are limiting your capacity to receive abundance.' },
@@ -60,7 +60,7 @@ const WHAT_WE_RESTORE = [
 
 const TRUST = [
   { icon: <IconShield size={28} />, title: 'Absolute Confidentiality',     description: 'Your financial situation is handled with the utmost privacy and discretion.' },
-  { icon: <IconCompass size={28} />, title: 'Root Cause Analysis',          description: 'We identify the true underlying cause — not just the symptoms — of your blockage.' },
+  { icon: <IconCompass size={28} />, title: 'Root Cause Analysis',          description: 'We identify the true underlying cause, not just the symptoms, of your blockage.' },
   { icon: <IconCrown size={28} />, title: 'Proven Removal Methods',         description: 'Authentic, effective spiritual methods developed through decades of practice.' },
   { icon: <IconGlobe size={28} />, title: 'Worldwide Service',              description: 'Available to clients globally via secure, private online sessions.' },
   { icon: <IconDiamond size={28} />, title: 'Long-Term Prosperity Focus',   description: 'We remove blockages and build lasting protective foundations for your future growth.' },
@@ -91,8 +91,8 @@ export default function FinancialBlockage() {
 
       <HeroSection
         image={heroImage}
-        imageAlt="Financial Blockage Removal — Business Wealth Key"
-        title="Financial Blockage Removal — Restore Prosperity & Financial Flow"
+        imageAlt="Financial Blockage Removal | Business Wealth Key"
+        title="Financial Blockage Removal: Restore Prosperity & Financial Flow"
         subtitle="Many businesses experience recurring financial challenges despite consistent effort and strong strategy. The root cause may lie beyond what conventional analysis can reach."
         ctaPrimary={{ label: 'Book a Consultation', href: '/contact' }}
         align="center"
@@ -104,18 +104,18 @@ export default function FinancialBlockage() {
             <p className="page-eyebrow">Understanding the Problem</p>
             <h2 className="page-heading">What Is Financial Blockage Removal?</h2>
             <div className="section-divider" />
-            <p>A financial blockage is any spiritual, energetic, or metaphysical condition that restricts the natural flow of prosperity through your business or personal finances. These blockages operate below the surface of conventional business analysis — and they can persist for years, frustrating even the most capable and disciplined business operators.</p>
+            <p>A financial blockage is any spiritual, energetic, or metaphysical condition that restricts the natural flow of prosperity through your business or personal finances. These blockages operate below the surface of conventional business analysis, and they can persist for years, frustrating even the most capable and disciplined business operators.</p>
             <p>Financial blockages are not always the result of bad decisions or poor strategy. They often arise from external interference, energy misalignment, disrupted business relationships, or conditions in the environment surrounding your business that conventional consultants are not equipped to address.</p>
             <p>Our financial blockage removal service identifies the precise nature and source of the blockage, removes it through targeted spiritual work, and puts in place protective and restorative measures to support your financial recovery and long-term prosperity.</p>
           </div>
           <div className="page-two-col__aside">
             <div className="page-highlight">
-              <p>"If you have done everything right and the results still do not follow — the cause may be something no spreadsheet can identify."</p>
+              <p>"If you have done everything right and the results still do not follow, the cause may be something no spreadsheet can identify."</p>
             </div>
             <div className="page-info-box">
-              <h3>Spiritual Financial Blockage — Who Is Affected</h3>
-              <p>We work with sole traders, small businesses, and large corporations — wherever financial blockages are impacting performance.</p>
-              <h3>Financial Flow Restoration — Available Worldwide</h3>
+              <h3>Spiritual Financial Blockage: Who Is Affected</h3>
+              <p>We work with sole traders, small businesses, and large corporations wherever financial blockages are impacting performance.</p>
+              <h3>Financial Flow Restoration: Available Worldwide</h3>
               <p>All services delivered privately online. Available to clients worldwide across all time zones.</p>
             </div>
           </div>

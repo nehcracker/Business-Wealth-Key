@@ -59,7 +59,7 @@ const WHY_SEEK = [
 
 const TRUST = [
   { icon: <IconShield size={28} />, title: 'Absolute Discretion',        description: 'All rituals are conducted privately. Your details are never shared.' },
-  { icon: <IconFlame size={28} />, title: 'Genuine Ritual Practice',     description: 'Authentic, deeply-rooted spiritual ritual work — not performative ceremony.' },
+  { icon: <IconFlame size={28} />, title: 'Genuine Ritual Practice',     description: 'Authentic, deeply-rooted spiritual ritual work, not performative ceremony.' },
   { icon: <IconCrown size={28} />, title: 'Personalised Programmes',     description: 'Every ritual is designed around your specific business goals and spiritual profile.' },
   { icon: <IconGlobe size={28} />, title: 'Available Worldwide',         description: 'Ritual services available to clients globally via secure online delivery.' },
   { icon: <IconDiamond size={28} />, title: 'Corporate Packages Available', description: 'Bespoke prosperity programmes for organisations of all sizes and sectors.' },
@@ -90,7 +90,7 @@ export default function ProsperityRituals() {
 
       <HeroSection
         image={heroImage}
-        imageAlt="Prosperity Rituals — Business Wealth Key"
+        imageAlt="Prosperity Rituals | Business Wealth Key"
         title="Rituals for Business Success, Luck & Prosperity"
         subtitle="Remove spiritual and financial blockages. Attract luck, opportunity, and abundance through personalised prosperity rituals for entrepreneurs, executives, and corporations."
         ctaPrimary={{ label: 'Book a Consultation', href: '/contact' }}
@@ -105,17 +105,17 @@ export default function ProsperityRituals() {
             <div className="section-divider" />
             <p>Business prosperity rituals are powerful, personalised spiritual ceremonies designed to activate abundance, attract new opportunities, and strengthen the energetic foundations that support financial growth and success.</p>
             <p>Every ritual is tailored specifically to you and your business. We assess your current energetic and spiritual alignment, identify the areas where ritual work will have the greatest impact, and design a ceremony that addresses your goals at their root.</p>
-            <p>These are not symbolic gestures. They are serious spiritual interventions rooted in authentic practice — designed to produce real change in the flow of prosperity through your business and personal life.</p>
+            <p>These are not symbolic gestures. They are serious spiritual interventions rooted in authentic practice, designed to produce real change in the flow of prosperity through your business and personal life.</p>
           </div>
           <div className="page-two-col__aside">
             <div className="page-highlight">
               <p>"Prosperity is not luck. It is alignment. Our rituals create the conditions in which your business can thrive."</p>
             </div>
             <div className="page-info-box">
-              <h3>Private Ritual Sessions — Entrepreneurs & Corporations</h3>
+              <h3>Private Ritual Sessions: Entrepreneurs & Corporations</h3>
               <p>We serve solo entrepreneurs and large corporations alike. Every programme is scaled and customised to your size and goals.</p>
               <h3>Spiritual & Financial Blockage Removal Programmes</h3>
-              <p>One-time rituals or sustained prosperity programmes — we recommend the approach that will create the most lasting impact for your situation.</p>
+              <p>One-time rituals or sustained prosperity programmes. We recommend the approach that will create the most lasting impact for your situation.</p>
             </div>
           </div>
         </div>
@@ -128,7 +128,7 @@ export default function ProsperityRituals() {
       <SectionWrapper background="alt">
         <div className="page-section-header page-section-header--center">
           <p className="page-eyebrow">Ritual Services</p>
-          <h2 className="page-heading">Luck Rituals for Business — Our Full Offering</h2>
+          <h2 className="page-heading">Luck Rituals for Business: Our Full Offering</h2>
           <div className="section-divider" style={{ margin: 'var(--space-5) auto' }} />
         </div>
         <div className="page-cards-grid">

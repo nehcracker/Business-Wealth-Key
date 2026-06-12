@@ -31,7 +31,7 @@ export default function Footer() {
 
         {/* ── Brand column ── */}
         <div className="footer__brand">
-          <a href="/" className="footer__logo" aria-label="Business Wealth Key — home">
+          <a href="/" className="footer__logo" aria-label="Business Wealth Key home">
             <img src={logo} alt="Business Wealth Key" className="footer__logo-img" />
             <span className="footer__logo-text">
               <span className="footer__logo-top">Business</span>
@@ -46,7 +46,7 @@ export default function Footer() {
           </p>
 
           <p className="footer__global">
-            Serving clients worldwide — online consultations available across all time zones.
+            Serving clients worldwide. Online consultations available across all time zones.
           </p>
 
           <a

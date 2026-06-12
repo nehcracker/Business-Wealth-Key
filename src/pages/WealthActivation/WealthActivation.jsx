@@ -53,7 +53,7 @@ const WHY_SEEK = [
 
 const TRUST = [
   { icon: <IconShield size={28} />, title: 'Complete Confidentiality',    description: 'All wealth activation work is conducted in absolute privacy.' },
-  { icon: <IconCrown size={28} />, title: 'Authentic Practice',           description: 'Rooted in genuine spiritual tradition — not modern wellness trends.' },
+  { icon: <IconCrown size={28} />, title: 'Authentic Practice',           description: 'Rooted in genuine spiritual tradition, not modern wellness trends.' },
   { icon: <IconStar size={28} />, title: 'Personalised Activation',       description: 'Every programme is built around your unique wealth profile and goals.' },
   { icon: <IconGlobe size={28} />, title: 'Serving Clients Globally',     description: 'Available worldwide via secure online delivery.' },
   { icon: <IconDiamond size={28} />, title: 'Corporate Programmes',       description: 'Bespoke wealth activation for organisations of every size.' },
@@ -84,8 +84,8 @@ export default function WealthActivation() {
 
       <HeroSection
         image={heroImage}
-        imageAlt="Wealth Activation — Business Wealth Key"
-        title="Wealth Activation — Activate Prosperity, Expand Abundance & Strengthen Your Wealth Path"
+        imageAlt="Wealth Activation | Business Wealth Key"
+        title="Wealth Activation: Activate Prosperity, Expand Abundance & Strengthen Your Wealth Path"
         subtitle="For individuals and organisations seeking to move beyond financial plateaus and build a lasting foundation for wealth creation and sustained prosperity."
         ctaPrimary={{ label: 'Book a Consultation', href: '/contact' }}
         align="center"
@@ -97,19 +97,19 @@ export default function WealthActivation() {
             <p className="page-eyebrow">What This Service Offers</p>
             <h2 className="page-heading">Wealth Activation Services</h2>
             <div className="section-divider" />
-            <p>Wealth activation is the process of identifying and energising the spiritual and energetic conditions that enable sustained financial growth. It addresses the invisible foundations of wealth — the consciousness, alignment, and energetic pathways through which financial abundance flows.</p>
-            <p>Many individuals and businesses possess the capability for significant wealth creation, but are held back by invisible ceilings — spiritual conditions, prosperity consciousness limitations, or energetic misalignments that prevent their efforts from fully translating into financial results.</p>
+            <p>Wealth activation is the process of identifying and energising the spiritual and energetic conditions that enable sustained financial growth. It addresses the invisible foundations of wealth: the consciousness, alignment, and energetic pathways through which financial abundance flows.</p>
+            <p>Many individuals and businesses possess the capability for significant wealth creation, but are held back by invisible ceilings: spiritual conditions, prosperity consciousness limitations, or energetic misalignments that prevent their efforts from fully translating into financial results.</p>
             <p>Our wealth activation programmes identify these conditions, remove the barriers, and actively cultivate the spiritual foundations required for lasting prosperity and abundance at every level of your business and personal finances.</p>
           </div>
           <div className="page-two-col__aside">
             <div className="page-highlight">
-              <p>"Wealth is not simply earned. It is activated — through the right alignment of energy, intention, and spiritual foundation."</p>
+              <p>"Wealth is not simply earned. It is activated through the right alignment of energy, intention, and spiritual foundation."</p>
             </div>
             <div className="page-info-box">
               <h3>Wealth Consciousness Activation for Individuals & Corporations</h3>
               <p>We work with sole traders, high net worth individuals, and large corporations. Wealth activation is relevant at every scale of ambition.</p>
               <h3>Spiritual Wealth Activation Programmes Available</h3>
-              <p>Single activation sessions or sustained wealth development programmes — we design the approach that will create the most lasting results for your situation.</p>
+              <p>Single activation sessions or sustained wealth development programmes. We design the approach that will create the most lasting results for your situation.</p>
             </div>
           </div>
         </div>

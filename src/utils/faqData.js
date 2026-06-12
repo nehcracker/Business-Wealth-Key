@@ -17,7 +17,7 @@ export const faqData = {
     },
     {
       question: 'Can corporations book psychic business consultations?',
-      answer:   'Yes. We offer dedicated corporate consultation packages for organisations of all sizes — from startups to established corporations. Please contact us to discuss a tailored programme.',
+      answer:   'Yes. We offer dedicated corporate consultation packages for organisations of all sizes, from startups to established corporations. Please contact us to discuss a tailored programme.',
     },
   ],
   'prosperity-rituals': [
@@ -27,7 +27,7 @@ export const faqData = {
     },
     {
       question: 'Can luck rituals for business really produce results?',
-      answer:   'Yes. Luck rituals work by shifting the energetic environment around your business — removing resistance, attracting opportunity, and creating alignment between your intentions and your outcomes. Clients consistently report increased momentum, new opportunities, and improved financial flow following ritual work.',
+      answer:   'Yes. Luck rituals work by shifting the energetic environment around your business, removing resistance, attracting opportunity, and creating alignment between your intentions and your outcomes. Clients consistently report increased momentum, new opportunities, and improved financial flow following ritual work.',
     },
     {
       question: 'Can a ritual help with spiritual or financial blockage removal?',
@@ -41,7 +41,7 @@ export const faqData = {
   'financial-blockage': [
     {
       question: 'What causes financial blockages in a business?',
-      answer:   'Financial blockages can stem from a variety of sources — negative energy patterns, misaligned decisions, strained business relationships, environmental factors, or underlying prosperity consciousness issues. Our assessment identifies the root cause specific to your situation.',
+      answer:   'Financial blockages can stem from a variety of sources, including negative energy patterns, misaligned decisions, strained business relationships, environmental factors, or underlying prosperity consciousness issues. Our assessment identifies the root cause specific to your situation.',
     },
     {
       question: 'How long does financial blockage removal take?',
@@ -81,7 +81,7 @@ export const faqData = {
     },
     {
       question: 'What types of businesses do you work with?',
-      answer:   'We work with businesses of all sizes and sectors — from sole traders and startups to established companies and large corporations. Our services are tailored to your specific situation.',
+      answer:   'We work with businesses of all sizes and sectors, from sole traders and startups to established companies and large corporations. Our services are tailored to your specific situation.',
     },
     {
       question: 'Are business breakthrough consultations confidential?',
@@ -95,7 +95,7 @@ export const faqData = {
   'corporate-solutions': [
     {
       question: 'Do you work with large corporations?',
-      answer:   'Yes. Our corporate programmes are designed to scale — whether you represent a growing business, a mid-sized company, or a large multinational corporation.',
+      answer:   'Yes. Our corporate programmes are designed to scale, whether you represent a growing business, a mid-sized company, or a large multinational corporation.',
     },
     {
       question: 'How is executive confidentiality maintained?',
@@ -103,7 +103,7 @@ export const faqData = {
     },
     {
       question: 'Can you create a custom corporate spiritual programme?',
-      answer:   'Yes. All corporate programmes are bespoke — designed around your organisation\'s specific goals, challenges, and structure. We do not offer off-the-shelf packages for corporate clients.',
+      answer:   'Yes. All corporate programmes are bespoke, designed around your organisation\'s specific goals, challenges, and structure. We do not offer off-the-shelf packages for corporate clients.',
     },
     {
       question: 'Do you serve international corporations?',

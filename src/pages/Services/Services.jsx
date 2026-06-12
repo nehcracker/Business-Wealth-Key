@@ -18,13 +18,13 @@ const WHO_WE_SERVE = [
 
 const TRUST_ITEMS = [
   { icon: <IconShield size={28} />, title: 'Absolute Confidentiality',     description: 'All services and consultations are conducted in complete privacy.' },
-  { icon: <IconDiamond size={28} />, title: 'Fully Personalised',          description: 'Every programme is built around your unique situation — no generic solutions.' },
+  { icon: <IconDiamond size={28} />, title: 'Fully Personalised',          description: 'Every programme is built around your unique situation with no generic solutions.' },
   { icon: <IconCrown size={28} />, title: 'Prosperity-Centred',            description: 'Our purpose is your lasting business prosperity and financial success.' },
   { icon: <IconGlobe size={28} />, title: 'Global Client Base',            description: 'We serve clients across every continent via secure online consultations.' },
   { icon: <IconStar size={28} />, title: 'Deep Spiritual Expertise',       description: 'Decades of experience guiding businesses through spiritual and energetic challenges.' },
   { icon: <IconKey size={28} />, title: 'Trusted by Leaders',              description: 'Entrepreneurs, executives, investors, and corporations trust us with their goals.' },
   { icon: <IconBolt size={28} />, title: 'Results-Oriented Guidance',      description: 'Every service is focused on producing real, measurable change in your business.' },
-  { icon: <IconEye size={28} />, title: 'Honest & Transparent',            description: 'We provide genuine insight — not comfort. We tell you what your business needs to hear.' },
+  { icon: <IconEye size={28} />, title: 'Honest & Transparent',            description: 'We provide genuine insight, not comfort. We tell you what your business needs to hear.' },
 ]
 
 export default function Services() {
@@ -34,7 +34,7 @@ export default function Services() {
       {seo}
       <HeroSection
         image={heroImage}
-        imageAlt="Spiritual business services hero image — Business Wealth Key"
+        imageAlt="Spiritual business services hero image | Business Wealth Key"
         title="Spiritual Solutions for Business Growth, Prosperity, and Financial Success"
         subtitle="Six specialised service areas, each designed to unlock a specific dimension of business prosperity. From psychic insight to corporate prosperity programmes, we address what strategy alone cannot."
         ctaPrimary={{ label: 'Book a Consultation', href: '/contact' }}
@@ -48,7 +48,7 @@ export default function Services() {
           <h2 className="page-heading">Unlock the Hidden Forces Behind Success</h2>
           <div className="section-divider" style={{ margin: 'var(--space-5) auto' }} />
           <p className="page-lead">
-            Every business challenge has a visible dimension and a hidden one. Our services address both —
+            Every business challenge has a visible dimension and a hidden one. Our services address both,
             combining deep spiritual insight with a clear-eyed understanding of what it takes to succeed.
           </p>
         </div>

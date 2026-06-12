@@ -55,7 +55,7 @@ export default function Navbar() {
       <div className="navbar__inner">
 
         {/* ── Logo ── */}
-        <a href="/" className="navbar__logo" aria-label="Business Wealth Key — home">
+        <a href="/" className="navbar__logo" aria-label="Business Wealth Key home">
           <img src={logo} alt="Business Wealth Key" className="navbar__logo-img" />
           <span className="navbar__logo-text" aria-hidden="true">
             <span className="navbar__logo-top">Business</span>

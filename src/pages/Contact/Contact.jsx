@@ -9,7 +9,7 @@ import './Contact.css'
 
 const WHY_CONTACT = [
   'You are ready to address a persistent business challenge with a deeper level of insight',
-  'You want genuine clarity on a major decision — not reassurance, but truth',
+  'You want genuine clarity on a major decision, not reassurance, but truth',
   'You believe something unseen is influencing your business results and you want it identified',
   'You are seeking spiritual guidance for a significant business transition or opportunity',
   'You represent a corporation that requires a confidential, high-level spiritual engagement',
@@ -43,7 +43,7 @@ export default function Contact() {
 
             <p className="contact-left__text">
               Every successful journey begins with a conversation.
-              Submit your request and we will be in touch promptly —
+              Submit your request and we will be in touch promptly,
               in complete confidence.
             </p>
 
@@ -65,7 +65,7 @@ export default function Contact() {
               </div>
               <div className="contact-detail">
                 <span className="contact-detail__label">Availability</span>
-                <span className="contact-detail__value">Online — All Time Zones Served</span>
+                <span className="contact-detail__value">Online, All Time Zones Served</span>
               </div>
             </div>
 
