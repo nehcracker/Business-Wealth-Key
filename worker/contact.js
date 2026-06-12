@@ -115,6 +115,7 @@ export default {
         body: JSON.stringify({
           from:     { address: 'noreply@businesswealthkey.com', name: 'Business Wealth Key' },
           to:       [{ email_address: { address: env.CONTACT_EMAIL, name: 'Business Wealth Key' }}],
+          cc:       [{ email_address: { address: 'consultations@businesswealthkey.com', name: 'Consultations' }}],
           reply_to: [{ address: email, name: fullName }],
           subject:  `New Consultation Request — ${fullName}`,
           htmlbody: htmlBody,

@@ -12,6 +12,9 @@ import './styles/pages.css'
 
 import App from './App'
 
+document.addEventListener('copy', (e) => e.preventDefault())
+document.addEventListener('contextmenu', (e) => e.preventDefault())
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <HelmetProvider>
