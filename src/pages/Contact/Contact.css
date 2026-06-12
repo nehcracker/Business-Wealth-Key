@@ -16,7 +16,6 @@
   height: calc(100vh - var(--navbar-height));
   align-self: start;
   overflow-y: auto;
-  scrollbar-width: none; /* Firefox 64+ */
   -ms-overflow-style: none;
 
   background:
