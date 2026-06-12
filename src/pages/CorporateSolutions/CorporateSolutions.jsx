@@ -1,4 +1,4 @@
-import { useSEO } from '../../hooks/useSEO'
+﻿import { useSEO } from '../../hooks/useSEO'
 import { Helmet } from 'react-helmet-async'
 import HeroSection from '../../components/common/HeroSection/HeroSection'
 import SectionWrapper from '../../components/common/SectionWrapper/SectionWrapper'
@@ -92,7 +92,7 @@ export default function CorporateSolutions() {
         imageAlt="Corporate Spiritual Solutions | Business Wealth Key"
         title="Corporate Spiritual Solutions: Spiritual Guidance for Corporate Growth, Prosperity & Leadership"
         subtitle="Tailored spiritual solutions for corporations, executives, directors, and investors. Addressing the invisible forces that shape organisational performance at the highest level."
-        ctaPrimary={{ label: 'Submit a Corporate Enquiry', href: '/contact' }}
+        ctaPrimary={{ label: 'Submit a Corporate Enquiry', href: '/contact#consultation-form' }}
         align="center"
       />
 
@@ -163,7 +163,7 @@ export default function CorporateSolutions() {
       <CTABanner
         heading="Begin Your Corporate Spiritual Solutions Engagement Today"
         subtext="Submit a confidential corporate enquiry and begin exploring what spiritual guidance can unlock for your organisation."
-        ctaPrimary={{ label: 'Submit a Corporate Enquiry', href: '/contact' }}
+        ctaPrimary={{ label: 'Submit a Corporate Enquiry', href: '/contact#consultation-form' }}
         variant="dark"
       />
     </>

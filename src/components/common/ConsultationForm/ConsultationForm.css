@@ -481,3 +481,11 @@
   .cf__method-group     { grid-template-columns: 1fr 1fr; }
   .cf__service-group    { grid-template-columns: 1fr; }
 }
+
+/* Prevent iOS Safari from zooming on input focus (requires font-size >= 16px) */
+@media (max-width: 640px) {
+  .cf__input,
+  .cf__textarea {
+    font-size: 16px;
+  }
+}

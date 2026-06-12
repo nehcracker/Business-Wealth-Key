@@ -1,4 +1,4 @@
-import { useSEO } from '../../hooks/useSEO'
+﻿import { useSEO } from '../../hooks/useSEO'
 import { Helmet } from 'react-helmet-async'
 import HeroSection from '../../components/common/HeroSection/HeroSection'
 import SectionWrapper from '../../components/common/SectionWrapper/SectionWrapper'
@@ -87,7 +87,7 @@ export default function WealthActivation() {
         imageAlt="Wealth Activation | Business Wealth Key"
         title="Wealth Activation: Activate Prosperity, Expand Abundance & Strengthen Your Wealth Path"
         subtitle="For individuals and organisations seeking to move beyond financial plateaus and build a lasting foundation for wealth creation and sustained prosperity."
-        ctaPrimary={{ label: 'Book a Consultation', href: '/contact' }}
+        ctaPrimary={{ label: 'Book a Consultation', href: '/contact#consultation-form' }}
         align="center"
       />
 
@@ -158,7 +158,7 @@ export default function WealthActivation() {
       <CTABanner
         heading="Begin Your Wealth Activation Programme Today"
         subtext="Take the first step toward unlocking your full wealth potential with a private consultation."
-        ctaPrimary={{ label: 'Book a Consultation', href: '/contact' }}
+        ctaPrimary={{ label: 'Book a Consultation', href: '/contact#consultation-form' }}
         variant="dark"
       />
     </>

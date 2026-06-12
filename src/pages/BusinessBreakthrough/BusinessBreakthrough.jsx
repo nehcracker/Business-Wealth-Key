@@ -1,4 +1,4 @@
-import { useSEO } from '../../hooks/useSEO'
+﻿import { useSEO } from '../../hooks/useSEO'
 import { Helmet } from 'react-helmet-async'
 import HeroSection from '../../components/common/HeroSection/HeroSection'
 import SectionWrapper from '../../components/common/SectionWrapper/SectionWrapper'
@@ -95,7 +95,7 @@ export default function BusinessBreakthrough() {
         imageAlt="Business Breakthrough | Business Wealth Key"
         title="Business Breakthrough: Overcome Stagnation, Unlock Opportunities & Accelerate Growth"
         subtitle="For businesses that are doing everything right, yet something invisible is holding back the growth, momentum, and success they deserve."
-        ctaPrimary={{ label: 'Book a Consultation', href: '/contact' }}
+        ctaPrimary={{ label: 'Book a Consultation', href: '/contact#consultation-form' }}
         align="center"
       />
 
@@ -166,7 +166,7 @@ export default function BusinessBreakthrough() {
       <CTABanner
         heading="Begin Your Business Breakthrough Today"
         subtext="Begin identifying and removing what is holding your business back. Book a private consultation today."
-        ctaPrimary={{ label: 'Book a Consultation', href: '/contact' }}
+        ctaPrimary={{ label: 'Book a Consultation', href: '/contact#consultation-form' }}
         variant="dark"
       />
     </>

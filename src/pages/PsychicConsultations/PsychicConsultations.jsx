@@ -1,4 +1,4 @@
-import { useSEO } from '../../hooks/useSEO'
+﻿import { useSEO } from '../../hooks/useSEO'
 import { Helmet } from 'react-helmet-async'
 import HeroSection from '../../components/common/HeroSection/HeroSection'
 import SectionWrapper from '../../components/common/SectionWrapper/SectionWrapper'
@@ -85,7 +85,7 @@ export default function PsychicConsultations() {
         imageAlt="Psychic Business Consultations | Business Wealth Key"
         title="Psychic Business Consultations: Gain Clarity, Identify Opportunities & Strengthen Your Path to Success"
         subtitle="Every business decision shapes the future of your company. A psychic business consultation provides the deeper clarity that strategy and analysis alone cannot offer."
-        ctaPrimary={{ label: 'Book a Consultation', href: '/contact' }}
+        ctaPrimary={{ label: 'Book a Consultation', href: '/contact#consultation-form' }}
         align="center"
       />
 
@@ -170,7 +170,7 @@ export default function PsychicConsultations() {
       <CTABanner
         heading="Book Your Psychic Business Consultation Today"
         subtext="Book a private psychic business consultation and take the first step toward the clarity your business needs."
-        ctaPrimary={{ label: 'Book Your Consultation', href: '/contact' }}
+        ctaPrimary={{ label: 'Book Your Consultation', href: '/contact#consultation-form' }}
         variant="dark"
       />
     </>

@@ -1,4 +1,4 @@
-import { useSEO } from '../../hooks/useSEO'
+﻿import { useSEO } from '../../hooks/useSEO'
 import { Helmet } from 'react-helmet-async'
 import HeroSection from '../../components/common/HeroSection/HeroSection'
 import SectionWrapper from '../../components/common/SectionWrapper/SectionWrapper'
@@ -93,7 +93,7 @@ export default function ProsperityRituals() {
         imageAlt="Prosperity Rituals | Business Wealth Key"
         title="Rituals for Business Success, Luck & Prosperity"
         subtitle="Remove spiritual and financial blockages. Attract luck, opportunity, and abundance through personalised prosperity rituals for entrepreneurs, executives, and corporations."
-        ctaPrimary={{ label: 'Book a Consultation', href: '/contact' }}
+        ctaPrimary={{ label: 'Book a Consultation', href: '/contact#consultation-form' }}
         align="center"
       />
 
@@ -164,7 +164,7 @@ export default function ProsperityRituals() {
       <CTABanner
         heading="Begin Your Ritual for Business Success Today"
         subtext="Start your prosperity ritual programme and take decisive action toward the abundance your business deserves."
-        ctaPrimary={{ label: 'Book a Consultation', href: '/contact' }}
+        ctaPrimary={{ label: 'Book a Consultation', href: '/contact#consultation-form' }}
         variant="dark"
       />
     </>

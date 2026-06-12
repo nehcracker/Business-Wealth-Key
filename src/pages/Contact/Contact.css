@@ -267,11 +267,16 @@ a.contact-detail__value:hover {
   .contact-split {
     grid-template-columns: 1fr;
   }
+  /* Form first — info panel scrolls below */
+  .contact-split__right {
+    order: -1;
+    min-height: 0;
+  }
   .contact-split__left {
     position: static;
     height: auto;
     border-right: none;
-    border-bottom: 1px solid var(--color-amethyst-border);
+    border-top: 1px solid var(--color-amethyst-border);
   }
   .contact-left__inner {
     padding: var(--space-12) var(--space-6);
@@ -279,12 +284,11 @@ a.contact-detail__value:hover {
     margin-inline: auto;
     width: 100%;
   }
-  .contact-split__right { min-height: 0; }
   .contact-form-wrapper { padding: var(--space-12) var(--space-6) var(--space-16); }
 }
 
 @media (max-width: 640px) {
-  .contact-left__inner { padding: var(--space-10) var(--space-5); }
+  .contact-left__inner   { padding: var(--space-10) var(--space-5); }
   .contact-left__heading { font-size: clamp(2.2rem, 9vw, 2.8rem); }
-  .contact-form-wrapper  { padding: var(--space-10) var(--space-5) var(--space-12); }
+  .contact-form-wrapper  { padding: var(--space-8) var(--space-5) var(--space-12); }
 }

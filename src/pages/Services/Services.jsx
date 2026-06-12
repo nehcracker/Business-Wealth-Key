@@ -1,4 +1,4 @@
-import { useSEO } from '../../hooks/useSEO'
+﻿import { useSEO } from '../../hooks/useSEO'
 import HeroSection from '../../components/common/HeroSection/HeroSection'
 import SectionWrapper from '../../components/common/SectionWrapper/SectionWrapper'
 import ServiceCard from '../../components/common/ServiceCard/ServiceCard'
@@ -37,7 +37,7 @@ export default function Services() {
         imageAlt="Spiritual business services hero image | Business Wealth Key"
         title="Spiritual Solutions for Business Growth, Prosperity, and Financial Success"
         subtitle="Six specialised service areas, each designed to unlock a specific dimension of business prosperity. From psychic insight to corporate prosperity programmes, we address what strategy alone cannot."
-        ctaPrimary={{ label: 'Book a Consultation', href: '/contact' }}
+        ctaPrimary={{ label: 'Book a Consultation', href: '/contact#consultation-form' }}
         ctaSecondary={{ label: 'About Us', href: '/about' }}
         align="center"
       />
@@ -78,7 +78,7 @@ export default function Services() {
       <CTABanner
         heading="Take the Next Step Toward Prosperity"
         subtext="Every journey begins with a single conversation. Book your private consultation today."
-        ctaPrimary={{ label: 'Book a Consultation', href: '/contact' }}
+        ctaPrimary={{ label: 'Book a Consultation', href: '/contact#consultation-form' }}
         ctaSecondary={{ label: 'View All Services', href: '/services' }}
         variant="dark"
       />

@@ -1,4 +1,4 @@
-import { useSEO } from '../../hooks/useSEO'
+﻿import { useSEO } from '../../hooks/useSEO'
 import { useScrollReveal } from '../../hooks/useScrollReveal'
 import HeroSection from '../../components/common/HeroSection/HeroSection'
 import SectionWrapper from '../../components/common/SectionWrapper/SectionWrapper'
@@ -97,7 +97,7 @@ export default function Home() {
         imageAlt="Psychic business consultations and prosperity rituals | Business Wealth Key"
         title="Psychic Business Consultations, Prosperity Rituals & Wealth Activation"
         subtitle="Unlock the hidden forces behind business growth. Through psychic consultations, prosperity rituals, and spiritual guidance, we help entrepreneurs, executives, and corporations achieve lasting success."
-        ctaPrimary={{ label: 'Book Private Consultation', href: '/contact' }}
+        ctaPrimary={{ label: 'Book Private Consultation', href: '/contact#consultation-form' }}
         ctaSecondary={{ label: 'Explore Our Services', href: '/services' }}
         eager
         align="center"
@@ -208,8 +208,8 @@ export default function Home() {
       <CTABanner
         heading="Your Success Begins with The Right Key"
         subtext="Take the first step toward lasting prosperity. Book a private consultation and begin your journey."
-        ctaPrimary={{ label: 'Schedule Consultation', href: '/contact' }}
-        ctaSecondary={{ label: 'Speak With an Advisor', href: '/contact' }}
+        ctaPrimary={{ label: 'Schedule Consultation', href: '/contact#consultation-form' }}
+        ctaSecondary={{ label: 'Speak With an Advisor', href: '/contact#consultation-form' }}
         variant="dark"
       />
     </>

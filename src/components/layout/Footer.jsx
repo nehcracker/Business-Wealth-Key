@@ -92,7 +92,7 @@ export default function Footer() {
             <p className="footer__consult-text">
               Begin your journey toward prosperity and business success.
             </p>
-            <Link to="/contact" className="footer__cta">
+            <Link to="/contact#consultation-form" className="footer__cta">
               Book Consultation
             </Link>
           </div>

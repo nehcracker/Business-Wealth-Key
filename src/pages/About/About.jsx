@@ -1,4 +1,4 @@
-import { useSEO } from '../../hooks/useSEO'
+﻿import { useSEO } from '../../hooks/useSEO'
 import HeroSection from '../../components/common/HeroSection/HeroSection'
 import SectionWrapper from '../../components/common/SectionWrapper/SectionWrapper'
 import ServiceCard from '../../components/common/ServiceCard/ServiceCard'
@@ -51,7 +51,7 @@ export default function About() {
         imageAlt="Business Wealth Key: trusted spiritual business guidance and prosperity consultancy"
         title="Trusted Spiritual Business Guidance: About Business Wealth Key"
         subtitle="We exist to serve those who know their business is capable of more, and who are ready to unlock the forces that make lasting prosperity possible."
-        ctaPrimary={{ label: 'Book a Consultation', href: '/contact' }}
+        ctaPrimary={{ label: 'Book a Consultation', href: '/contact#consultation-form' }}
         ctaSecondary={{ label: 'Our Services', href: '/services' }}
         align="center"
       />
@@ -129,7 +129,7 @@ export default function About() {
       <CTABanner
         heading="Your Success Journey Starts Here"
         subtext="Speak privately with Business Wealth Key and take the first step toward lasting prosperity."
-        ctaPrimary={{ label: 'Book a Consultation', href: '/contact' }}
+        ctaPrimary={{ label: 'Book a Consultation', href: '/contact#consultation-form' }}
         variant="dark"
       />
     </>

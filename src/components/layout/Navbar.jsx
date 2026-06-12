@@ -85,7 +85,7 @@ export default function Navbar() {
         </nav>
 
         {/* ── Desktop CTA ── */}
-        <Link to="/contact" className="navbar__cta" aria-label="Book a private consultation">
+        <Link to="/contact#consultation-form" className="navbar__cta" aria-label="Book a private consultation">
           Book Consultation
         </Link>
 
@@ -139,7 +139,7 @@ export default function Navbar() {
               style={{ '--i': NAV_LINKS.length }}
             >
               <Link
-                to="/contact"
+                to="/contact#consultation-form"
                 className="navbar__mobile-cta"
                 tabIndex={menuOpen ? 0 : -1}
               >

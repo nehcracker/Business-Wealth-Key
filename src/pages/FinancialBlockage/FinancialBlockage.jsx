@@ -1,4 +1,4 @@
-import { useSEO } from '../../hooks/useSEO'
+﻿import { useSEO } from '../../hooks/useSEO'
 import { Helmet } from 'react-helmet-async'
 import HeroSection from '../../components/common/HeroSection/HeroSection'
 import SectionWrapper from '../../components/common/SectionWrapper/SectionWrapper'
@@ -94,7 +94,7 @@ export default function FinancialBlockage() {
         imageAlt="Financial Blockage Removal | Business Wealth Key"
         title="Financial Blockage Removal: Restore Prosperity & Financial Flow"
         subtitle="Many businesses experience recurring financial challenges despite consistent effort and strong strategy. The root cause may lie beyond what conventional analysis can reach."
-        ctaPrimary={{ label: 'Book a Consultation', href: '/contact' }}
+        ctaPrimary={{ label: 'Book a Consultation', href: '/contact#consultation-form' }}
         align="center"
       />
 
@@ -165,7 +165,7 @@ export default function FinancialBlockage() {
       <CTABanner
         heading="Begin Your Financial Blockage Removal Today"
         subtext="Begin the process of identifying and removing what is holding your business back from the financial success it deserves."
-        ctaPrimary={{ label: 'Book a Consultation', href: '/contact' }}
+        ctaPrimary={{ label: 'Book a Consultation', href: '/contact#consultation-form' }}
         variant="dark"
       />
     </>
