@@ -266,6 +266,7 @@ a.contact-detail__value:hover {
 @media (max-width: 920px) {
   .contact-split {
     grid-template-columns: 1fr;
+    overflow-x: hidden;
   }
   /* Form first — info panel scrolls below */
   .contact-split__right {
@@ -275,9 +276,11 @@ a.contact-detail__value:hover {
   .contact-split__left {
     position: static;
     height: auto;
+    overflow: hidden;
     border-right: none;
     border-top: 1px solid var(--color-amethyst-border);
   }
+  .contact-left__orb { display: none; }
   .contact-left__inner {
     padding: var(--space-12) var(--space-6);
     max-width: 680px;
