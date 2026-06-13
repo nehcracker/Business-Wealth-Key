@@ -79,6 +79,13 @@ export default function ConsultationForm() {
       if (data.ok) {
         setStatus('success')
         setFields(INITIAL_STATE)
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'conversion', {
+            send_to: 'AW-18234308546/ame7COWvsb4cEMLv5fZD',
+            value: 1.0,
+            currency: 'USD',
+          })
+        }
       } else {
         setStatus('error')
         setErrMsg(data.error || FORM_CONFIG.messages.error)
