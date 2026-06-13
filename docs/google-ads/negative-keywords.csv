@@ -1,0 +1,50 @@
+Negative Keyword,Match Type,Apply To
+working at rituals,Broad,All campaigns
+working for rituals,Broad,All campaigns
+ritual jobs,Broad,All campaigns
+ritual careers,Broad,All campaigns
+health rituals,Phrase,All campaigns
+wellness rituals,Phrase,All campaigns
+beauty rituals,Phrase,All campaigns
+ritual cosmetics,Phrase,All campaigns
+ritual health and beauty,Phrase,All campaigns
+morning rituals,Phrase,All campaigns
+bedtime rituals,Phrase,All campaigns
+how to do rituals,Phrase,All campaigns
+diy ritual,Phrase,All campaigns
+free ritual,Phrase,All campaigns
+free psychic,Phrase,Campaign B
+free reading,Phrase,Campaign B
+psychic jobs,Phrase,Campaign B
+psychic career,Phrase,Campaign B
+become a psychic,Phrase,Campaign B
+psychic training,Phrase,Campaign B
+psychic course,Phrase,Campaign B
+astrology,Exact,All campaigns
+tarot,Exact,All campaigns
+horoscope,Exact,All campaigns
+youtube,Exact,All campaigns
+reddit,Exact,All campaigns
+satanic,Broad,All campaigns
+chakra,Broad,All campaigns
+root chakra,Phrase,All campaigns
+buy yourself,Phrase,All campaigns
+marketing strategy,Phrase,Campaigns C D E
+rituals marketing,Phrase,Campaigns C D E
+brand rituals,Phrase,Campaigns C D E
+ritual soap,Phrase,All campaigns
+ritual vitamin,Phrase,All campaigns
+ritual supplement,Phrase,All campaigns
+psychic hotline,Phrase,Campaign B
+psychic phone,Phrase,Campaign B
+daily manifestation,Phrase,Campaigns C D
+routine ritual,Phrase,All campaigns
+life rituals,Phrase,Campaigns C D
+21 rituals,Phrase,All campaigns
+21 rituals to change,Phrase,All campaigns
+book sarah,Phrase,All campaigns
+creating rituals,Phrase,Campaigns C D
+rituals in everyday life,Phrase,Campaigns C D
+daily routine,Phrase,Campaigns C D
+how to clear energy,Phrase,All campaigns
+how to remove energy,Phrase,All campaigns
