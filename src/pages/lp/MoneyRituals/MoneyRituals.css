@@ -1,0 +1,956 @@
+/* ─── /lp/money-rituals — Sacred Treasury / Alchemical Gold ──────────────── */
+
+/* ── Design tokens — gold palette for this page ──────────────────────────── */
+.lp {
+  --lp-bg:          #100C1A;  /* lifted: was #060409 */
+  --lp-bg-alt:      #170F26;  /* lifted: was #0A0710 */
+  --lp-gold:        #D4A030;  /* brighter gold */
+  --lp-gold-light:  #EDD070;  /* brighter light gold */
+  --lp-gold-pale:   #F8EBBB;  /* brighter pale gold */
+  --lp-gold-dim:    rgba(212, 160, 48, 0.13);
+  --lp-gold-glow:   rgba(212, 160, 48, 0.28);
+  --lp-gold-ring:   rgba(212, 160, 48, 0.50);  /* more visible rings */
+  --lp-text:        #F2EEF9;  /* bright primary text */
+  --lp-text-sub:    #C8BAE0;  /* lifted: was #A898C4 */
+  --lp-text-dim:    #8A7EAA;  /* lifted: was #5C527A */
+  --lp-border:      rgba(212, 160, 48, 0.28);  /* more visible borders */
+
+  background: var(--lp-bg);
+  color: var(--lp-text);
+  font-family: 'Jost', system-ui, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── Global type inside lp ───────────────────────────────────────────────── */
+
+.lp-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 9.5px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--lp-gold);
+  opacity: 0.75;
+  margin-bottom: 0.75rem;
+}
+
+.lp-eyebrow--center { text-align: center; }
+
+.lp-h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--lp-text);
+  margin-bottom: 1.5rem;
+}
+
+.lp-body {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  line-height: 1.88;
+  color: var(--lp-text-sub);
+  margin-bottom: 1.2rem;
+  max-width: 660px;
+}
+
+.lp-br--md { display: block; }
+
+/* ── Hero ─────────────────────────────────────────────────────────────────── */
+
+.lp-hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 1.5rem 4rem;
+  overflow: hidden;
+  gap: 0;
+
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 25%, rgba(212, 160, 48, 0.16) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 20% 80%,  rgba(140, 80, 200, 0.09) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 50% at 80% 80%,  rgba(200, 120, 40, 0.07) 0%, transparent 55%),
+    var(--lp-bg);
+}
+
+/* Floating particles */
+.lp-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.lp-particle {
+  position: absolute;
+  bottom: -4px;
+  left: var(--p-x);
+  width: var(--p-size);
+  height: var(--p-size);
+  border-radius: 50%;
+  background: var(--lp-gold);
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .lp-particle {
+    animation: particleRise var(--p-dur) var(--p-delay) linear infinite;
+  }
+
+  @keyframes particleRise {
+    0%   { transform: translateY(0)      scale(1);   opacity: 0; }
+    5%   { opacity: var(--p-opacity); }
+    88%  { opacity: var(--p-opacity); }
+    100% { transform: translateY(-100vh) scale(0.3); opacity: 0; }
+  }
+}
+
+/* ── CSS 3D Portal Rings ─────────────────────────────────────────────────── */
+
+.lp-portal-wrap {
+  position: relative;
+  width: 500px;
+  max-width: 90vw;
+  height: 240px;
+  flex-shrink: 0;
+  margin-bottom: 3rem;
+  perspective: 1400px;
+  perspective-origin: 50% 40%;
+}
+
+.lp-portal__bg-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(212, 160, 48, 0.22) 0%, rgba(212, 160, 48, 0.08) 40%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .lp-portal__bg-glow {
+    animation: glowBreath 4s ease-in-out infinite alternate;
+  }
+  @keyframes glowBreath {
+    from { transform: translate(-50%, -50%) scale(1);    opacity: 0.7; }
+    to   { transform: translate(-50%, -50%) scale(1.35); opacity: 1; }
+  }
+}
+
+.lp-portal__ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  pointer-events: none;
+  transform-origin: center;
+}
+
+/* Each ring: size + color + animation */
+.lp-portal__ring--1 {
+  width: 88px;  height: 88px;
+  border: 2px solid rgba(212, 160, 48, 1.00);
+  box-shadow: 0 0 18px 4px rgba(212, 160, 48, 0.55), inset 0 0 12px rgba(212, 160, 48, 0.2);
+}
+.lp-portal__ring--2 {
+  width: 160px; height: 160px;
+  border: 1.5px solid rgba(212, 160, 48, 0.80);
+  box-shadow: 0 0 12px rgba(212, 160, 48, 0.30);
+}
+.lp-portal__ring--3 {
+  width: 240px; height: 240px;
+  border: 1px solid rgba(212, 160, 48, 0.60);
+  box-shadow: 0 0 8px rgba(212, 160, 48, 0.18);
+}
+.lp-portal__ring--4 {
+  width: 330px; height: 330px;
+  border: 1px solid rgba(212, 160, 48, 0.42);
+}
+.lp-portal__ring--5 {
+  width: 420px; height: 420px;
+  border: 1px solid rgba(212, 160, 48, 0.26);
+}
+.lp-portal__ring--6 {
+  width: 510px; height: 510px;
+  border: 1px solid rgba(212, 160, 48, 0.14);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .lp-portal__ring--1 { animation: ringCW  3.5s linear infinite; }
+  .lp-portal__ring--2 { animation: ringCCW 5.2s linear infinite; }
+  .lp-portal__ring--3 { animation: ringCW  7.8s linear infinite; }
+  .lp-portal__ring--4 { animation: ringCCW 11s  linear infinite; }
+  .lp-portal__ring--5 { animation: ringCW  15s  linear infinite; }
+  .lp-portal__ring--6 { animation: ringCCW 20s  linear infinite; }
+
+  @keyframes ringCW {
+    from { transform: translate(-50%, -50%) rotateX(70deg) rotateZ(0deg); }
+    to   { transform: translate(-50%, -50%) rotateX(70deg) rotateZ(360deg); }
+  }
+  @keyframes ringCCW {
+    from { transform: translate(-50%, -50%) rotateX(70deg) rotateZ(0deg); }
+    to   { transform: translate(-50%, -50%) rotateX(70deg) rotateZ(-360deg); }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lp-portal__ring {
+    transform: translate(-50%, -50%) rotateX(70deg);
+  }
+}
+
+/* Central orb */
+.lp-portal__orb {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 56px;
+  height: 56px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 35%, var(--lp-gold-pale) 0%, var(--lp-gold) 30%, rgba(212, 160, 48, 0.2) 65%, transparent 100%);
+  z-index: 5;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .lp-portal__orb {
+    animation: orbPulse 2.8s ease-in-out infinite alternate;
+  }
+  @keyframes orbPulse {
+    from {
+      transform: translate(-50%, -50%) scale(1);
+      box-shadow:
+        0 0 12px  6px rgba(201, 150, 42, 0.40),
+        0 0 40px 10px rgba(201, 150, 42, 0.18);
+    }
+    to {
+      transform: translate(-50%, -50%) scale(1.2);
+      box-shadow:
+        0 0 24px 10px rgba(201, 150, 42, 0.55),
+        0 0 80px 20px rgba(201, 150, 42, 0.25);
+    }
+  }
+}
+
+/* Portal entrance fade — fires once on load */
+@media (prefers-reduced-motion: no-preference) {
+  .lp-portal-wrap {
+    animation: portalFadeIn 1.4s 0.2s ease both;
+  }
+  @keyframes portalFadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+}
+
+/* ── Hero content ─────────────────────────────────────────────────────────── */
+
+.lp-hero__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 720px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .lp-hero__eyebrow { animation: heroReveal 0.8s 0.6s ease both; }
+  .lp-hero__h1      { animation: heroReveal 1s   0.8s ease both; }
+  .lp-hero__sub     { animation: heroReveal 0.8s 1.0s ease both; }
+  .lp-btn--primary  { animation: heroReveal 0.8s 1.2s ease both; }
+  .lp-hero__note    { animation: heroReveal 0.8s 1.4s ease both; }
+
+  @keyframes heroReveal {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+}
+
+.lp-hero__eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 9.5px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--lp-gold);
+  opacity: 0.75;
+  margin-bottom: 0.75rem;
+}
+
+.lp-hero__h1 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2.8rem, 8vw, 5.4rem);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1.0;
+  margin-bottom: 1.4rem;
+  will-change: background-position;
+
+  background: linear-gradient(
+    160deg,
+    var(--lp-gold-pale)  0%,
+    var(--lp-gold-light) 30%,
+    var(--lp-gold)       60%,
+    var(--lp-gold-light) 85%,
+    var(--lp-gold-pale)  100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% 100%;
+
+  animation: goldShimmerText 5s ease-in-out infinite alternate;
+}
+
+@keyframes goldShimmerText {
+  from { background-position: 0% 0%; }
+  to   { background-position: 100% 0%; }
+}
+
+.lp-hero__sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+  line-height: 1.85;
+  color: var(--lp-text-sub);
+  max-width: 580px;
+  margin-bottom: 2.4rem;
+}
+
+.lp-hero__note {
+  margin-top: 1.2rem;
+  font-family: 'Cinzel', serif;
+  font-size: 8.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--lp-text-dim);
+}
+
+/* ── CTA Button ───────────────────────────────────────────────────────────── */
+
+.lp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform   220ms ease,
+    box-shadow  220ms ease,
+    background  220ms ease;
+}
+
+.lp-btn:hover  { transform: translateY(-2px); }
+.lp-btn:active { transform: translateY(0); }
+
+.lp-btn--primary {
+  background: linear-gradient(135deg, var(--lp-gold) 0%, #B07E1E 100%);
+  color: #0A0608;
+  font-weight: 600;
+  box-shadow:
+    0 4px 20px rgba(201, 150, 42, 0.35),
+    inset 0 1px 0 rgba(255,255,255,0.15);
+}
+
+.lp-btn--primary:hover {
+  box-shadow:
+    0 8px 40px rgba(201, 150, 42, 0.55),
+    inset 0 1px 0 rgba(255,255,255,0.2);
+}
+
+/* Shimmer sweep on primary button */
+.lp-btn--primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent       35%,
+    rgba(255,255,255,0.28) 50%,
+    transparent       65%
+  );
+  transform: translateX(-120%);
+  animation: btnShimmer 4s 2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lp-btn--primary::after { display: none; }
+}
+
+@keyframes btnShimmer {
+  0%, 55%  { transform: translateX(-120%); }
+  100%     { transform: translateX(220%); }
+}
+
+.lp-btn--ghost {
+  background: transparent;
+  color: var(--lp-gold-light);
+  border: 1px solid var(--lp-gold-ring);
+}
+
+.lp-btn--ghost:hover {
+  background: var(--lp-gold-dim);
+  border-color: var(--lp-gold);
+  box-shadow: 0 4px 20px var(--lp-gold-dim);
+}
+
+.lp-btn--large {
+  padding: 1.25rem 2.5rem;
+  font-size: 12px;
+}
+
+.lp-btn__arrow {
+  font-style: normal;
+  transition: transform 200ms ease;
+}
+.lp-btn:hover .lp-btn__arrow { transform: translateX(4px); }
+
+/* ── Trust strip ─────────────────────────────────────────────────────────── */
+
+.lp-trust {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  padding: 1.5rem 1.5rem;
+  border-top:    1px solid var(--lp-border);
+  border-bottom: 1px solid var(--lp-border);
+  background:
+    radial-gradient(ellipse 100% 100% at 50% 50%, rgba(212, 160, 48, 0.07) 0%, transparent 70%),
+    var(--lp-bg-alt);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gold scan line across trust strip */
+@media (prefers-reduced-motion: no-preference) {
+  .lp-trust::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -60%;
+    width: 55%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent 0%, rgba(212, 160, 48, 0.07) 40%, rgba(212, 160, 48, 0.12) 50%, rgba(212, 160, 48, 0.07) 60%, transparent 100%);
+    animation: trustScan 7s 1.5s ease-in-out infinite;
+    pointer-events: none;
+  }
+  @keyframes trustScan {
+    0%   { left: -60%; }
+    100% { left: 140%; }
+  }
+}
+
+.lp-trust__item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.lp-trust__icon {
+  color: var(--lp-gold);
+  font-size: 0.7rem;
+  opacity: 0.7;
+}
+
+.lp-trust__text {
+  font-family: 'Cinzel', serif;
+  font-size: 9.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--lp-text-sub);
+}
+
+/* ── Sections ────────────────────────────────────────────────────────────── */
+
+.lp-section {
+  padding: 6rem 1.5rem;
+}
+
+.lp-section--alt {
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 50%, rgba(212, 160, 48, 0.06) 0%, transparent 70%),
+    var(--lp-bg-alt);
+  border-top: 1px solid var(--lp-border);
+  border-bottom: 1px solid var(--lp-border);
+}
+
+.lp-section__inner {
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+/* ── Truth section — sacred geometry backdrop ────────────────────────────── */
+
+.lp-section--truth {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Atmospheric left glow + right depth */
+.lp-section--truth::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 55% 90% at 0% 50%,  rgba(212, 160, 48, 0.07) 0%, transparent 55%),
+    radial-gradient(ellipse 45% 65% at 100% 50%, rgba(110, 60, 200, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.lp-section--truth .lp-section__inner { position: relative; z-index: 1; }
+
+/* Sacred geometry mandala container */
+.lp-truth-bg {
+  position: absolute;
+  top: 50%;
+  right: -5%;
+  transform: translateY(-50%);
+  width: min(640px, 85vw);
+  height: min(640px, 85vw);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.07;
+}
+
+.lp-truth-mandala {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .lp-truth-mandala {
+    animation: mandalaRotate 90s linear infinite;
+    transform-origin: center;
+  }
+  @keyframes mandalaRotate {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+}
+
+/* ── Floating alchemical gems (truth section) ────────────────────────────── */
+
+.lp-gems {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.lp-gem {
+  position: absolute;
+  width:  var(--gem-size, 10px);
+  height: var(--gem-size, 10px);
+  border: 1px solid rgba(212, 160, 48, 0.38);
+  transform: rotate(45deg);
+  opacity: var(--gem-opacity, 0.22);
+  will-change: transform, opacity;
+}
+
+.lp-gem::before {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border: 1px solid rgba(212, 160, 48, 0.2);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .lp-gem {
+    animation: gemDrift var(--gem-dur, 9s) var(--gem-delay, 0s) ease-in-out infinite alternate;
+  }
+  @keyframes gemDrift {
+    from { transform: rotate(45deg)  translateY(0)                    scale(1); opacity: var(--gem-opacity); }
+    to   { transform: rotate(225deg) translateY(var(--gem-travel, -18px)) scale(1.2); opacity: calc(var(--gem-opacity) * 1.5); }
+  }
+}
+
+/* ── Benefits cards ──────────────────────────────────────────────────────── */
+
+.lp-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+  perspective: 1400px;
+}
+
+.lp-card {
+  padding: 2.2rem 1.8rem;
+  background:
+    radial-gradient(ellipse 120% 80% at 50% 0%, rgba(212, 160, 48, 0.07) 0%, transparent 60%),
+    rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--lp-border);
+  border-radius: 4px;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: border-color 280ms ease, background 280ms ease, transform 320ms cubic-bezier(0.23, 1, 0.32, 1), box-shadow 280ms ease;
+}
+
+.lp-card:hover {
+  border-color: rgba(212, 160, 48, 0.60);
+  background:
+    radial-gradient(ellipse 120% 80% at 50% 0%, rgba(212, 160, 48, 0.14) 0%, transparent 60%),
+    rgba(255, 255, 255, 0.04);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35), 0 0 30px rgba(212,160,48,0.08);
+}
+
+.lp-card__glyph {
+  display: block;
+  font-size: 1.5rem;
+  color: var(--lp-gold);
+  opacity: 0.7;
+  margin-bottom: 1.2rem;
+}
+
+.lp-card__title {
+  font-family: 'Cinzel', serif;
+  font-size: 11.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--lp-gold-light);
+  margin-bottom: 0.9rem;
+  line-height: 1.5;
+}
+
+.lp-card__body {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.07rem;
+  line-height: 1.82;
+  color: var(--lp-text-sub);
+}
+
+/* ── Steps ───────────────────────────────────────────────────────────────── */
+
+.lp-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 3rem;
+  position: relative;
+  perspective: 1200px;
+}
+
+/* Individual step stagger delays for 3D entrance */
+.lp-step { --step-delay: 0ms; }
+.lp-step:nth-child(1) { --step-delay: 0ms; }
+.lp-step:nth-child(2) { --step-delay: 120ms; }
+.lp-step:nth-child(3) { --step-delay: 240ms; }
+.lp-step:nth-child(4) { --step-delay: 360ms; }
+
+.lp-step.lp-reveal {
+  transition-delay: var(--step-delay);
+  transform: translateY(28px) rotateX(-8deg);
+}
+.lp-step.lp-reveal.is-visible {
+  transform: translateY(0) rotateX(0deg);
+}
+
+/* Gold connector line between steps */
+.lp-steps::before {
+  content: '';
+  position: absolute;
+  top: 2.2rem;
+  left: 3.5rem;
+  right: 3.5rem;
+  height: 1px;
+  background: linear-gradient(90deg, var(--lp-gold-ring), var(--lp-gold-ring), var(--lp-gold-ring));
+  z-index: 0;
+}
+
+.lp-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.lp-step__num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid var(--lp-gold);
+  background: rgba(212, 160, 48, 0.10);
+  box-shadow: 0 0 14px rgba(212, 160, 48, 0.22);
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--lp-gold-light);
+  margin-bottom: 1.4rem;
+  flex-shrink: 0;
+}
+
+.lp-step__title {
+  font-family: 'Cinzel', serif;
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--lp-text);
+  margin-bottom: 0.7rem;
+}
+
+.lp-step__body {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--lp-text-sub);
+}
+
+/* ── Who it's for ────────────────────────────────────────────────────────── */
+
+.lp-for__inner {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.lp-for__header .lp-h2 { margin-bottom: 0; }
+
+.lp-for__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 0.5rem;
+}
+
+.lp-for__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--lp-text-sub);
+}
+
+.lp-for__diamond {
+  color: var(--lp-gold);
+  font-size: 0.5rem;
+  flex-shrink: 0;
+  margin-top: 0.55rem;
+  opacity: 0.75;
+}
+
+/* ── Final CTA section ───────────────────────────────────────────────────── */
+
+.lp-final {
+  position: relative;
+  padding: 7rem 1.5rem;
+  overflow: hidden;
+
+  background:
+    radial-gradient(ellipse 90% 70% at 50% 55%, rgba(212, 160, 48, 0.14) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 50% 100%, rgba(212, 160, 48, 0.08) 0%, transparent 50%),
+    var(--lp-bg);
+  border-top: 1px solid var(--lp-border);
+}
+
+/* Decorative mini rings in the final section */
+.lp-final__rings {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.lp-final__ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  opacity: 0.35;
+}
+
+.lp-final__ring--1 { width: 200px; height: 200px; border: 1px solid rgba(201, 150, 42, 0.5); transform: translate(-50%, -50%); }
+.lp-final__ring--2 { width: 400px; height: 400px; border: 1px solid rgba(201, 150, 42, 0.2); transform: translate(-50%, -50%); }
+.lp-final__ring--3 { width: 640px; height: 640px; border: 1px solid rgba(201, 150, 42, 0.1); transform: translate(-50%, -50%); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .lp-final__ring--1 { animation: finalRingPulse 3s ease-in-out infinite alternate; }
+  .lp-final__ring--2 { animation: finalRingPulse 4s 0.5s ease-in-out infinite alternate; }
+  .lp-final__ring--3 { animation: finalRingPulse 5s 1s ease-in-out infinite alternate; }
+
+  @keyframes finalRingPulse {
+    from { transform: translate(-50%, -50%) scale(1);    opacity: 0.35; }
+    to   { transform: translate(-50%, -50%) scale(1.05); opacity: 0.15; }
+  }
+}
+
+.lp-final__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0;
+}
+
+.lp-final__h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--lp-text);
+  margin-bottom: 1.4rem;
+}
+
+.lp-final__sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.12rem;
+  line-height: 1.85;
+  color: var(--lp-text-sub);
+  max-width: 520px;
+  margin-bottom: 2.4rem;
+}
+
+.lp-final__note {
+  margin-top: 1.4rem;
+  font-family: 'Cinzel', serif;
+  font-size: 8.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--lp-text-dim);
+}
+
+/* ── Minimal footer ───────────────────────────────────────────────────────── */
+
+.lp-footer {
+  padding: 2rem 1.5rem;
+  border-top: 1px solid var(--lp-border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background:
+    radial-gradient(ellipse 80% 100% at 50% 100%, rgba(212, 160, 48, 0.05) 0%, transparent 60%),
+    var(--lp-bg-alt);
+}
+
+.lp-footer nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.lp-footer__link {
+  font-family: 'Cinzel', serif;
+  font-size: 9.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--lp-text-dim);
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.lp-footer__link:hover { color: var(--lp-gold); }
+
+.lp-footer__sep {
+  color: var(--lp-text-dim);
+  opacity: 0.5;
+  font-size: 0.7rem;
+}
+
+.lp-footer__copy {
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  color: var(--lp-text-dim);
+  opacity: 0.6;
+  letter-spacing: 0.04em;
+}
+
+/* ── Scroll reveal ───────────────────────────────────────────────────────── */
+
+.lp-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity   700ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 700ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.lp-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lp-reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  .lp-cards { grid-template-columns: 1fr; max-width: 480px; margin-inline: auto; }
+  .lp-steps { grid-template-columns: 1fr 1fr; }
+  .lp-steps::before { display: none; }
+  .lp-for__inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .lp-for__header .lp-h2 { margin-bottom: 0; }
+  .lp-br--md { display: none; }
+}
+
+@media (max-width: 600px) {
+  .lp-portal-wrap {
+    width: min(340px, 90vw);
+    height: 180px;
+    margin-bottom: 2.5rem;
+  }
+
+  /* Scale ring sizes down for mobile */
+  .lp-portal__ring--1 { width: 60px;  height: 60px; }
+  .lp-portal__ring--2 { width: 110px; height: 110px; }
+  .lp-portal__ring--3 { width: 165px; height: 165px; }
+  .lp-portal__ring--4 { width: 230px; height: 230px; }
+  .lp-portal__ring--5 { width: 295px; height: 295px; }
+  .lp-portal__ring--6 { width: 350px; height: 350px; }
+
+  .lp-portal__orb { width: 40px; height: 40px; }
+
+  .lp-steps { grid-template-columns: 1fr; }
+  .lp-trust { gap: 1.5rem; flex-direction: column; }
+  .lp-section { padding: 4rem 1.25rem; }
+  .lp-final { padding: 5rem 1.25rem; }
+  .lp-btn--large { font-size: 10px; padding: 1rem 1.6rem; }
+}
+
+@media (max-width: 380px) {
+  .lp-hero__h1 { letter-spacing: 0.06em; }
+}

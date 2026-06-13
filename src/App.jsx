@@ -16,6 +16,14 @@ import Services from './pages/Services/Services'
 import Contact from './pages/Contact/Contact'
 import NotFound from './pages/NotFound/NotFound'
 
+// Lazy-loaded LP pages — no Layout wrapper, noindex
+const LpMoneyRituals = lazy(() =>
+  import('./pages/lp/MoneyRituals/MoneyRituals')
+)
+const LpPsychicReading = lazy(() =>
+  import('./pages/lp/PsychicReading/PsychicReading')
+)
+
 // Lazy-loaded service pages — each is a separate JS chunk
 const PsychicConsultations = lazy(() =>
   import('./pages/PsychicConsultations/PsychicConsultations')
@@ -54,6 +62,16 @@ export default function App() {
       <ScrollToTop />
 
       <Routes>
+        {/* LP pages — no navbar/footer, noindex */}
+        <Route
+          path="/lp/money-rituals"
+          element={<LazyPage component={LpMoneyRituals} />}
+        />
+        <Route
+          path="/lp/online-psychic-reading"
+          element={<LazyPage component={LpPsychicReading} />}
+        />
+
         <Route element={<Layout />}>
           {/* Eager pages */}
           <Route index element={<Home />} />
