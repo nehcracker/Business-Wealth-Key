@@ -1,13 +1,17 @@
-/* ─── ConsultationForm — The Sanctum / Ceremonial Gold redesign ───────────── */
+/* ─── ConsultationForm — Luminous Ceremony Edition ───────────────────────── */
 
 /* Gold accent tokens scoped to the form */
 .cf,
 .cf-success {
   --gold:          #C9962A;
   --gold-light:    #E0B553;
+  --gold-bright:   #F0CC6A;
   --gold-glow:     rgba(201, 150, 42, 0.10);
+  --gold-glow-md:  rgba(201, 150, 42, 0.16);
   --gold-border:   rgba(201, 150, 42, 0.32);
-  --gold-selected: rgba(201, 150, 42, 0.08);
+  --gold-selected: rgba(201, 150, 42, 0.07);
+  --input-bg:      rgba(201, 150, 42, 0.025);
+  --input-bg-focus:rgba(201, 150, 42, 0.045);
 }
 
 /* ── Root form ────────────────────────────────────────────────────────────── */
@@ -31,10 +35,10 @@
 .cf__field {
   display: flex;
   flex-direction: column;
-  gap: var(--space-1);
+  gap: var(--space-2);
 }
 
-/* ── Label ───────────────────────────────────────────────────────────────── */
+/* ── Label — ignites gold when its field is focused ──────────────────────── */
 
 .cf__label {
   font-family: var(--font-cinzel);
@@ -43,11 +47,20 @@
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--gold);
-  opacity: 0.75;
-  padding-bottom: var(--space-1);
+  opacity: 0.68;
+  padding-bottom: 2px;
   display: flex;
   align-items: center;
   gap: var(--space-2);
+  transition: opacity 280ms ease, color 280ms ease, text-shadow 280ms ease;
+}
+
+/* Label glow when sibling input is focused — CSS :has() */
+.cf__field:has(.cf__input:focus) .cf__label,
+.cf__field:has(.cf__textarea:focus) .cf__label {
+  opacity: 1;
+  color: var(--gold-light);
+  text-shadow: 0 0 12px rgba(201, 150, 42, 0.35);
 }
 
 .cf__required {
@@ -69,23 +82,23 @@
   opacity: 0.7;
 }
 
-/* ── Underline Input / Textarea ──────────────────────────────────────────── */
+/* ── Luminous Input / Textarea — full bordered box ───────────────────────── */
 
 .cf__input,
 .cf__textarea {
   width: 100%;
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid rgba(155, 110, 200, 0.28);
-  border-radius: 0;
-  padding: var(--space-3) 0;
+  background: var(--input-bg);
+  border: 1px solid rgba(155, 110, 200, 0.22);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-5);
   font-family: var(--font-body);
   font-size: 1.05rem;
   color: var(--color-text-primary);
   outline: none;
   transition:
-    border-bottom-color 280ms ease,
-    box-shadow          280ms ease;
+    border-color  280ms ease,
+    box-shadow    280ms ease,
+    background    280ms ease;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -100,33 +113,39 @@
 
 .cf__input:hover,
 .cf__textarea:hover {
-  border-bottom-color: var(--gold-border);
+  border-color: rgba(201, 150, 42, 0.35);
+  background: rgba(201, 150, 42, 0.04);
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .cf__input:focus,
   .cf__textarea:focus {
-    border-bottom-color: var(--gold);
-    box-shadow: 0 1px 0 0 var(--gold-glow);
+    border-color: rgba(201, 150, 42, 0.82);
+    background: var(--input-bg-focus);
+    box-shadow:
+      0 0 0 1px rgba(201, 150, 42, 0.22),
+      0 0 22px rgba(201, 150, 42, 0.13),
+      0 0 48px rgba(201, 150, 42, 0.06),
+      inset 0 0 14px rgba(201, 150, 42, 0.03);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .cf__input:focus,
   .cf__textarea:focus {
-    border-bottom-color: var(--gold);
+    border-color: rgba(201, 150, 42, 0.82);
   }
 }
 
 /* Error state */
 .cf__input--error {
-  border-bottom-color: var(--color-error) !important;
-  box-shadow: none !important;
+  border-color: var(--color-error) !important;
+  box-shadow: 0 0 12px rgba(192, 90, 90, 0.12) !important;
 }
 
 .cf__textarea {
   resize: vertical;
-  min-height: 120px;
+  min-height: 130px;
   padding-top: var(--space-3);
   line-height: 1.75;
 }
@@ -153,7 +172,7 @@
   gap: var(--space-3);
 }
 
-/* ── Communication Method Cards — horizontal grid layout ─────────────────── */
+/* ── Communication Method Cards — 3D lift on hover ───────────────────────── */
 
 .cf__method-group {
   display: grid;
@@ -161,11 +180,6 @@
   gap: var(--space-3);
 }
 
-/*
-  Layout: hidden radio (absolute) + icon + name + desc
-  Grid: [icon] [name]
-              [desc]
-*/
 .cf__method-label {
   position: relative;
   display: grid;
@@ -175,27 +189,37 @@
   row-gap: 3px;
   align-items: center;
   padding: var(--space-4) var(--space-5);
-  background: transparent;
+  background: rgba(201, 150, 42, 0.02);
   border: 1px solid var(--color-amethyst-border);
   border-radius: var(--radius-md);
   cursor: pointer;
   transition:
-    border-color  200ms ease,
-    background    200ms ease,
-    box-shadow    200ms ease;
+    border-color  220ms ease,
+    background    220ms ease,
+    box-shadow    220ms ease,
+    transform     300ms cubic-bezier(0.23, 1, 0.32, 1);
   -webkit-user-select: none;
           user-select: none;
 }
 
 .cf__method-label:hover {
-  border-color: var(--gold-border);
-  background: var(--gold-glow);
+  border-color: rgba(201, 150, 42, 0.45);
+  background: rgba(201, 150, 42, 0.055);
+  transform: perspective(700px) translateZ(10px) translateY(-2px);
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(201, 150, 42, 0.25),
+    0 0 22px rgba(201, 150, 42, 0.08);
 }
 
 .cf__method-label--selected {
   border-color: var(--gold);
   background: var(--gold-selected);
-  box-shadow: 0 0 0 1px var(--gold-border);
+  transform: perspective(700px) translateZ(7px);
+  box-shadow:
+    0 6px 20px rgba(0, 0, 0, 0.38),
+    0 0 0 1px var(--gold-border),
+    0 0 28px rgba(201, 150, 42, 0.12);
 }
 
 /* Hidden native radio — out of flow */
@@ -216,13 +240,19 @@
   width: 40px;
   height: 40px;
   border-radius: var(--radius-md);
-  transition: background 200ms ease;
+  transition: background 220ms ease, box-shadow 220ms ease;
 }
 
 .cf__method-icon--wa  { color: #25D366; background: rgba(37, 211, 102, 0.09); }
 .cf__method-icon--gm  { color: #4285f4; background: rgba(66, 133, 244, 0.09); }
-.cf__method-label--selected .cf__method-icon--wa { background: rgba(37, 211, 102, 0.15); }
-.cf__method-label--selected .cf__method-icon--gm { background: rgba(66, 133, 244, 0.15); }
+.cf__method-label--selected .cf__method-icon--wa {
+  background: rgba(37, 211, 102, 0.16);
+  box-shadow: 0 0 12px rgba(37, 211, 102, 0.2);
+}
+.cf__method-label--selected .cf__method-icon--gm {
+  background: rgba(66, 133, 244, 0.16);
+  box-shadow: 0 0 12px rgba(66, 133, 244, 0.2);
+}
 
 .cf__method-name {
   grid-column: 2;
@@ -246,7 +276,7 @@
   line-height: 1;
 }
 
-/* ── Service radio pills — flex-wrap tag layout ─────────────────────────── */
+/* ── Service radio pills — glowing on select ─────────────────────────────── */
 
 .cf__service-group {
   display: flex;
@@ -260,7 +290,7 @@
   align-items: center;
   gap: var(--space-2);
   padding: var(--space-2) var(--space-4);
-  background: transparent;
+  background: rgba(201, 150, 42, 0.02);
   border: 1px solid var(--color-amethyst-border);
   border-radius: var(--radius-full);
   cursor: pointer;
@@ -270,25 +300,31 @@
   text-transform: uppercase;
   color: var(--color-text-tertiary);
   transition:
-    border-color  180ms ease,
-    background    180ms ease,
-    color         180ms ease;
+    border-color  200ms ease,
+    background    200ms ease,
+    color         200ms ease,
+    box-shadow    200ms ease,
+    transform     200ms ease;
   -webkit-user-select: none;
           user-select: none;
   white-space: nowrap;
 }
 
 .cf__service-label:hover {
-  border-color: var(--gold-border);
+  border-color: rgba(201, 150, 42, 0.4);
   color: var(--color-text-secondary);
-  background: var(--gold-glow);
+  background: rgba(201, 150, 42, 0.05);
+  transform: translateY(-1px);
 }
 
 .cf__service-label--selected {
   border-color: var(--gold);
   background: var(--gold-selected);
   color: var(--gold-light);
-  box-shadow: 0 0 0 1px var(--gold-border);
+  box-shadow:
+    0 0 0 1px var(--gold-border),
+    0 0 16px rgba(201, 150, 42, 0.14);
+  text-shadow: 0 0 12px rgba(201, 150, 42, 0.4);
 }
 
 .cf__service-dot {
@@ -298,7 +334,7 @@
   border: 1px solid currentColor;
   background: transparent;
   flex-shrink: 0;
-  transition: background 180ms ease;
+  transition: background 200ms ease, box-shadow 200ms ease;
 }
 
 .cf__service-dot::after { display: none; }
@@ -306,6 +342,7 @@
 .cf__service-label--selected .cf__service-dot {
   background: var(--gold);
   border-color: var(--gold);
+  box-shadow: 0 0 6px rgba(201, 150, 42, 0.6);
 }
 
 /* ── Privacy note ─────────────────────────────────────────────────────────── */
@@ -322,13 +359,13 @@
   line-height: 1.9;
   max-width: none;
   padding: var(--space-3) 0;
-  border-top: 1px solid rgba(155, 110, 200, 0.12);
+  border-top: 1px solid rgba(201, 150, 42, 0.12);
 }
 
 .cf__privacy-icon {
   color: var(--gold);
   flex-shrink: 0;
-  opacity: 0.6;
+  opacity: 0.65;
   font-size: 0.8rem;
   margin-top: 2px;
 }
@@ -345,7 +382,57 @@
   padding: var(--space-4) var(--space-5);
 }
 
-/* ── Success state ────────────────────────────────────────────────────────── */
+/* ── Submit glow rings — pulsing behind the CTA button ───────────────────── */
+
+.cf__submit-glow {
+  position: relative;
+  width: 100%;
+  height: 0;
+  pointer-events: none;
+}
+
+.cf__submit-ring {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -50%);
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(201, 150, 42, 0.18);
+}
+
+.cf__submit-ring--1 {
+  width: 85%;
+  height: 52px;
+}
+.cf__submit-ring--2 {
+  width: 105%;
+  height: 68px;
+  border-color: rgba(201, 150, 42, 0.10);
+}
+.cf__submit-ring--3 {
+  width: 125%;
+  height: 84px;
+  border-color: rgba(201, 150, 42, 0.05);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .cf__submit-ring--1 {
+    animation: submitPulse 3.5s 0.0s ease-in-out infinite;
+  }
+  .cf__submit-ring--2 {
+    animation: submitPulse 3.5s 0.6s ease-in-out infinite;
+  }
+  .cf__submit-ring--3 {
+    animation: submitPulse 3.5s 1.2s ease-in-out infinite;
+  }
+  @keyframes submitPulse {
+    0%   { transform: translate(-50%, -50%) scale(0.97); opacity: 0.5; }
+    50%  { transform: translate(-50%, -50%) scale(1.02); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(0.97); opacity: 0.5; }
+  }
+}
+
+/* ── Success state — radiant ──────────────────────────────────────────────── */
 
 .cf-success {
   display: flex;
@@ -354,11 +441,30 @@
   text-align: center;
   gap: var(--space-5);
   padding: var(--space-16) var(--space-8);
+  background:
+    radial-gradient(ellipse 80% 55% at 50% 10%, rgba(201,150,42,0.08) 0%, transparent 65%),
+    transparent;
+  border: 1px solid rgba(201, 150, 42, 0.12);
+  border-radius: var(--radius-lg);
 }
 
 .cf-success__icon {
-  font-size: 2rem;
+  font-size: 2.6rem;
   color: var(--gold);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .cf-success__icon {
+    animation: successGlow 2.5s ease-in-out infinite alternate;
+  }
+  @keyframes successGlow {
+    from {
+      text-shadow: 0 0 20px rgba(201,150,42,0.5), 0 0 40px rgba(201,150,42,0.2);
+    }
+    to {
+      text-shadow: 0 0 40px rgba(201,150,42,0.85), 0 0 80px rgba(201,150,42,0.4), 0 0 120px rgba(201,150,42,0.15);
+    }
+  }
 }
 
 .cf-success__heading {
@@ -396,6 +502,7 @@
 
 @media (max-width: 480px) {
   .cf__method-group   { grid-template-columns: 1fr; }
+  .cf__method-label:hover { transform: none; }
 }
 
 /* Prevent iOS Safari auto-zoom on input focus */

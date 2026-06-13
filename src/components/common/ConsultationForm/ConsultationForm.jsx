@@ -266,6 +266,13 @@ export default function ConsultationForm() {
         </div>
       )}
 
+      {/* Pulsing rings behind submit button */}
+      <div className="cf__submit-glow" aria-hidden="true">
+        <span className="cf__submit-ring cf__submit-ring--1" />
+        <span className="cf__submit-ring cf__submit-ring--2" />
+        <span className="cf__submit-ring cf__submit-ring--3" />
+      </div>
+
       <Button
         type="submit" variant="primary" size="lg"
         accentVariant="amethyst" fullWidth
