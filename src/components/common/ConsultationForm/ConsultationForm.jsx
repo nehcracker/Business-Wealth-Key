@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { FORM_CONFIG } from '../../../utils/formConfig'
 import Button from '../Button/Button'
 import './ConsultationForm.css'
@@ -37,6 +37,26 @@ export default function ConsultationForm() {
   const [errors, setErrors] = useState({})
   const [status, setStatus] = useState('idle')
   const [errMsg, setErrMsg] = useState('')
+  const [detectedCode, setDetectedCode] = useState('')
+
+  /* Auto-detect country via IP on mount — pre-fill calling code + country */
+  useEffect(() => {
+    fetch('https://ipapi.co/json/')
+      .then(r => r.json())
+      .then(data => {
+        const code = data.country_calling_code || ''
+        const name = data.country_name || ''
+        if (code) {
+          setDetectedCode(code)
+          setFields(prev => ({
+            ...prev,
+            phone:   prev.phone   || `${code} `,
+            country: prev.country || name,
+          }))
+        }
+      })
+      .catch(() => {})
+  }, [])
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -59,7 +79,10 @@ export default function ConsultationForm() {
         e.phone = 'Include your country code — e.g. +44 7911 123456 or +1 234 567 8900.'
     }
     if (!fields.serviceRequired) e.serviceRequired = 'Please select a service to proceed.'
-    if (!fields.message.trim())  e.message  = 'Please describe your challenge or goal.'
+    if (!fields.message.trim())
+      e.message = 'Please describe your challenge or goal.'
+    else if (fields.message.trim().length < 140)
+      e.message = `Please provide more detail (${fields.message.trim().length}/140 characters minimum).`
     return e
   }
 
@@ -185,7 +208,11 @@ export default function ConsultationForm() {
           <label className="cf__label" htmlFor="phone">
             Phone Number <span className="cf__required" aria-hidden="true">*</span>
           </label>
-          <p className="cf__field-hint">International format — include country code</p>
+          <p className="cf__field-hint">
+            {detectedCode
+              ? `Location detected: ${detectedCode} — edit if different`
+              : 'International format required — include country code'}
+          </p>
           <input
             id="phone" name="phone" type="tel"
             className={['cf__input', errors.phone ? 'cf__input--error' : ''].filter(Boolean).join(' ')}
@@ -267,6 +294,9 @@ export default function ConsultationForm() {
           placeholder="Please share as much detail as you are comfortable with. All information is treated in the strictest confidence."
           aria-required="true" aria-describedby={errors.message ? 'err-message' : undefined}
         />
+        <p className={['cf__char-count', fields.message.trim().length >= 140 ? 'cf__char-count--ok' : ''].filter(Boolean).join(' ')} aria-live="polite">
+          {fields.message.trim().length} / 140 characters{fields.message.trim().length >= 140 ? ' ✓' : ' minimum'}
+        </p>
         {errors.message && <span id="err-message" className="cf__error" role="alert">{errors.message}</span>}
       </div>
 

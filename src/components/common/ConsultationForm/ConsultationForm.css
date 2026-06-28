@@ -362,6 +362,22 @@
   box-shadow: 0 0 6px rgba(201, 150, 42, 0.6);
 }
 
+/* ── Character counter for message field ─────────────────────────────────── */
+
+.cf__char-count {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  color: var(--color-text-tertiary);
+  text-align: right;
+  margin-top: var(--space-1);
+  transition: color 200ms ease;
+}
+
+.cf__char-count--ok {
+  color: var(--color-success);
+}
+
 /* ── Privacy note ─────────────────────────────────────────────────────────── */
 
 .cf__privacy {
