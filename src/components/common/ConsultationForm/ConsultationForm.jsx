@@ -50,8 +50,15 @@ export default function ConsultationForm() {
     if (!fields.email.trim())    e.email    = 'Email address is required.'
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fields.email))
                                  e.email    = 'Please enter a valid email address.'
-    if (!fields.phone.trim())    e.phone    = 'Phone number is required.'
     if (!fields.country.trim())  e.country  = 'Country is required.'
+    if (!fields.phone.trim()) {
+      e.phone = 'Phone number is required.'
+    } else {
+      const stripped = fields.phone.trim().replace(/[\s\-().]/g, '')
+      if (!/^\+\d{7,15}$/.test(stripped))
+        e.phone = 'Include your country code — e.g. +44 7911 123456 or +1 234 567 8900.'
+    }
+    if (!fields.serviceRequired) e.serviceRequired = 'Please select a service to proceed.'
     if (!fields.message.trim())  e.message  = 'Please describe your challenge or goal.'
     return e
   }
@@ -178,11 +185,12 @@ export default function ConsultationForm() {
           <label className="cf__label" htmlFor="phone">
             Phone Number <span className="cf__required" aria-hidden="true">*</span>
           </label>
+          <p className="cf__field-hint">International format — include country code</p>
           <input
             id="phone" name="phone" type="tel"
             className={['cf__input', errors.phone ? 'cf__input--error' : ''].filter(Boolean).join(' ')}
             value={fields.phone} onChange={handleChange}
-            placeholder="+1 234 567 8900" autoComplete="tel"
+            placeholder="+44 7911 123456" autoComplete="tel"
             aria-required="true" aria-describedby={errors.phone ? 'err-phone' : undefined}
           />
           {errors.phone && <span id="err-phone" className="cf__error" role="alert">{errors.phone}</span>}
@@ -214,13 +222,16 @@ export default function ConsultationForm() {
         </div>
       </div>
 
-      {/* Service required — single select */}
+      {/* Service required — mandatory single select */}
       <div className="cf__field">
-        <fieldset className="cf__fieldset">
+        <fieldset
+          className="cf__fieldset"
+          aria-describedby={errors.serviceRequired ? 'err-serviceRequired' : undefined}
+        >
           <legend className="cf__label">
-            Service Required <span className="cf__optional">(select one)</span>
+            Service Required <span className="cf__required" aria-hidden="true">*</span>
           </legend>
-          <div className="cf__service-group">
+          <div className={['cf__service-group', errors.serviceRequired ? 'cf__service-group--error' : ''].filter(Boolean).join(' ')}>
             {FORM_CONFIG.services.map((service) => (
               <label
                 key={service}
@@ -236,6 +247,11 @@ export default function ConsultationForm() {
               </label>
             ))}
           </div>
+          {errors.serviceRequired && (
+            <span id="err-serviceRequired" className="cf__error" role="alert">
+              {errors.serviceRequired}
+            </span>
+          )}
         </fieldset>
       </div>
 
